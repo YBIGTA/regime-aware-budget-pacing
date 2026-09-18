@@ -1,0 +1,3 @@
+[submodule "external/yahoo-budget-pacing"]
+	path = external/yahoo-budget-pacing
+	url = https://github.com/yahoo/BudgetPacingSimulation.git
