@@ -5,32 +5,22 @@ Fixed PI 실험을 수행한다.
 
 ## 빠른 시작
 
-예제 설정을 복사해 시나리오, 시드, PI 계수를 수정한 뒤 실행한다.
+설정 파일에서 시나리오, 시드, PI 계수를 수정한 뒤 실행한다.
 
 ```bash
 .venv/bin/python src/simulator/run_experiments.py \
-  --config configs/experiment_1_1.example.json
+  --config configs/experiment_1_1.json
 ```
 
 기본 출력 루트는 `outputs/simulation_runs/<experiment_id>/`이다. 같은
 `experiment_id`의 결과가 있으면 덮어쓰지 않고 실패한다. 의도적으로 같은 실행
 ID를 다시 계산할 때만 `--overwrite`를 추가한다.
 
-시뮬레이션 전에 조건표와 실행 조합만 검토하려면 `--plan-only`를 사용한다.
-
-```bash
-.venv/bin/python src/simulator/run_experiments.py \
-  --config configs/experiment_1_1.representative.json \
-  --plan-only
-```
-
-이 명령은 경매를 실행하지 않고 `conditions.csv`와 `run_plan.csv`만 생성한다.
-
 ## 설정 구조
 
 ```json
 {
-  "experiment_id": "traffic_competition_v1",
+  "experiment_id": "experiment_1_1",
   "seeds": [42, 43],
   "pi_coefficients": [
     {"kp": 0.1, "ki": 0.001},
@@ -112,7 +102,6 @@ outputs/simulation_runs/<experiment_id>/
 ```
 
 - `conditions.csv`: 시나리오별 조건과 적용 시작·종료 분을 기록한 조건표
-- `run_plan.csv`: 실행 예정인 시나리오·시드·PI 계수 조합
 - `manifest.csv`: 모든 조합의 성공/실패, 결과 경로, 행 수, 오류를 기록
 - `metadata.json`: 실행에 사용한 시나리오, 시드, PI 계수와 조건표
 - `trace.csv`: 캠페인별 분 단위 지출·낙찰·PI 상태와 당시 환경 설정

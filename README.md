@@ -109,19 +109,11 @@ flowchart LR
 
 ```bash
 .venv/bin/python src/simulator/run_experiments.py \
-  --config configs/experiment_1_1.example.json
+  --config configs/experiment_1_1.json
 ```
 
 설정 항목과 출력 구조는 [실험 조건 설정 및 일괄 실행](docs/experiment_runner.md)을
 참고한다.
-
-대표 12개 시나리오의 조건표만 먼저 생성하려면 다음 명령을 사용한다.
-
-```bash
-.venv/bin/python src/simulator/run_experiments.py \
-  --config configs/experiment_1_1.representative.json \
-  --plan-only
-```
 
 ## Tech Stack
 

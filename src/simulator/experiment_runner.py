@@ -84,16 +84,6 @@ MANIFEST_FIELDS = [
 ]
 
 
-PLAN_FIELDS = [
-    "run_id",
-    "scenario_id",
-    "environment_seed",
-    "kp",
-    "ki",
-    "status",
-]
-
-
 class ScenarioMarketplace(Marketplace):
     def __init__(self, *args, environment_rng, **kwargs):
         super().__init__(*args, **kwargs)
@@ -383,49 +373,6 @@ def _write_csv(path, fieldnames, rows):
         writer = csv.DictWriter(output_file, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
-
-
-def write_experiment_plan(config: ExperimentConfig, output_root, overwrite=False):
-    experiment_dir = Path(output_root) / config.experiment_id
-    conditions_path = experiment_dir / "conditions.csv"
-    run_plan_path = experiment_dir / "run_plan.csv"
-    if (
-        not overwrite
-        and (conditions_path.exists() or run_plan_path.exists())
-    ):
-        raise FileExistsError(
-            f"experiment plan already exists: {experiment_dir}"
-        )
-    experiment_dir.mkdir(parents=True, exist_ok=True)
-
-    condition_rows = [
-        row
-        for scenario in config.scenarios
-        for row in scenario.condition_rows()
-    ]
-    plan_rows = [
-        {
-            "run_id": make_run_id(
-                scenario.scenario_id,
-                seed,
-                coefficients.kp,
-                coefficients.ki,
-            ),
-            "scenario_id": scenario.scenario_id,
-            "environment_seed": seed,
-            "kp": coefficients.kp,
-            "ki": coefficients.ki,
-            "status": "planned",
-        }
-        for scenario in config.scenarios
-        for seed in config.seeds
-        for coefficients in config.pi_coefficients
-    ]
-    _write_csv(conditions_path, CONDITION_FIELDS, condition_rows)
-    _write_csv(run_plan_path, PLAN_FIELDS, plan_rows)
-    print(f"experiment_plan_dir={experiment_dir}")
-    print(f"scenarios={len(config.scenarios)} planned_runs={len(plan_rows)}")
-    return experiment_dir
 
 
 def run_experiment(config: ExperimentConfig, output_root, overwrite=False):

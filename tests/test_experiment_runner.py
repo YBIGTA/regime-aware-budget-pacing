@@ -19,7 +19,6 @@ from simulator.experiment_runner import (
     ScenarioServingSystem,
     run_experiment,
     run_simulation,
-    write_experiment_plan,
 )
 
 
@@ -234,36 +233,6 @@ class TestSimulationRunner(unittest.TestCase):
                 len(list((experiment_dir / "runs").glob("*/trace.csv"))),
                 8,
             )
-
-    def test_plan_writes_conditions_and_all_planned_runs_without_traces(self):
-        config = ExperimentConfig.from_dict(
-            {
-                "experiment_id": "plan-test",
-                "seeds": [1, 2],
-                "pi_coefficients": [{"kp": 0.1, "ki": 0.01}],
-                "scenarios": [
-                    {
-                        "id": "static",
-                        "minutes": 2,
-                        "campaigns": {"count": 1},
-                        "initial_condition": {
-                            "traffic": {"dc": 1, "amplitude": 0},
-                            "competition": {"untracked_bid_factor": 0},
-                        },
-                    }
-                ],
-            }
-        )
-        with tempfile.TemporaryDirectory() as temp_dir:
-            experiment_dir = write_experiment_plan(config, temp_dir)
-
-            conditions = read_csv(experiment_dir / "conditions.csv")
-            run_plan = read_csv(experiment_dir / "run_plan.csv")
-
-            self.assertEqual(len(conditions), 1)
-            self.assertEqual(len(run_plan), 2)
-            self.assertFalse((experiment_dir / "runs").exists())
-
 
 if __name__ == "__main__":
     unittest.main()

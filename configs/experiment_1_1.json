@@ -1,5 +1,5 @@
 {
-  "experiment_id": "traffic_competition_representative_v1",
+  "experiment_id": "experiment_1_1",
   "seeds": [42, 43],
   "pi_coefficients": [
     {"kp": 0.1, "ki": 0.001},
