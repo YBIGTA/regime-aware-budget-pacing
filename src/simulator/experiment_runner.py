@@ -5,6 +5,7 @@ import math
 from pathlib import Path
 import random
 import sys
+import time
 
 import numpy as np
 
@@ -415,6 +416,7 @@ def run_simulation(
     metadata_path=None,
     run_id=None,
     overwrite=False,
+    progress=None,
 ):
     if (
         isinstance(seed, bool)
@@ -473,8 +475,13 @@ def run_simulation(
     }
     active = scenario.schedule[0]
     row_count = 0
+    # 완료 전에는 임시 파일에 쓰고 마지막에 이름을 바꾼다. trace.csv가 있으면
+    # 항상 끝까지 실행되고 metadata까지 저장된 결과라는 뜻이다.
+    partial_trace_path = trace_path.with_name(trace_path.name + ".partial")
 
-    with trace_path.open("w", newline="", encoding="utf-8") as output_file:
+    with partial_trace_path.open(
+        "w", newline="", encoding="utf-8"
+    ) as output_file:
         writer = csv.DictWriter(output_file, fieldnames=TRACE_FIELDS)
         writer.writeheader()
 
@@ -563,8 +570,10 @@ def run_simulation(
                 )
                 row_count += 1
             Clock.advance()
+            if progress is not None:
+                progress(minute + 1, scenario.minutes)
 
-    validation = validate_trace(trace_path, scenario)
+    validation = validate_trace(partial_trace_path, scenario)
     metadata = {
         "run_id": run_id,
         "scenario_id": scenario.scenario_id,
@@ -580,6 +589,7 @@ def run_simulation(
     with metadata_path.open("w", encoding="utf-8") as metadata_file:
         json.dump(metadata, metadata_file, ensure_ascii=False, indent=2)
         metadata_file.write("\n")
+    partial_trace_path.replace(trace_path)
 
     return {
         "run_id": run_id,
@@ -610,18 +620,111 @@ def _write_csv(path, fieldnames, rows):
         writer.writerows(rows)
 
 
+def _format_duration(seconds):
+    seconds = int(round(seconds))
+    hours, remainder = divmod(seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    if hours:
+        return f"{hours}h{minutes:02d}m{seconds:02d}s"
+    return f"{minutes}m{seconds:02d}s"
+
+
+class BatchProgress:
+    """배치 전체와 현재 run의 진행률을 터미널에 출력한다.
+
+    터미널에서는 한 줄을 갱신하고, 로그 파일로 리다이렉트된 경우에는
+    run마다 10% 단위로 줄을 추가한다.
+    """
+
+    def __init__(self, total_minutes, stream=None, refresh_seconds=0.5):
+        self.total_minutes = total_minutes
+        self.stream = stream if stream is not None else sys.stdout
+        self.interactive = self.stream.isatty()
+        self.refresh_seconds = refresh_seconds
+        self.done_minutes = 0
+        self.started_at = time.monotonic()
+        self._last_print = 0.0
+        self._last_decile = -1
+        self._label = ""
+
+    def start_run(self, label):
+        self._label = label
+        self._run_started_at = time.monotonic()
+        self._last_decile = -1
+
+    def update(self, minute, minutes):
+        now = time.monotonic()
+        finished = minute == minutes
+        if self.interactive:
+            if not finished and now - self._last_print < self.refresh_seconds:
+                return
+        else:
+            decile = minute * 10 // minutes
+            if decile == self._last_decile:
+                return
+            self._last_decile = decile
+        self._last_print = now
+
+        done = self.done_minutes + minute
+        overall = done / self.total_minutes if self.total_minutes else 1.0
+        elapsed = now - self.started_at
+        eta = elapsed * (1 - overall) / overall if overall > 0 else 0.0
+        line = (
+            f"{self._label} minute {minute}/{minutes} "
+            f"({minute / minutes:5.1%}) | overall {overall:5.1%} "
+            f"elapsed {_format_duration(elapsed)} "
+            f"ETA {_format_duration(eta)}"
+        )
+        if self.interactive:
+            self.stream.write("\r\033[K" + line)
+        else:
+            self.stream.write(line + "\n")
+        self.stream.flush()
+
+    def finish_run(self, minutes):
+        self.done_minutes += minutes
+        if self.interactive:
+            self.stream.write("\n")
+        self.stream.write(
+            f"  done in {_format_duration(time.monotonic() - self._run_started_at)}\n"
+        )
+        self.stream.flush()
+
+
+def _skipped_result(run_id, scenario, seed, coefficients, trace_path,
+                    metadata_path):
+    validation = {"status": "unknown", "error": ""}
+    rows = ""
+    if metadata_path.exists():
+        with metadata_path.open(encoding="utf-8") as metadata_file:
+            metadata = json.load(metadata_file)
+        validation = metadata.get("validation", validation)
+        rows = metadata.get("rows", "")
+    return {
+        "run_id": run_id,
+        "scenario_id": scenario.scenario_id,
+        "environment_seed": seed,
+        "kp": coefficients.kp,
+        "ki": coefficients.ki,
+        "status": "skipped",
+        "rows": rows,
+        "trace_path": str(trace_path),
+        "metadata_path": str(metadata_path),
+        "validation_status": validation["status"],
+        "validation_error": validation["error"],
+        "error": "",
+    }
+
+
 def run_experiment(config: ExperimentConfig, output_root, overwrite=False):
+    """모든 조합을 순차 실행한다.
+
+    overwrite=False이면 trace.csv가 이미 있는 run은 다시 생성하지 않는다.
+    중단된 배치를 같은 명령으로 다시 실행하면 남은 run만 이어서 실행된다.
+    """
     experiment_dir = Path(output_root) / config.experiment_id
     manifest_path = experiment_dir / "manifest.csv"
     conditions_path = experiment_dir / "conditions.csv"
-    runs_path = experiment_dir / "runs"
-    if (
-        not overwrite
-        and (manifest_path.exists() or runs_path.exists())
-    ):
-        raise FileExistsError(
-            f"experiment output already exists: {experiment_dir}"
-        )
     experiment_dir.mkdir(parents=True, exist_ok=True)
 
     condition_rows = [
@@ -636,12 +739,10 @@ def run_experiment(config: ExperimentConfig, output_root, overwrite=False):
         * len(config.seeds)
         * len(config.pi_coefficients)
     )
-    manifest_rows = []
-    run_number = 0
+    planned_runs = []
     for scenario in config.scenarios:
         for seed in config.seeds:
             for coefficients in config.pi_coefficients:
-                run_number += 1
                 run_id = make_run_id(
                     scenario.scenario_id,
                     seed,
@@ -649,45 +750,78 @@ def run_experiment(config: ExperimentConfig, output_root, overwrite=False):
                     coefficients.ki,
                 )
                 run_dir = experiment_dir / "runs" / run_id
-                trace_path = run_dir / "trace.csv"
-                metadata_path = run_dir / "metadata.json"
-                print(f"[{run_number}/{total_runs}] {run_id}")
-                try:
-                    result = run_simulation(
-                        scenario=scenario,
-                        seed=seed,
-                        kp=coefficients.kp,
-                        ki=coefficients.ki,
-                        trace_path=trace_path,
-                        metadata_path=metadata_path,
-                        run_id=run_id,
-                        overwrite=overwrite,
-                    )
-                except Exception as error:
-                    result = {
-                        "run_id": run_id,
-                        "scenario_id": scenario.scenario_id,
-                        "environment_seed": seed,
-                        "kp": coefficients.kp,
-                        "ki": coefficients.ki,
-                        "status": "failed",
-                        "rows": 0,
-                        "trace_path": str(trace_path),
-                        "metadata_path": str(metadata_path),
-                        "validation_status": "not_run",
-                        "validation_error": "",
-                        "error": f"{type(error).__name__}: {error}",
-                    }
-                    print(f"failed: {result['error']}")
-                if result["status"] == "validation_failed":
-                    print(
-                        "validation failed: "
-                        f"{result['validation_error']}"
-                    )
-                manifest_rows.append(result)
-                _write_csv(manifest_path, MANIFEST_FIELDS, manifest_rows)
+                planned_runs.append(
+                    (scenario, seed, coefficients, run_id, run_dir)
+                )
+    pending_minutes = sum(
+        scenario.minutes
+        for scenario, _, _, _, run_dir in planned_runs
+        if overwrite or not (run_dir / "trace.csv").exists()
+    )
+    progress = BatchProgress(total_minutes=pending_minutes)
+
+    manifest_rows = []
+    for run_number, (scenario, seed, coefficients, run_id, run_dir) in (
+        enumerate(planned_runs, start=1)
+    ):
+        trace_path = run_dir / "trace.csv"
+        metadata_path = run_dir / "metadata.json"
+        label = f"[{run_number}/{total_runs}] {run_id}"
+        if not overwrite and trace_path.exists():
+            print(f"{label} skipped (trace.csv exists)")
+            manifest_rows.append(
+                _skipped_result(
+                    run_id, scenario, seed, coefficients,
+                    trace_path, metadata_path,
+                )
+            )
+            _write_csv(manifest_path, MANIFEST_FIELDS, manifest_rows)
+            continue
+        print(label)
+        progress.start_run(label)
+        try:
+            # trace.csv가 없으면 이전 실행이 중간에 멈춘 것이므로
+            # 남아 있는 metadata나 임시 파일은 덮어쓴다.
+            result = run_simulation(
+                scenario=scenario,
+                seed=seed,
+                kp=coefficients.kp,
+                ki=coefficients.ki,
+                trace_path=trace_path,
+                metadata_path=metadata_path,
+                run_id=run_id,
+                overwrite=True,
+                progress=progress.update,
+            )
+        except Exception as error:
+            result = {
+                "run_id": run_id,
+                "scenario_id": scenario.scenario_id,
+                "environment_seed": seed,
+                "kp": coefficients.kp,
+                "ki": coefficients.ki,
+                "status": "failed",
+                "rows": 0,
+                "trace_path": str(trace_path),
+                "metadata_path": str(metadata_path),
+                "validation_status": "not_run",
+                "validation_error": "",
+                "error": f"{type(error).__name__}: {error}",
+            }
+        progress.finish_run(scenario.minutes)
+        if result["status"] == "failed":
+            print(f"failed: {result['error']}")
+        if result["status"] == "validation_failed":
+            print(
+                "validation failed: "
+                f"{result['validation_error']}"
+            )
+        manifest_rows.append(result)
+        _write_csv(manifest_path, MANIFEST_FIELDS, manifest_rows)
 
     completed = sum(row["status"] == "completed" for row in manifest_rows)
+    skipped = sum(row["status"] == "skipped" for row in manifest_rows)
+    failed = total_runs - completed - skipped
     print(f"experiment_dir={experiment_dir}")
-    print(f"completed={completed} failed={total_runs - completed}")
+    print(f"completed={completed} skipped={skipped} failed={failed}")
     return manifest_rows

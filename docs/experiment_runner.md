@@ -12,9 +12,25 @@ Fixed PI 실험을 수행한다.
   --config configs/experiment_1_1.json
 ```
 
-기본 출력 루트는 `outputs/simulation_runs/<experiment_id>/`이다. 같은
-`experiment_id`의 결과가 있으면 덮어쓰지 않고 실패한다. 의도적으로 같은 실행
-ID를 다시 계산할 때만 `--overwrite`를 추가한다.
+기본 출력 루트는 `outputs/simulation_runs/<experiment_id>/`이다.
+
+- `runs/<run_id>/trace.csv`가 이미 있는 run은 다시 생성하지 않고 `skipped`로
+  `manifest.csv`에 기록한다. 시드나 PI 계수를 설정에 추가한 뒤 같은 명령을
+  다시 실행하면 새 조합만 실행된다.
+- 실행 중에는 `trace.csv.partial`에 쓰고, 검증과 `metadata.json` 저장이 끝난
+  뒤 `trace.csv`로 이름을 바꾼다. 중간에 멈춘 run은 다음 실행 때 처음부터 다시
+  계산된다.
+- 이미 있는 run도 다시 계산하려면 `--overwrite`를 추가한다.
+
+진행률은 터미널에 표시된다. 터미널에서는 한 줄이 갱신되고, 로그 파일로
+리다이렉트하면 run마다 10% 단위로 줄이 추가된다.
+
+```
+[3/48] baseline_static__seed43__kp0p1__ki0p001 minute 720/1440 (50.0%) | overall 5.2% elapsed 5m40s ETA 1h43m12s
+```
+
+ETA는 남은 시뮬레이션 분 수로 계산한다. 경매가 많은 시나리오는 분당 계산
+시간이 길어서 실제 시간과 차이가 날 수 있다.
 
 ## 설정 구조
 

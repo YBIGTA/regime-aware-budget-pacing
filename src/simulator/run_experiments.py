@@ -23,7 +23,7 @@ def parse_args():
     parser.add_argument(
         "--overwrite",
         action="store_true",
-        help="overwrite files for the same deterministic run ids",
+        help="rerun and overwrite runs whose trace.csv already exists",
     )
     return parser.parse_args()
 
@@ -36,7 +36,9 @@ def main():
         output_root=args.output_dir,
         overwrite=args.overwrite,
     )
-    if any(row["status"] != "completed" for row in manifest):
+    if any(
+        row["status"] not in ("completed", "skipped") for row in manifest
+    ):
         raise SystemExit(1)
 
 

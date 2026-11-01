@@ -286,5 +286,53 @@ class TestSimulationRunner(unittest.TestCase):
                 8,
             )
 
+    def test_batch_skips_existing_traces_and_reruns_incomplete_ones(self):
+        scenario = make_scenario("scenario-a")
+        config = ExperimentConfig.from_dict(
+            {
+                "experiment_id": "resume-test",
+                "seeds": [1],
+                "pi_coefficients": [
+                    {"kp": 0.1, "ki": 0.01},
+                    {"kp": 0.2, "ki": 0.02},
+                ],
+                "scenarios": [
+                    {
+                        "id": scenario.scenario_id,
+                        "minutes": scenario.minutes,
+                        "campaigns": {
+                            "count": scenario.campaigns.count,
+                            "daily_budget": scenario.campaigns.daily_budget,
+                        },
+                        "initial_condition": {
+                            "traffic": {"dc": 1, "amplitude": 0},
+                            "competition": {"untracked_bid_factor": 0},
+                        },
+                    },
+                ],
+            }
+        )
+        with tempfile.TemporaryDirectory() as temp_dir:
+            first = run_experiment(config, temp_dir)
+            kept_trace = Path(first[0]["trace_path"])
+            kept_mtime = kept_trace.stat().st_mtime_ns
+            interrupted_trace = Path(first[1]["trace_path"])
+            expected = interrupted_trace.read_bytes()
+            interrupted_trace.rename(
+                interrupted_trace.with_name("trace.csv.partial")
+            )
+
+            second = run_experiment(config, temp_dir)
+
+            self.assertEqual(
+                [row["status"] for row in second], ["skipped", "completed"]
+            )
+            self.assertEqual(second[0]["validation_status"], "passed")
+            self.assertEqual(kept_trace.stat().st_mtime_ns, kept_mtime)
+            self.assertEqual(interrupted_trace.read_bytes(), expected)
+            self.assertFalse(
+                interrupted_trace.with_name("trace.csv.partial").exists()
+            )
+
 if __name__ == "__main__":
     unittest.main()
