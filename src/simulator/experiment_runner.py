@@ -1,6 +1,7 @@
 from dataclasses import asdict
 import csv
 import json
+import math
 from pathlib import Path
 import random
 import sys
@@ -42,6 +43,11 @@ TRACE_FIELDS = [
     "untracked_bid_price_multiplier",
     "traffic_mean",
     "actual_auctions",
+    "competitor_bid_count_total",
+    "competitor_bid_count_mean",
+    "competitor_bid_price_mean",
+    "competitor_bid_price_std",
+    "competitor_bid_price_max",
     "campaign_id",
     "daily_budget",
     "target_spend_cumulative",
@@ -80,6 +86,8 @@ MANIFEST_FIELDS = [
     "rows",
     "trace_path",
     "metadata_path",
+    "validation_status",
+    "validation_error",
     "error",
 ]
 
@@ -119,6 +127,13 @@ class ScenarioServingSystem(ServingSystem):
         self.competition_rng = competition_rng
         self.untracked_bid_factor = 0.0
         self.untracked_bid_price_multiplier = 1.0
+        self.start_minute()
+
+    def start_minute(self):
+        self.competitor_bid_count_total = 0
+        self.competitor_bid_price_sum = 0.0
+        self.competitor_bid_price_sum_squares = 0.0
+        self.competitor_bid_price_max = 0.0
 
     def set_competition(self, competition):
         self.untracked_bid_factor = competition.untracked_bid_factor
@@ -150,10 +165,42 @@ class ScenarioServingSystem(ServingSystem):
             :-num_untracked_bids
         ]
         sampled_bids = sampled_bids * self.untracked_bid_price_multiplier
+        self.competitor_bid_count_total += sampled_bids.size
+        self.competitor_bid_price_sum += float(sampled_bids.sum())
+        self.competitor_bid_price_sum_squares += float(
+            np.square(sampled_bids).sum()
+        )
+        self.competitor_bid_price_max = max(
+            self.competitor_bid_price_max,
+            float(sampled_bids.max()),
+        )
         return [
             Bid(campaign_id=f"untracked_campaign_{index}", amount=amount)
             for index, amount in enumerate(sampled_bids)
         ]
+
+    def get_competition_statistics(self, auction_count):
+        count = self.competitor_bid_count_total
+        if count == 0:
+            price_mean = 0.0
+            price_std = 0.0
+        else:
+            price_mean = self.competitor_bid_price_sum / count
+            variance = max(
+                self.competitor_bid_price_sum_squares / count
+                - price_mean**2,
+                0.0,
+            )
+            price_std = math.sqrt(variance)
+        return {
+            "competitor_bid_count_total": count,
+            "competitor_bid_count_mean": (
+                count / auction_count if auction_count else 0.0
+            ),
+            "competitor_bid_price_mean": price_mean,
+            "competitor_bid_price_std": price_std,
+            "competitor_bid_price_max": self.competitor_bid_price_max,
+        }
 
 
 def _set_campaign_daily_budget(campaigns, daily_budget):
@@ -182,6 +229,181 @@ def make_run_id(scenario_id, seed, kp, ki):
         f"{scenario_id}__seed{seed}__kp{_float_slug(kp)}"
         f"__ki{_float_slug(ki)}"
     )
+
+
+def validate_trace(trace_path, scenario: Scenario):
+    errors = []
+
+    def add_error(message):
+        if message not in errors and len(errors) < 20:
+            errors.append(message)
+
+    with Path(trace_path).open(newline="", encoding="utf-8") as input_file:
+        reader = csv.DictReader(input_file)
+        missing_fields = set(TRACE_FIELDS) - set(reader.fieldnames or [])
+        rows = list(reader)
+
+    if missing_fields:
+        add_error(
+            "missing columns: " + ", ".join(sorted(missing_fields))
+        )
+        return {
+            "status": "failed",
+            "error": "; ".join(errors),
+        }
+
+    expected_row_count = scenario.minutes * scenario.campaigns.count
+    if len(rows) != expected_row_count:
+        add_error(
+            f"expected {expected_row_count} rows, found {len(rows)}"
+        )
+
+    expected_conditions = {}
+    active_index = 0
+    for minute in range(scenario.minutes):
+        if (
+            active_index + 1 < len(scenario.schedule)
+            and scenario.schedule[active_index + 1].minute == minute
+        ):
+            active_index += 1
+        expected_conditions[minute] = scenario.schedule[active_index]
+
+    rows_by_campaign = {}
+    environment_by_minute = {}
+    seen_keys = set()
+    for row in rows:
+        try:
+            minute = int(row["minute"])
+            campaign_id = row["campaign_id"]
+            key = (campaign_id, minute)
+            if key in seen_keys:
+                add_error(f"duplicate row: campaign={campaign_id}, minute={minute}")
+            seen_keys.add(key)
+            rows_by_campaign.setdefault(campaign_id, []).append(row)
+
+            if not 0 <= minute < scenario.minutes:
+                add_error(f"minute out of range: {minute}")
+                continue
+            scheduled = expected_conditions[minute]
+            condition = scheduled.condition
+            expected_values = {
+                "condition_start_minute": scheduled.minute,
+                "traffic_dc": condition.traffic.dc,
+                "traffic_amplitude": condition.traffic.amplitude,
+                "traffic_phase": condition.traffic.phase,
+                "untracked_bid_factor": (
+                    condition.competition.untracked_bid_factor
+                ),
+                "untracked_bid_price_multiplier": (
+                    condition.competition.untracked_bid_price_multiplier
+                ),
+            }
+            for field, expected in expected_values.items():
+                if not math.isclose(
+                    float(row[field]),
+                    float(expected),
+                    rel_tol=1e-9,
+                    abs_tol=1e-9,
+                ):
+                    add_error(f"condition mismatch: {field} at minute {minute}")
+
+            environment_values = tuple(
+                row[field]
+                for field in (
+                    "actual_auctions",
+                    "competitor_bid_count_total",
+                    "competitor_bid_count_mean",
+                    "competitor_bid_price_mean",
+                    "competitor_bid_price_std",
+                    "competitor_bid_price_max",
+                )
+            )
+            if minute in environment_by_minute:
+                if environment_by_minute[minute] != environment_values:
+                    add_error(
+                        f"environment values differ between campaigns at minute {minute}"
+                    )
+            else:
+                environment_by_minute[minute] = environment_values
+                auction_count = int(row["actual_auctions"])
+                bid_count = int(row["competitor_bid_count_total"])
+                bid_count_mean = float(row["competitor_bid_count_mean"])
+                expected_mean = (
+                    bid_count / auction_count if auction_count else 0.0
+                )
+                if not math.isclose(
+                    bid_count_mean,
+                    expected_mean,
+                    rel_tol=1e-9,
+                    abs_tol=1e-9,
+                ):
+                    add_error(
+                        f"competitor bid count mean mismatch at minute {minute}"
+                    )
+                price_mean = float(row["competitor_bid_price_mean"])
+                price_std = float(row["competitor_bid_price_std"])
+                price_max = float(row["competitor_bid_price_max"])
+                if bid_count == 0 and any(
+                    value != 0.0
+                    for value in (price_mean, price_std, price_max)
+                ):
+                    add_error(
+                        f"competitor price statistics must be zero at minute {minute}"
+                    )
+                if price_std < 0 or price_max < price_mean:
+                    add_error(
+                        f"invalid competitor price statistics at minute {minute}"
+                    )
+        except (KeyError, TypeError, ValueError) as error:
+            add_error(f"invalid row value: {error}")
+
+    if len(rows_by_campaign) != scenario.campaigns.count:
+        add_error(
+            f"expected {scenario.campaigns.count} campaigns, "
+            f"found {len(rows_by_campaign)}"
+        )
+
+    expected_minutes = set(range(scenario.minutes))
+    for campaign_id, campaign_rows in rows_by_campaign.items():
+        actual_minutes = {int(row["minute"]) for row in campaign_rows}
+        if actual_minutes != expected_minutes:
+            add_error(f"missing or extra minutes for campaign {campaign_id}")
+            continue
+        previous_spend = 0.0
+        for row in sorted(campaign_rows, key=lambda item: int(item["minute"])):
+            minute = int(row["minute"])
+            daily_budget = float(row["daily_budget"])
+            cumulative_spend = float(row["actual_spend_cumulative"])
+            spend_this_minute = float(row["spend_this_minute"])
+            remaining_budget = float(row["remaining_budget"])
+            if cumulative_spend + 1e-9 < previous_spend:
+                add_error(
+                    f"cumulative spend decreased: campaign={campaign_id}, minute={minute}"
+                )
+            if not math.isclose(
+                cumulative_spend - previous_spend,
+                spend_this_minute,
+                rel_tol=1e-9,
+                abs_tol=1e-9,
+            ):
+                add_error(
+                    f"minute spend mismatch: campaign={campaign_id}, minute={minute}"
+                )
+            if not math.isclose(
+                daily_budget - cumulative_spend,
+                remaining_budget,
+                rel_tol=1e-9,
+                abs_tol=1e-9,
+            ):
+                add_error(
+                    f"remaining budget mismatch: campaign={campaign_id}, minute={minute}"
+                )
+            previous_spend = cumulative_spend
+
+    return {
+        "status": "passed" if not errors else "failed",
+        "error": "; ".join(errors),
+    }
 
 
 def run_simulation(
@@ -264,6 +486,7 @@ def run_simulation(
 
             traffic_mean = marketplace._calculate_current_mean_num_of_auctions()
             auctions = marketplace._generate_auctions()
+            serving_system.start_minute()
             spend_before = {
                 campaign.id: campaign.spent_today() for campaign in campaigns
             }
@@ -277,6 +500,9 @@ def run_simulation(
             }
 
             marketplace._run_auctions(auctions)
+            competition_statistics = (
+                serving_system.get_competition_statistics(len(auctions))
+            )
             spend_after = {
                 campaign.id: campaign.spent_today() for campaign in campaigns
             }
@@ -315,6 +541,7 @@ def run_simulation(
                         ),
                         "traffic_mean": traffic_mean,
                         "actual_auctions": len(auctions),
+                        **competition_statistics,
                         "campaign_id": campaign.id,
                         "daily_budget": campaign.daily_budget,
                         "target_spend_cumulative": target_spend,
@@ -337,6 +564,7 @@ def run_simulation(
                 row_count += 1
             Clock.advance()
 
+    validation = validate_trace(trace_path, scenario)
     metadata = {
         "run_id": run_id,
         "scenario_id": scenario.scenario_id,
@@ -347,6 +575,7 @@ def run_simulation(
         "trace_path": str(trace_path),
         "scenario": asdict(scenario),
         "condition_table": scenario.condition_rows(),
+        "validation": validation,
     }
     with metadata_path.open("w", encoding="utf-8") as metadata_file:
         json.dump(metadata, metadata_file, ensure_ascii=False, indent=2)
@@ -358,10 +587,16 @@ def run_simulation(
         "environment_seed": seed,
         "kp": kp,
         "ki": ki,
-        "status": "completed",
+        "status": (
+            "completed"
+            if validation["status"] == "passed"
+            else "validation_failed"
+        ),
         "rows": row_count,
         "trace_path": str(trace_path),
         "metadata_path": str(metadata_path),
+        "validation_status": validation["status"],
+        "validation_error": validation["error"],
         "error": "",
     }
 
@@ -439,9 +674,16 @@ def run_experiment(config: ExperimentConfig, output_root, overwrite=False):
                         "rows": 0,
                         "trace_path": str(trace_path),
                         "metadata_path": str(metadata_path),
+                        "validation_status": "not_run",
+                        "validation_error": "",
                         "error": f"{type(error).__name__}: {error}",
                     }
                     print(f"failed: {result['error']}")
+                if result["status"] == "validation_failed":
+                    print(
+                        "validation failed: "
+                        f"{result['validation_error']}"
+                    )
                 manifest_rows.append(result)
                 _write_csv(manifest_path, MANIFEST_FIELDS, manifest_rows)
 

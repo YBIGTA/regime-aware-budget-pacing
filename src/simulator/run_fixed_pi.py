@@ -83,6 +83,10 @@ def main():
     print(f"trace_path={result['trace_path']}")
     print(f"metadata_path={result['metadata_path']}")
     print(f"rows={result['rows']}")
+    print(f"validation_status={result['validation_status']}")
+    if result["validation_status"] != "passed":
+        print(f"validation_error={result['validation_error']}")
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

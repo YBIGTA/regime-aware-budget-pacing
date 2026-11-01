@@ -102,12 +102,39 @@ outputs/simulation_runs/<experiment_id>/
 ```
 
 - `conditions.csv`: 시나리오별 조건과 적용 시작·종료 분을 기록한 조건표
-- `manifest.csv`: 모든 조합의 성공/실패, 결과 경로, 행 수, 오류를 기록
+- `manifest.csv`: 모든 조합의 실행·검증 상태, 결과 경로, 행 수, 오류를 기록
 - `metadata.json`: 실행에 사용한 시나리오, 시드, PI 계수와 조건표
 - `trace.csv`: 캠페인별 분 단위 지출·낙찰·PI 상태와 당시 환경 설정
 
 `manifest.csv`는 각 실행이 끝날 때마다 갱신되므로 장기 배치 도중에도 진행
 상태와 실패한 조합을 확인할 수 있다.
+
+### 실제 경쟁 입찰 통계
+
+`trace.csv`에는 설정값인 `untracked_bid_factor` 및
+`untracked_bid_price_multiplier`와 별도로, 해당 분에 실제 생성된 경쟁 입찰의
+통계가 기록된다. 같은 분의 값은 모든 캠페인 행에 동일하게 들어간다.
+
+| 컬럼 | 의미 |
+| --- | --- |
+| `competitor_bid_count_total` | 해당 분에 실제 생성된 경쟁 입찰 총수 |
+| `competitor_bid_count_mean` | 실제 경매 한 건당 평균 경쟁 입찰 수 |
+| `competitor_bid_price_mean` | 실제 경쟁 입찰가 평균 |
+| `competitor_bid_price_std` | 실제 경쟁 입찰가의 모집단 표준편차 |
+| `competitor_bid_price_max` | 실제 경쟁 입찰가 최댓값 |
+
+경매나 경쟁 입찰이 없는 분의 관련 통계는 `0`으로 기록한다.
+
+### 자동 결과 검증
+
+각 실행 직후 `trace.csv`의 행 수, 캠페인별 분 누락·중복, 조건 변경값,
+캠페인 간 환경 통계 일치, 분 지출과 누적 지출의 일치, 남은 예산 계산을
+자동으로 검사한다. 별도 파일을 만들지 않고 결과를 기존 출력에 기록한다.
+
+- `manifest.csv`: `validation_status`, `validation_error`
+- `metadata.json`: `validation.status`, `validation.error`
+
+검증을 통과하면 실행 상태는 `completed`, 실패하면 `validation_failed`가 된다.
 
 ## 재현성
 

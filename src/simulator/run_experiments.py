@@ -36,7 +36,7 @@ def main():
         output_root=args.output_dir,
         overwrite=args.overwrite,
     )
-    if any(row["status"] == "failed" for row in manifest):
+    if any(row["status"] != "completed" for row in manifest):
         raise SystemExit(1)
 
 

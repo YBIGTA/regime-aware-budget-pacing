@@ -19,6 +19,7 @@ from simulator.experiment_runner import (
     ScenarioServingSystem,
     run_experiment,
     run_simulation,
+    validate_trace,
 )
 
 
@@ -111,6 +112,32 @@ class TestSimulationRunner(unittest.TestCase):
 
         self.assertEqual(len(bids), 10)
 
+    def test_competition_statistics_record_observed_bids(self):
+        serving_system = ScenarioServingSystem(
+            competition_rng=np.random.default_rng(10)
+        )
+        serving_system.set_competition(CompetitionCondition(1.0, 1.0))
+        serving_system.start_minute()
+
+        bids = serving_system._generate_untracked_bids(2)
+        bids += serving_system._generate_untracked_bids(1)
+        statistics = serving_system.get_competition_statistics(
+            auction_count=2
+        )
+        amounts = np.array([bid.amount for bid in bids])
+
+        self.assertEqual(statistics["competitor_bid_count_total"], 3)
+        self.assertEqual(statistics["competitor_bid_count_mean"], 1.5)
+        self.assertAlmostEqual(
+            statistics["competitor_bid_price_mean"], amounts.mean()
+        )
+        self.assertAlmostEqual(
+            statistics["competitor_bid_price_std"], amounts.std()
+        )
+        self.assertAlmostEqual(
+            statistics["competitor_bid_price_max"], amounts.max()
+        )
+
     def test_same_scenario_and_seed_reproduces_trace(self):
         scenario = make_scenario()
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -141,6 +168,25 @@ class TestSimulationRunner(unittest.TestCase):
         self.assertEqual(rows[-1]["untracked_bid_factor"], "3.0")
         self.assertEqual(rows[0]["traffic_mean"], "2.0")
         self.assertEqual(rows[-1]["traffic_mean"], "5.0")
+        self.assertIn("competitor_bid_count_total", rows[0])
+        self.assertIn("competitor_bid_price_mean", rows[0])
+
+    def test_trace_validation_detects_incorrect_remaining_budget(self):
+        scenario = make_scenario()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            trace = Path(temp_dir) / "trace.csv"
+            run_simulation(scenario, 7, 0.1, 0.01, trace)
+            rows = read_csv(trace)
+            rows[0]["remaining_budget"] = "999"
+            with trace.open("w", newline="", encoding="utf-8") as output:
+                writer = csv.DictWriter(output, fieldnames=rows[0].keys())
+                writer.writeheader()
+                writer.writerows(rows)
+
+            validation = validate_trace(trace, scenario)
+
+        self.assertEqual(validation["status"], "failed")
+        self.assertIn("remaining budget mismatch", validation["error"])
 
     def test_last_minute_keeps_daily_totals_before_yahoo_resets_them(self):
         scenario = Scenario.from_dict(
@@ -226,6 +272,12 @@ class TestSimulationRunner(unittest.TestCase):
             self.assertEqual(len(manifest), 8)
             self.assertTrue(
                 all(row["status"] == "completed" for row in manifest)
+            )
+            self.assertTrue(
+                all(
+                    row["validation_status"] == "passed"
+                    for row in manifest
+                )
             )
             self.assertTrue((experiment_dir / "manifest.csv").exists())
             self.assertTrue((experiment_dir / "conditions.csv").exists())
