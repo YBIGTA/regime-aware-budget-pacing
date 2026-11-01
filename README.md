@@ -102,6 +102,27 @@ flowchart LR
 └── README.md
 ```
 
+## Experiment Runner
+
+트래픽, 경쟁 수준, 캠페인 예산, 난수 시드와 Fixed PI 계수를 JSON으로 설정해
+여러 조합을 순차 실행할 수 있다.
+
+```bash
+.venv/bin/python src/simulator/run_experiments.py \
+  --config configs/experiment_1_1.example.json
+```
+
+설정 항목과 출력 구조는 [실험 조건 설정 및 일괄 실행](docs/experiment_runner.md)을
+참고한다.
+
+대표 12개 시나리오의 조건표만 먼저 생성하려면 다음 명령을 사용한다.
+
+```bash
+.venv/bin/python src/simulator/run_experiments.py \
+  --config configs/experiment_1_1.representative.json \
+  --plan-only
+```
+
 ## Tech Stack
 
 `Python` · `Yahoo Budget Pacing Simulation Framework` · `pandas` · `NumPy` · `scikit-learn` · `HDBSCAN` · `Optuna` · `SHAP` · `SciPy` · `statsmodels` · `MLflow` · `Plotly` · `Docker`

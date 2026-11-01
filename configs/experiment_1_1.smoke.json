@@ -1,0 +1,40 @@
+{
+  "experiment_id": "traffic_competition_smoke",
+  "seeds": [42],
+  "pi_coefficients": [
+    {"kp": 0.1, "ki": 0.001}
+  ],
+  "scenarios": [
+    {
+      "id": "low_to_high_smoke",
+      "minutes": 6,
+      "campaigns": {
+        "count": 2,
+        "daily_budget": 10.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 2,
+          "amplitude": 0.0,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 0.5,
+          "untracked_bid_price_multiplier": 0.5
+        }
+      },
+      "changes": [
+        {
+          "minute": 3,
+          "traffic": {
+            "dc": 5
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 2.0
+          }
+        }
+      ]
+    }
+  ]
+}
