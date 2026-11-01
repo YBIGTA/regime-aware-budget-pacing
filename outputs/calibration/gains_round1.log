@@ -1,0 +1,19 @@
+8 runs, 8 workers
+done gains__baseline_static__b1000.0__kp1.0__ki0.01__s42
+done gains__baseline_static__b1000.0__kp1.0__ki0.1__s42
+done gains__baseline_static__b1000.0__kp5.0__ki0.05__s42
+done gains__baseline_static__b1000.0__kp5.0__ki0.5__s42
+done gains__baseline_static__b1000.0__kp20.0__ki0.2__s42
+done gains__baseline_static__b1000.0__kp20.0__ki1.0__s42
+done gains__baseline_static__b1000.0__kp50.0__ki0.5__s42
+done gains__baseline_static__b1000.0__kp50.0__ki2.0__s42
+                                                     daily_spend  spend_ratio  exhaust_minute      te  signal_mean  signal_min  signal_step_std
+run                                                                                                                                            
+gains__baseline_static__b1000.0__kp1.0__ki0.01__s42     910.0779       0.9101             NaN  0.1013       0.4204      0.0000           0.0013
+gains__baseline_static__b1000.0__kp1.0__ki0.1__s42      988.3085       0.9883             NaN  0.0199       0.4497      0.0000           0.0025
+gains__baseline_static__b1000.0__kp20.0__ki0.2__s42     997.1046       0.9971             NaN  0.0036       0.4570      0.2119           0.0035
+gains__baseline_static__b1000.0__kp20.0__ki1.0__s42     999.7825       0.9998          1439.0  0.0009       0.4571      0.2088           0.0040
+gains__baseline_static__b1000.0__kp5.0__ki0.05__s42     985.2040       0.9852             NaN  0.0144       0.4557      0.2154           0.0016
+gains__baseline_static__b1000.0__kp5.0__ki0.5__s42      999.5264       0.9995          1439.0  0.0029       0.4564      0.1586           0.0031
+gains__baseline_static__b1000.0__kp50.0__ki0.5__s42     998.8963       0.9989             NaN  0.0014       0.4571      0.2100           0.0078
+gains__baseline_static__b1000.0__kp50.0__ki2.0__s42     999.6971       0.9997          1439.0  0.0005       0.4571      0.2119           0.0081

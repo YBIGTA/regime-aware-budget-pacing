@@ -1,0 +1,35 @@
+12 runs, 8 workers
+done gains__traffic_low_static__b1000.0__kp1.0__ki0.01__s42
+done gains__traffic_low_static__b1000.0__kp5.0__ki0.05__s42
+done gains__traffic_low_static__b1000.0__kp50.0__ki0.5__s42
+done gains__traffic_high_static__b1000.0__kp1.0__ki0.01__s42
+done gains__traffic_high_static__b1000.0__kp5.0__ki0.05__s42
+done gains__traffic_high_static__b1000.0__kp50.0__ki0.5__s42
+done gains__competition_price_high_static__b1000.0__kp1.0__ki0.01__s42
+done gains__competition_price_high_static__b1000.0__kp5.0__ki0.05__s42
+done gains__competition_price_high_static__b1000.0__kp50.0__ki0.5__s42
+done gains__combined_low_to_high_at_noon__b1000.0__kp1.0__ki0.01__s42
+done gains__combined_low_to_high_at_noon__b1000.0__kp5.0__ki0.05__s42
+done gains__combined_low_to_high_at_noon__b1000.0__kp50.0__ki0.5__s42
+                                                                   daily_spend  spend_ratio  exhaust_minute      te  signal_mean  signal_min  signal_step_std
+run                                                                                                                                                          
+gains__baseline_static__b1000.0__kp1.0__ki0.01__s42                   910.0779       0.9101             NaN  0.1013       0.4204      0.0000           0.0013
+gains__baseline_static__b1000.0__kp1.0__ki0.1__s42                    988.3085       0.9883             NaN  0.0199       0.4497      0.0000           0.0025
+gains__baseline_static__b1000.0__kp20.0__ki0.2__s42                   997.1046       0.9971             NaN  0.0036       0.4570      0.2119           0.0035
+gains__baseline_static__b1000.0__kp20.0__ki1.0__s42                   999.7825       0.9998          1439.0  0.0009       0.4571      0.2088           0.0040
+gains__baseline_static__b1000.0__kp5.0__ki0.05__s42                   985.2040       0.9852             NaN  0.0144       0.4557      0.2154           0.0016
+gains__baseline_static__b1000.0__kp5.0__ki0.5__s42                    999.5264       0.9995          1439.0  0.0029       0.4564      0.1586           0.0031
+gains__baseline_static__b1000.0__kp50.0__ki0.5__s42                   998.8963       0.9989             NaN  0.0014       0.4571      0.2100           0.0078
+gains__baseline_static__b1000.0__kp50.0__ki2.0__s42                   999.6971       0.9997          1439.0  0.0005       0.4571      0.2119           0.0081
+gains__combined_low_to_high_at_noon__b1000.0__kp1.0__ki0.01__s42      854.6230       0.8546             NaN  0.1200       0.4838      0.0000           0.0014
+gains__combined_low_to_high_at_noon__b1000.0__kp5.0__ki0.05__s42      922.0695       0.9221             NaN  0.0207       0.5533      0.1776           0.0021
+gains__combined_low_to_high_at_noon__b1000.0__kp50.0__ki0.5__s42      957.3383       0.9573             NaN  0.0033       0.5694      0.2635           0.0085
+gains__competition_price_high_static__b1000.0__kp1.0__ki0.01__s42     914.1771       0.9142             NaN  0.1017       0.4863      0.0340           0.0013
+gains__competition_price_high_static__b1000.0__kp5.0__ki0.05__s42     973.3299       0.9733             NaN  0.0141       0.5625      0.2791           0.0014
+gains__competition_price_high_static__b1000.0__kp50.0__ki0.5__s42     996.9304       0.9969             NaN  0.0018       0.5664      0.2803           0.0084
+gains__traffic_high_static__b1000.0__kp1.0__ki0.01__s42               935.2172       0.9352             NaN  0.1008       0.3473      0.0000           0.0014
+gains__traffic_high_static__b1000.0__kp5.0__ki0.05__s42               989.6463       0.9896             NaN  0.0143       0.3441      0.1539           0.0019
+gains__traffic_high_static__b1000.0__kp50.0__ki0.5__s42               998.9125       0.9989          1439.0  0.0014       0.3441      0.1698           0.0079
+gains__traffic_low_static__b1000.0__kp1.0__ki0.01__s42                852.8253       0.8528             NaN  0.0989       0.5683      0.0952           0.0012
+gains__traffic_low_static__b1000.0__kp5.0__ki0.05__s42                954.3255       0.9543             NaN  0.0262       0.6766      0.3081           0.0014
+gains__traffic_low_static__b1000.0__kp50.0__ki0.5__s42                983.2878       0.9833             NaN  0.0108       0.6914      0.3247           0.0078
