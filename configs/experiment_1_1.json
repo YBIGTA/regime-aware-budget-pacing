@@ -1,7 +1,8 @@
 {
   "experiment_id": "experiment_1_1",
-  "seeds": [42, 43],
+  "seeds": [42, 43, 44, 45, 46],
   "pi_coefficients": [
+    {"kp": 0.05, "ki": 0.0005},
     {"kp": 0.1, "ki": 0.001},
     {"kp": 0.5, "ki": 0.01}
   ],
