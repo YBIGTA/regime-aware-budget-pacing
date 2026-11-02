@@ -177,6 +177,46 @@ class TestBuildStateTable(unittest.TestCase):
             )
         )
 
+    def test_multiple_experiment_dirs_are_merged_without_duplicates(self):
+        def config(experiment_id, seeds):
+            return ExperimentConfig.from_dict(
+                {
+                    "experiment_id": experiment_id,
+                    "seeds": seeds,
+                    "pi_coefficients": [{"kp": 0.1, "ki": 0.01}],
+                    "scenarios": [
+                        {
+                            "id": "scenario-a",
+                            "minutes": 3,
+                            "campaigns": {"count": 1, "daily_budget": 10.0},
+                            "initial_condition": {
+                                "traffic": {"dc": 1, "amplitude": 0},
+                                "competition": {"untracked_bid_factor": 0},
+                            },
+                        }
+                    ],
+                }
+            )
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            run_experiment(config("first", [1]), temp_dir)
+            # 시드 1은 두 폴더에 모두 있다.
+            run_experiment(config("second", [1, 2]), temp_dir)
+            output_dir = Path(temp_dir) / "state"
+            info = build_state_table(
+                [Path(temp_dir) / "first", Path(temp_dir) / "second"],
+                output_dir,
+                {"train": (1,), "test": (2,)},
+            )
+            table = pd.read_parquet(output_dir / "state_table.parquet")
+
+        self.assertEqual(info["runs_used"], 2)
+        self.assertEqual(len(table), 2 * 3)
+        self.assertEqual(
+            table.groupby("seed")["split"].unique().map(tuple).to_dict(),
+            {1: ("train",), 2: ("test",)},
+        )
+
     def test_unassigned_seed_is_rejected(self):
         config = ExperimentConfig.from_dict(
             {

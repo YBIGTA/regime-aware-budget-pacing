@@ -26,7 +26,9 @@ def parse_args():
     parser.add_argument(
         "--experiment-dir",
         type=Path,
-        default=PROJECT_ROOT / "outputs" / "simulation_runs" / "experiment_1_1",
+        nargs="+",
+        default=[PROJECT_ROOT / "outputs" / "simulation_runs" / "experiment_1_1"],
+        help="one or more experiment folders; identical runs are used once",
     )
     parser.add_argument(
         "--output-dir",

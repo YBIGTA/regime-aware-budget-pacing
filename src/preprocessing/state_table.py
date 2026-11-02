@@ -417,15 +417,40 @@ def _ordered_columns(table):
     return [name for name in names if name in table.columns]
 
 
-def build_state_table(experiment_dir, output_dir, splits=None):
+def load_runs_from_dirs(experiment_dirs):
+    """여러 실험 폴더의 실행을 합친다.
+
+    같은 run_id(시나리오·시드·PI가 같은 실행)가 여러 폴더에 있으면 결과가
+    같으므로 앞 폴더의 것 하나만 쓴다.
+    """
+    runs = []
+    excluded = []
+    seen = set()
+    for experiment_dir in experiment_dirs:
+        dir_runs, dir_excluded = load_runs(experiment_dir)
+        excluded.extend(dir_excluded)
+        for run in dir_runs:
+            if run["run_id"] in seen:
+                continue
+            seen.add(run["run_id"])
+            runs.append(run)
+    return runs, excluded
+
+
+def build_state_table(experiment_dirs, output_dir, splits=None):
+    """experiment_dirs는 실험 폴더 하나 또는 여러 개의 목록이다."""
     splits = splits or DEFAULT_SPLITS
-    experiment_dir = Path(experiment_dir)
+    if isinstance(experiment_dirs, (str, Path)):
+        experiment_dirs = [experiment_dirs]
+    experiment_dirs = [Path(path) for path in experiment_dirs]
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    runs, excluded = load_runs(experiment_dir)
+    runs, excluded = load_runs_from_dirs(experiment_dirs)
     if not runs:
-        raise ValueError(f"no usable runs in {experiment_dir}")
+        raise ValueError(
+            f"no usable runs in {', '.join(map(str, experiment_dirs))}"
+        )
     groups = _group_runs(runs)
 
     environments = {}
@@ -488,7 +513,7 @@ def build_state_table(experiment_dir, output_dir, splits=None):
         writer_csv.writerows(split_rows)
 
     info = {
-        "experiment_dir": str(experiment_dir),
+        "experiment_dirs": [str(path) for path in experiment_dirs],
         "rows": row_count,
         "runs_used": len(runs),
         "runs_excluded": excluded,

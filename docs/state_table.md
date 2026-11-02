@@ -6,7 +6,8 @@
 
 ## 파일
 
-`outputs/state_table/experiment_1_1/`
+`outputs/state_table/experiments_1_to_3/` (실험 1~3 수집 후 생성. 그 전 버전은
+`outputs/state_table/experiment_1_1/`)
 
 | 파일 | 내용 |
 | --- | --- |
@@ -18,7 +19,7 @@
 ```python
 import pandas as pd
 
-table = pd.read_parquet("outputs/state_table/experiment_1_1/state_table.parquet")
+table = pd.read_parquet("outputs/state_table/experiments_1_to_3/state_table.parquet")
 env = table[table["cluster_row"]]                  # 군집화용 (환경 1시점당 1행)
 train = env[env["split"] == "train"]
 features = [c for c in env.columns
@@ -112,7 +113,7 @@ table = table[table["window_filled_60m"]]
 | --- | --- |
 | 정보 시점 | 모든 변수는 그 분까지 관측된 정보로만 계산한다. 이후 시점 값은 쓰지 않는다. |
 | 변수 구분 | 군집화 입력(환경 변수)과 제어 결과(지출, 지출 오차, 승수, 낙찰 수)를 열 이름과 정의서에서 구분한다. 제어 결과는 군집화에 쓰지 않는다. |
-| 데이터 분할 | 시드 단위로 나눈다. 학습 42~45, 검증 46. 평가용 데이터는 이 데이터셋에 넣지 않았다. 평가에는 47 이후 시드를 쓰고, 필요할 때 아래 "평가 데이터 생성" 방법으로 만든다. |
+| 데이터 분할 | 시드 단위로 나눈다. 학습 42~45, 검증 46, 평가 47~61. 평가 분할은 기본 시나리오 15개만 있다. |
 | 분할 일관성 | 같은 시나리오·시드의 실행은 PI 계수가 달라도 같은 분할에 넣는다. |
 | 정규화 | 기준(평균, 표준편차)은 학습 분할의 `cluster_row` 행으로만 계산하고 검증·평가에도 같은 기준을 적용한다. |
 
@@ -127,18 +128,27 @@ cd regime-aware-budget-pacing
 
 # 1. 원본 로그 생성 (이미 trace.csv가 있는 실행은 건너뛴다)
 .venv/bin/python src/simulator/run_experiments.py \
-  --config configs/experiment_1_1.json
+  --config configs/experiment_2_test_seeds.json --workers 8
 
-# 2. 상태 테이블 생성
-.venv/bin/python src/preprocessing/build_state_table.py
+# 2. 상태 테이블 생성 (실험 폴더 여러 개를 합친다. 같은 실행은 하나만 쓴다)
+.venv/bin/python src/preprocessing/build_state_table.py \
+  --experiment-dir outputs/simulation_runs/experiment_1_1 \
+                   outputs/simulation_runs/experiment_2_test_seeds \
+                   outputs/simulation_runs/experiment_3_static_mac \
+                   outputs/simulation_runs/experiment_3_static_vm \
+  --output-dir outputs/state_table/experiments_1_to_3 \
+  --train-seeds 42 43 44 45 --validation-seeds 46 --test-seeds $(seq 47 61)
 ```
+
+이번 수집(실험 1~3)은 `experiments/data_collection/finish_collection.sh`가 VM 결과
+받기, 개수 검증, 2번을 한 번에 한다.
 
 | 하고 싶은 것 | 방법 |
 | --- | --- |
 | 데이터 추가 생성 | 설정 파일의 `seeds`, `pi_coefficients`, `scenarios`에 값을 추가하고 1을 다시 실행한다. 새 조합만 실행된다. 그다음 2를 다시 실행한다. |
 | 같은 환경에서 다른 PI 계수 평가 | 같은 시나리오·시드로 `pi_coefficients`만 바꿔 실행한다. 경매 수와 경쟁 입찰은 시드로 고정되어 똑같이 재현된다. |
-| 평가 데이터 생성 | 설정 파일 `seeds`에 47 이후 시드를 추가하고 1을 실행한 뒤, 2를 `--test-seeds 47`처럼 평가 시드를 지정해 실행한다. 시드 하나당 36개 실행, 약 1시간 15분 걸린다. 학습·검증 데이터와 정규화 기준은 바뀌지 않는다. |
+| 평가 데이터 추가 | 새 시드로 실행한 실험 폴더를 `--experiment-dir`에 더하고 `--test-seeds`에 시드를 넣는다. 학습·검증 데이터와 정규화 기준은 바뀌지 않는다. |
 | 분할 시드 변경 | `--train-seeds 42 43 44 45 --validation-seeds 46 --test-seeds 47 48`. 어느 분할에도 없는 시드가 데이터에 있으면 오류로 멈춘다. |
 | 변수 정의서 갱신 | `src/preprocessing/state_table.py`의 `COLUMNS`를 고친 뒤 `--write-docs`로 다시 생성한다. |
 
-180개 실행 기준으로 1은 약 6시간 30분, 2는 약 20초 걸린다.
+1은 맥 M1 `--workers 8` 기준 run 하나에 약 2.5분이다. 2는 실험 1~3 전체(중복 제외 약 1,935개 실행)에 약 7분 걸리고, parquet은 약 3GB다.
