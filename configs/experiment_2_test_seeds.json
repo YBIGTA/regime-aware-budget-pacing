@@ -1,0 +1,373 @@
+{
+  "experiment_id": "experiment_2_test_seeds",
+  "seeds": [
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61
+  ],
+  "pi_coefficients": [
+    {
+      "kp": 1.0,
+      "ki": 0.01
+    },
+    {
+      "kp": 5.0,
+      "ki": 0.05
+    },
+    {
+      "kp": 50.0,
+      "ki": 0.5
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "baseline_static",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      }
+    },
+    {
+      "id": "traffic_low_static",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 1500,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      }
+    },
+    {
+      "id": "traffic_high_static",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 4500,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      }
+    },
+    {
+      "id": "amplitude_low_static",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.2,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      }
+    },
+    {
+      "id": "amplitude_high_static",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.9,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      }
+    },
+    {
+      "id": "competition_count_low_static",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 0.5,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      }
+    },
+    {
+      "id": "competition_count_high_static",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 4.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      }
+    },
+    {
+      "id": "competition_price_low_static",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 0.5
+        }
+      }
+    },
+    {
+      "id": "competition_price_high_static",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 2.0
+        }
+      }
+    },
+    {
+      "id": "combined_low_static",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 1500,
+          "amplitude": 0.2,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 0.5,
+          "untracked_bid_price_multiplier": 0.5
+        }
+      }
+    },
+    {
+      "id": "combined_high_static",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 4500,
+          "amplitude": 0.9,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 4.0,
+          "untracked_bid_price_multiplier": 2.0
+        }
+      }
+    },
+    {
+      "id": "traffic_low_to_high_at_noon",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 1500,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      },
+      "changes": [
+        {
+          "minute": 720,
+          "traffic": {
+            "dc": 4500,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "competition_low_to_high_at_noon",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 0.5,
+          "untracked_bid_price_multiplier": 0.5
+        }
+      },
+      "changes": [
+        {
+          "minute": 720,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 4.0,
+            "untracked_bid_price_multiplier": 2.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "combined_low_to_high_at_noon",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 1500,
+          "amplitude": 0.2,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 0.5,
+          "untracked_bid_price_multiplier": 0.5
+        }
+      },
+      "changes": [
+        {
+          "minute": 720,
+          "traffic": {
+            "dc": 4500,
+            "amplitude": 0.9
+          },
+          "competition": {
+            "untracked_bid_factor": 4.0,
+            "untracked_bid_price_multiplier": 2.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "combined_high_to_low_at_noon",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 4500,
+          "amplitude": 0.9,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 4.0,
+          "untracked_bid_price_multiplier": 2.0
+        }
+      },
+      "changes": [
+        {
+          "minute": 720,
+          "traffic": {
+            "dc": 1500,
+            "amplitude": 0.2
+          },
+          "competition": {
+            "untracked_bid_factor": 0.5,
+            "untracked_bid_price_multiplier": 0.5
+          }
+        }
+      ]
+    }
+  ]
+}

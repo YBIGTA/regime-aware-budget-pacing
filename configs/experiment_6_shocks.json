@@ -1,0 +1,370 @@
+{
+  "experiment_id": "experiment_6_shocks",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "pi_coefficients": [
+    {
+      "kp": 1.0,
+      "ki": 0.01
+    },
+    {
+      "kp": 5.0,
+      "ki": 0.05
+    },
+    {
+      "kp": 50.0,
+      "ki": 0.5
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "shock_traffic_up_at_0500",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      },
+      "changes": [
+        {
+          "minute": 300,
+          "traffic": {
+            "dc": 9000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        },
+        {
+          "minute": 360,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "shock_traffic_up_at_1500",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      },
+      "changes": [
+        {
+          "minute": 900,
+          "traffic": {
+            "dc": 9000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        },
+        {
+          "minute": 960,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "shock_traffic_down_at_0500",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      },
+      "changes": [
+        {
+          "minute": 300,
+          "traffic": {
+            "dc": 900,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        },
+        {
+          "minute": 360,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "shock_traffic_down_at_1500",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      },
+      "changes": [
+        {
+          "minute": 900,
+          "traffic": {
+            "dc": 900,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        },
+        {
+          "minute": 960,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "shock_price_up_at_0500",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      },
+      "changes": [
+        {
+          "minute": 300,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 3.0
+          }
+        },
+        {
+          "minute": 360,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "shock_price_up_at_1500",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      },
+      "changes": [
+        {
+          "minute": 900,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 3.0
+          }
+        },
+        {
+          "minute": 960,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "shock_count_up_at_0500",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      },
+      "changes": [
+        {
+          "minute": 300,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 8.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        },
+        {
+          "minute": 360,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "shock_count_up_at_1500",
+      "minutes": 1440,
+      "campaigns": {
+        "count": 10,
+        "daily_budget": 1000.0
+      },
+      "initial_condition": {
+        "traffic": {
+          "dc": 3000,
+          "amplitude": 0.6,
+          "phase": 0.5
+        },
+        "competition": {
+          "untracked_bid_factor": 2.0,
+          "untracked_bid_price_multiplier": 1.0
+        }
+      },
+      "changes": [
+        {
+          "minute": 900,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 8.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        },
+        {
+          "minute": 960,
+          "traffic": {
+            "dc": 3000,
+            "amplitude": 0.6
+          },
+          "competition": {
+            "untracked_bid_factor": 2.0,
+            "untracked_bid_price_multiplier": 1.0
+          }
+        }
+      ]
+    }
+  ]
+}
