@@ -1,7 +1,9 @@
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from dataclasses import asdict
 import csv
 import json
 import math
+import multiprocessing
 from pathlib import Path
 import random
 import sys
@@ -716,12 +718,75 @@ def _skipped_result(run_id, scenario, seed, coefficients, trace_path,
     }
 
 
-def run_experiment(config: ExperimentConfig, output_root, overwrite=False):
-    """모든 조합을 순차 실행한다.
+def _failed_result(run_id, scenario, seed, coefficients, trace_path,
+                   metadata_path, error):
+    return {
+        "run_id": run_id,
+        "scenario_id": scenario.scenario_id,
+        "environment_seed": seed,
+        "kp": coefficients.kp,
+        "ki": coefficients.ki,
+        "status": "failed",
+        "rows": 0,
+        "trace_path": str(trace_path),
+        "metadata_path": str(metadata_path),
+        "validation_status": "not_run",
+        "validation_error": "",
+        "error": f"{type(error).__name__}: {error}",
+    }
+
+
+def _execute_run(scenario, seed, coefficients, run_id, run_dir,
+                 progress=None):
+    """run 하나를 실행하고 (manifest 행, 소요 시간)을 반환한다.
+
+    병렬 실행 시 worker 프로세스에서 호출되므로 모듈 최상위에 둔다.
+    """
+    trace_path = run_dir / "trace.csv"
+    metadata_path = run_dir / "metadata.json"
+    started_at = time.monotonic()
+    try:
+        # trace.csv가 없으면 이전 실행이 중간에 멈춘 것이므로
+        # 남아 있는 metadata나 임시 파일은 덮어쓴다.
+        result = run_simulation(
+            scenario=scenario,
+            seed=seed,
+            kp=coefficients.kp,
+            ki=coefficients.ki,
+            trace_path=trace_path,
+            metadata_path=metadata_path,
+            run_id=run_id,
+            overwrite=True,
+            progress=progress,
+        )
+    except Exception as error:
+        result = _failed_result(
+            run_id, scenario, seed, coefficients,
+            trace_path, metadata_path, error,
+        )
+    return result, time.monotonic() - started_at
+
+
+def _print_run_problems(result, stream=None):
+    stream = stream if stream is not None else sys.stdout
+    if result["status"] == "failed":
+        stream.write(f"failed: {result['error']}\n")
+    if result["status"] == "validation_failed":
+        stream.write(f"validation failed: {result['validation_error']}\n")
+    stream.flush()
+
+
+def run_experiment(config: ExperimentConfig, output_root, overwrite=False,
+                   workers=1):
+    """모든 조합을 실행한다.
 
     overwrite=False이면 trace.csv가 이미 있는 run은 다시 생성하지 않는다.
     중단된 배치를 같은 명령으로 다시 실행하면 남은 run만 이어서 실행된다.
+    workers가 2 이상이면 run을 프로세스 workers개로 나눠 동시에 실행한다.
+    run마다 시드로 난수를 초기화하므로 결과는 순차 실행과 같다.
     """
+    if isinstance(workers, bool) or not isinstance(workers, int) or workers < 1:
+        raise ValueError("workers must be a positive integer")
     experiment_dir = Path(output_root) / config.experiment_id
     manifest_path = experiment_dir / "manifest.csv"
     conditions_path = experiment_dir / "conditions.csv"
@@ -753,75 +818,109 @@ def run_experiment(config: ExperimentConfig, output_root, overwrite=False):
                 planned_runs.append(
                     (scenario, seed, coefficients, run_id, run_dir)
                 )
-    pending_minutes = sum(
-        scenario.minutes
-        for scenario, _, _, _, run_dir in planned_runs
-        if overwrite or not (run_dir / "trace.csv").exists()
-    )
-    progress = BatchProgress(total_minutes=pending_minutes)
 
-    manifest_rows = []
-    for run_number, (scenario, seed, coefficients, run_id, run_dir) in (
-        enumerate(planned_runs, start=1)
+    # manifest 행은 완료 순서와 관계없이 계획 순서대로 기록한다.
+    results = [None] * len(planned_runs)
+    pending = []
+    for index, (scenario, seed, coefficients, run_id, run_dir) in (
+        enumerate(planned_runs)
     ):
         trace_path = run_dir / "trace.csv"
-        metadata_path = run_dir / "metadata.json"
-        label = f"[{run_number}/{total_runs}] {run_id}"
         if not overwrite and trace_path.exists():
-            print(f"{label} skipped (trace.csv exists)")
-            manifest_rows.append(
-                _skipped_result(
-                    run_id, scenario, seed, coefficients,
-                    trace_path, metadata_path,
-                )
+            print(f"[{index + 1}/{total_runs}] {run_id} skipped (trace.csv exists)")
+            results[index] = _skipped_result(
+                run_id, scenario, seed, coefficients,
+                trace_path, run_dir / "metadata.json",
             )
-            _write_csv(manifest_path, MANIFEST_FIELDS, manifest_rows)
-            continue
-        print(label)
-        progress.start_run(label)
-        try:
-            # trace.csv가 없으면 이전 실행이 중간에 멈춘 것이므로
-            # 남아 있는 metadata나 임시 파일은 덮어쓴다.
-            result = run_simulation(
-                scenario=scenario,
-                seed=seed,
-                kp=coefficients.kp,
-                ki=coefficients.ki,
-                trace_path=trace_path,
-                metadata_path=metadata_path,
-                run_id=run_id,
-                overwrite=True,
-                progress=progress.update,
-            )
-        except Exception as error:
-            result = {
-                "run_id": run_id,
-                "scenario_id": scenario.scenario_id,
-                "environment_seed": seed,
-                "kp": coefficients.kp,
-                "ki": coefficients.ki,
-                "status": "failed",
-                "rows": 0,
-                "trace_path": str(trace_path),
-                "metadata_path": str(metadata_path),
-                "validation_status": "not_run",
-                "validation_error": "",
-                "error": f"{type(error).__name__}: {error}",
-            }
-        progress.finish_run(scenario.minutes)
-        if result["status"] == "failed":
-            print(f"failed: {result['error']}")
-        if result["status"] == "validation_failed":
-            print(
-                "validation failed: "
-                f"{result['validation_error']}"
-            )
-        manifest_rows.append(result)
-        _write_csv(manifest_path, MANIFEST_FIELDS, manifest_rows)
+        else:
+            pending.append(index)
 
+    def write_manifest():
+        _write_csv(
+            manifest_path,
+            MANIFEST_FIELDS,
+            [row for row in results if row is not None],
+        )
+
+    write_manifest()
+    if workers == 1:
+        _run_sequential(planned_runs, pending, results, total_runs,
+                        write_manifest)
+    else:
+        _run_parallel(planned_runs, pending, results, workers,
+                      write_manifest)
+
+    manifest_rows = results
     completed = sum(row["status"] == "completed" for row in manifest_rows)
     skipped = sum(row["status"] == "skipped" for row in manifest_rows)
     failed = total_runs - completed - skipped
     print(f"experiment_dir={experiment_dir}")
     print(f"completed={completed} skipped={skipped} failed={failed}")
     return manifest_rows
+
+
+def _run_sequential(planned_runs, pending, results, total_runs,
+                    write_manifest):
+    pending_minutes = sum(planned_runs[index][0].minutes for index in pending)
+    progress = BatchProgress(total_minutes=pending_minutes)
+    for index in pending:
+        scenario, seed, coefficients, run_id, run_dir = planned_runs[index]
+        label = f"[{index + 1}/{total_runs}] {run_id}"
+        print(label)
+        progress.start_run(label)
+        result, _ = _execute_run(
+            scenario, seed, coefficients, run_id, run_dir,
+            progress=progress.update,
+        )
+        progress.finish_run(scenario.minutes)
+        _print_run_problems(result)
+        results[index] = result
+        write_manifest()
+
+
+def _run_parallel(planned_runs, pending, results, workers, write_manifest,
+                  stream=None):
+    """run 단위로 프로세스 풀에 나눠 실행한다.
+
+    분 단위 진행률 대신 run이 끝날 때마다 한 줄을 출력한다.
+    """
+    stream = stream if stream is not None else sys.stdout
+    pending_minutes = sum(planned_runs[index][0].minutes for index in pending)
+    done_minutes = 0
+    started_at = time.monotonic()
+    stream.write(f"running {len(pending)} runs with {workers} workers\n")
+    stream.flush()
+    # fork는 macOS와 numpy 조합에서 불안정할 수 있어 spawn을 쓴다.
+    context = multiprocessing.get_context("spawn")
+    with ProcessPoolExecutor(max_workers=workers, mp_context=context) as pool:
+        futures = {
+            pool.submit(_execute_run, *planned_runs[index]): index
+            for index in pending
+        }
+        for finished, future in enumerate(as_completed(futures), start=1):
+            index = futures[future]
+            scenario, seed, coefficients, run_id, run_dir = planned_runs[index]
+            try:
+                result, duration = future.result()
+            except Exception as error:
+                # worker 프로세스가 비정상 종료된 경우
+                result = _failed_result(
+                    run_id, scenario, seed, coefficients,
+                    run_dir / "trace.csv", run_dir / "metadata.json", error,
+                )
+                duration = 0.0
+            results[index] = result
+            write_manifest()
+
+            done_minutes += scenario.minutes
+            overall = done_minutes / pending_minutes if pending_minutes else 1.0
+            elapsed = time.monotonic() - started_at
+            eta = elapsed * (1 - overall) / overall if overall > 0 else 0.0
+            stream.write(
+                f"[{finished}/{len(pending)}] {run_id} {result['status']} "
+                f"in {_format_duration(duration)} | overall {overall:5.1%} "
+                f"elapsed {_format_duration(elapsed)} "
+                f"ETA {_format_duration(eta)}\n"
+            )
+            stream.flush()
+            _print_run_problems(result, stream)

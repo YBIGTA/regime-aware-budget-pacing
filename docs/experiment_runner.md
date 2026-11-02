@@ -29,6 +29,22 @@ Fixed PI 실험을 수행한다.
 [3/48] baseline_static__seed43__kp0p1__ki0p001 minute 720/1440 (50.0%) | overall 5.2% elapsed 5m40s ETA 1h43m12s
 ```
 
+### 병렬 실행
+
+`--workers N`을 주면 run을 프로세스 N개로 나눠 동시에 실행한다. 기본값은 1이며
+순차 실행과 같다. run마다 시드로 난수를 초기화하므로 결과는 순차 실행과 같다.
+코어 수만큼 주면 된다(맥 M1은 8). 이때 진행률은 run이 끝날 때마다 한 줄씩
+출력한다.
+
+```bash
+.venv/bin/python src/simulator/run_experiments.py \
+  --config configs/experiment_1_1.json --workers 8
+```
+
+```
+[12/675] baseline_static__seed51__kp1__ki0p01 completed in 2m28s | overall  1.8% elapsed 4m37s ETA 3h55m44s
+```
+
 ETA는 남은 시뮬레이션 분 수로 계산한다. 경매가 많은 시나리오는 분당 계산
 시간이 길어서 실제 시간과 차이가 날 수 있다.
 

@@ -25,6 +25,12 @@ def parse_args():
         action="store_true",
         help="rerun and overwrite runs whose trace.csv already exists",
     )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=1,
+        help="number of runs to execute in parallel processes (default: 1)",
+    )
     return parser.parse_args()
 
 
@@ -35,6 +41,7 @@ def main():
         config=config,
         output_root=args.output_dir,
         overwrite=args.overwrite,
+        workers=args.workers,
     )
     if any(
         row["status"] not in ("completed", "skipped") for row in manifest

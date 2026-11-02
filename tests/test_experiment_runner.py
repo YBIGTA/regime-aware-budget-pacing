@@ -334,5 +334,46 @@ class TestSimulationRunner(unittest.TestCase):
                 interrupted_trace.with_name("trace.csv.partial").exists()
             )
 
+    def test_parallel_workers_reproduce_sequential_traces(self):
+        scenario = make_scenario("scenario-a")
+        config = ExperimentConfig.from_dict(
+            {
+                "experiment_id": "parallel-test",
+                "seeds": [1, 2],
+                "pi_coefficients": [{"kp": 0.1, "ki": 0.01}],
+                "scenarios": [
+                    {
+                        "id": scenario.scenario_id,
+                        "minutes": scenario.minutes,
+                        "campaigns": {
+                            "count": scenario.campaigns.count,
+                            "daily_budget": scenario.campaigns.daily_budget,
+                        },
+                        "initial_condition": {
+                            "traffic": {"dc": 2, "amplitude": 0},
+                            "competition": {"untracked_bid_factor": 1},
+                        },
+                    },
+                ],
+            }
+        )
+        with tempfile.TemporaryDirectory() as sequential_dir, \
+                tempfile.TemporaryDirectory() as parallel_dir:
+            sequential = run_experiment(config, sequential_dir, workers=1)
+            parallel = run_experiment(config, parallel_dir, workers=2)
+
+            self.assertEqual(
+                [row["status"] for row in parallel], ["completed"] * 2
+            )
+            self.assertEqual(
+                [row["run_id"] for row in parallel],
+                [row["run_id"] for row in sequential],
+            )
+            for sequential_row, parallel_row in zip(sequential, parallel):
+                self.assertEqual(
+                    Path(parallel_row["trace_path"]).read_bytes(),
+                    Path(sequential_row["trace_path"]).read_bytes(),
+                )
+
 if __name__ == "__main__":
     unittest.main()
