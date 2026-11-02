@@ -172,6 +172,28 @@
           }
         }
       ]
+    },
+    {
+      "id": "combined_high_to_low_at_noon",
+      "minutes": 1440,
+      "campaigns": {"count": 10, "daily_budget": 1000.0},
+      "initial_condition": {
+        "traffic": {"dc": 4500, "amplitude": 0.9, "phase": 0.5},
+        "competition": {
+          "untracked_bid_factor": 4.0,
+          "untracked_bid_price_multiplier": 2.0
+        }
+      },
+      "changes": [
+        {
+          "minute": 720,
+          "traffic": {"dc": 1500, "amplitude": 0.2},
+          "competition": {
+            "untracked_bid_factor": 0.5,
+            "untracked_bid_price_multiplier": 0.5
+          }
+        }
+      ]
     }
   ]
 }
