@@ -134,14 +134,13 @@ cd regime-aware-budget-pacing
 .venv/bin/python src/preprocessing/build_state_table.py \
   --experiment-dir outputs/simulation_runs/experiment_1_1 \
                    outputs/simulation_runs/experiment_2_test_seeds \
-                   outputs/simulation_runs/experiment_3_static_mac \
-                   outputs/simulation_runs/experiment_3_static_vm \
+                   outputs/simulation_runs/experiment_3_static \
   --output-dir outputs/state_table/experiments_1_to_3 \
   --train-seeds 42 43 44 45 --validation-seeds 46 --test-seeds $(seq 47 61)
 ```
 
-이번 수집(실험 1~3)은 `experiments/data_collection/finish_collection.sh`가 VM 결과
-받기, 개수 검증, 2번을 한 번에 한다.
+실험 1~3은 `experiments/data_collection/finish_collection.sh`가 결과 받기, 개수 검증,
+2번을 한 번에 한다.
 
 | 하고 싶은 것 | 방법 |
 | --- | --- |
@@ -151,4 +150,4 @@ cd regime-aware-budget-pacing
 | 분할 시드 변경 | `--train-seeds 42 43 44 45 --validation-seeds 46 --test-seeds 47 48`. 어느 분할에도 없는 시드가 데이터에 있으면 오류로 멈춘다. |
 | 변수 정의서 갱신 | `src/preprocessing/state_table.py`의 `COLUMNS`를 고친 뒤 `--write-docs`로 다시 생성한다. |
 
-1은 맥 M1 `--workers 8` 기준 run 하나에 약 2.5분이다. 2는 실험 1~3 전체(중복 제외 약 1,935개 실행)에 약 7분 걸리고, parquet은 약 3GB다.
+1은 맥 M1 `--workers 8` 기준 run 하나에 약 2.5분이다. 2는 실험 1~3 전체(중복 제외 약 1,950개 실행)에 약 7분 걸리고, parquet은 약 3GB다.

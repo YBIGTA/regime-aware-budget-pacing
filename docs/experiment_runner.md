@@ -26,7 +26,7 @@ Fixed PI 실험을 수행한다.
 리다이렉트하면 run마다 10% 단위로 줄이 추가된다.
 
 ```
-[3/48] baseline_static__seed43__kp0p1__ki0p001 minute 720/1440 (50.0%) | overall 5.2% elapsed 5m40s ETA 1h43m12s
+[3/195] baseline_static__seed42__kp50__ki0p5 minute 720/1440 (50.0%) | overall 1.3% elapsed 5m40s ETA 7h03m12s
 ```
 
 ### 병렬 실행
@@ -53,18 +53,19 @@ ETA는 남은 시뮬레이션 분 수로 계산한다. 경매가 많은 시나�
 ```json
 {
   "experiment_id": "experiment_1_1",
-  "seeds": [42, 43],
+  "seeds": [42, 43, 44, 45, 46],
   "pi_coefficients": [
-    {"kp": 0.1, "ki": 0.001},
-    {"kp": 0.5, "ki": 0.01}
+    {"kp": 1.0, "ki": 0.01},
+    {"kp": 5.0, "ki": 0.05},
+    {"kp": 50.0, "ki": 0.5}
   ],
   "scenarios": [
     {
-      "id": "low_to_high_at_noon",
+      "id": "combined_low_to_high_at_noon",
       "minutes": 1440,
       "campaigns": {
         "count": 10,
-        "daily_budget": 100.0
+        "daily_budget": 1000.0
       },
       "initial_condition": {
         "traffic": {
@@ -101,7 +102,8 @@ ETA는 남은 시뮬레이션 분 수로 계산한다. 경매가 많은 시나�
 | `pi_coefficients` | 평가할 Fixed PI의 `(Kp, Ki)` 목록 |
 | `scenarios` | 고정 또는 시간변화 환경 목록 |
 
-실행기는 `시나리오 × 시드 × PI 계수`의 모든 조합을 순차 실행한다.
+실행기는 `시나리오 × 시드 × PI 계수`의 모든 조합을 실행한다. 기본은 순차 실행이고,
+`--workers`를 주면 여러 개를 동시에 실행한다.
 
 ### 시나리오 항목
 

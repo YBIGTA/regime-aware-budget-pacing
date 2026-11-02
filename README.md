@@ -105,12 +105,15 @@ flowchart LR
 ## Experiment Runner
 
 트래픽, 경쟁 수준, 캠페인 예산, 난수 시드와 Fixed PI 계수를 JSON으로 설정해
-여러 조합을 순차 실행할 수 있다.
+여러 조합을 일괄 실행할 수 있다. `--workers`로 코어 수만큼 동시에 실행한다.
 
 ```bash
 .venv/bin/python src/simulator/run_experiments.py \
-  --config configs/experiment_1_1.json
+  --config configs/experiment_1_1.json --workers 8
 ```
+
+실험 조건과 수집 데이터는 [실험 시나리오 설계](docs/scenario_design_proposal.md),
+상태 테이블은 [레짐 분석용 상태 테이블](docs/state_table.md)을 참고한다.
 
 설정 항목과 출력 구조는 [실험 조건 설정 및 일괄 실행](docs/experiment_runner.md)을
 참고한다.
