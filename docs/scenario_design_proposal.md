@@ -86,12 +86,15 @@ run 수는 `시나리오 수 * 시드 수 * PI 수`다.
 | `experiment_1_1`          | 기본 1~9, 12~15 (13개) | 42~46 | 13 * 5(시드) * 3(PI) = 195  | 군집화 학습·검증      |
 | `experiment_2_test_seeds` | 기본 15개              | 47~61 | 15 * 15(시드) * 3(PI) = 675 | 상태 테이블 평가 분할 |
 | `experiment_3_static`     | 고정 그룹 81개         | 42~46 | 81 * 5(시드) * 3(PI) = 1,215 | 레짐 분리 보강        |
+| `experiment_4_pi_grid`    | 기본 15개              | 42~46 | 15 * 5(시드) * 21(PI) = 1,575 | 레짐별 PI 계수 탐색   |
 
-- 합계는 2,085 run이다. `experiment_3_static`의 135 run(기본 1~9 × 시드 5 × PI 3)은
+- `experiment_1_1`~`3` 합계는 2,085 run이다. `experiment_3_static`의 135 run(기본 1~9 × 시드 5 × PI 3)은
   `experiment_1_1`과 같은 실행이라, 상태 테이블에는 중복 없이 1,950 run이 들어간다.
+- `experiment_4_pi_grid`의 PI 21개는 Kp `0.5, 1, 2, 5, 10, 20, 50` × Ki/Kp `0.003, 0.01, 0.03`이다.
+  상태 테이블에는 넣지 않았고 원본 로그로만 있다.
 - 학습·검증(42~46)에는 시나리오 85개 전체가, 평가(47~61)에는 기본 15개가 들어간다.
-- 상태 테이블은 `outputs/state_table/experiments_1_to_3/`에 있고, 세 실험을 합쳐 만든다.
-- `experiment_2`·`3` 설정 파일은 `experiments/data_collection/make_configs.py`로 만든다. `experiment_1_1`은 직접 작성했다.
+- 상태 테이블은 `outputs/v1/state_table/experiments_1_to_3/`에 있고, 세 실험을 합쳐 만든다.
+- `experiment_2`~`4` 설정 파일은 `experiments/data_collection/make_configs.py`로 만든다. `experiment_1_1`은 직접 작성했다.
 
 ## 예산·PI 보정 근거 (2026-11-01)
 
@@ -102,4 +105,4 @@ run 수는 `시나리오 수 * 시드 수 * PI 수`다.
 | PI 약·중·강             | 후보 8개 중 Kp가 약 10배씩 다르고 Ki/Kp = 0.01인 세 조합을 골랐다. TE는 약 ≈ 0.10, 중 ≈ 0.014~0.026, 강 ≈ 0.001~0.011이다 |
 | 사용하지 않은 기존 기록 | Yahoo 원본 `No_Pacing.csv`(하루 요약만 있음), `trace_example.csv`(10분짜리 예시)                                           |
 
-보정 스크립트는 `experiments/calibration/calibrate.py`, 결과는 `outputs/calibration/`에 있다.
+보정 스크립트는 `experiments/calibration/calibrate.py`, 결과는 `outputs/v1/calibration/`에 있다.

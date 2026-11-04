@@ -109,7 +109,7 @@ flowchart LR
 
 ```bash
 .venv/bin/python src/simulator/run_experiments.py \
-  --config configs/experiment_1_1.json --workers 8
+  --config configs/v1/experiment_1_1.json --workers 8
 ```
 
 실험 조건과 수집 데이터는 [실험 시나리오 설계](docs/scenario_design_proposal.md),

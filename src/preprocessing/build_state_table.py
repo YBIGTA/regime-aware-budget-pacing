@@ -27,13 +27,13 @@ def parse_args():
         "--experiment-dir",
         type=Path,
         nargs="+",
-        default=[PROJECT_ROOT / "outputs" / "simulation_runs" / "experiment_1_1"],
+        default=[PROJECT_ROOT / "outputs" / "v1" / "simulation_runs" / "experiment_1_1"],
         help="one or more experiment folders; identical runs are used once",
     )
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=PROJECT_ROOT / "outputs" / "state_table" / "experiment_1_1",
+        default=PROJECT_ROOT / "outputs" / "v1" / "state_table" / "experiment_1_1",
     )
     parser.add_argument(
         "--train-seeds", nargs="+", default=DEFAULT_SPLITS["train"]

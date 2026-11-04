@@ -88,6 +88,9 @@ run 수는 `시나리오 수 * 시드 수 * PI 수`다.
 | `experiment_1_1`          | 기본 1~9, 12~15 (13개) | 42~46 | 13 * 5(시드) * 3(PI) = 195  | 군집화 학습·검증      |
 | `experiment_2_test_seeds` | 기본 15개              | 47~61 | 15 * 15(시드) * 3(PI) = 675 | 상태 테이블 평가 분할 |
 | `experiment_3_static`     | 고정 그룹 81개         | 42~46 | 81 * 5(시드) * 3(PI) = 1,215 | 레짐 분리 보강        |
+| `experiment_4_pi_grid`    | 기본 15개              | 42~46 | 15 * 5(시드) * 21(PI) = 1,575 | 레짐별 PI 계수 탐색   |
+
+`experiment_4_pi_grid`의 PI 21개는 Kp `0.5, 1, 2, 5, 10, 20, 50` × Ki/Kp `0.003, 0.01, 0.03`이다. 상태 테이블과 별도로 "PI 그리드"의 제어 결과 테이블로 정리했다.
 
 학습·검증(42~46)에는 시나리오 85개 전체가, 평가(47~61)에는 기본 15개가 들어간다.
 
@@ -95,8 +98,9 @@ run 수는 `시나리오 수 * 시드 수 * PI 수`다.
 
 | 결과물          | 위치                                                            | 내용                                                |
 | --------------- | --------------------------------------------------------------- | --------------------------------------------------- |
-| 상태 테이블     | 구글 드라이브 (링크는 따로 전달) → `outputs/state_table/experiments_1_to_3/`에 풀기 | 아래 "상태 테이블" 참고. 약 3GB                     |
-| 원본 로그       | 요청 시 전달 (약 11GB)                                          | run별 분 단위 `trace.csv`, `metadata.json`          |
+| 상태 테이블     | 구글 드라이브 (링크는 따로 전달) → `outputs/v1/state_table/experiments_1_to_3/`에 풀기 | 아래 "상태 테이블" 참고. 약 3GB                     |
+| PI 그리드       | 구글 드라이브 (링크는 따로 전달) → `outputs/v1/control_table/experiment_4_pi_grid/`에 풀기 | 아래 "PI 그리드" 참고. 약 1.5GB                    |
+| 원본 로그       | 요청 시 전달 (약 19GB)                                          | run별 분 단위 `trace.csv`, `metadata.json`          |
 | 실행·전처리 코드 | 브랜치 `feat/experiment-runner`                                 | 데이터 추가 생성, 동일 환경 재실행, 상태 테이블 재생성 |
 
 ## 상태 테이블
@@ -121,7 +125,7 @@ run 수는 `시나리오 수 * 시드 수 * PI 수`다.
 ```python
 import pandas as pd
 
-table = pd.read_parquet("outputs/state_table/experiments_1_to_3/state_table.parquet")
+table = pd.read_parquet("outputs/v1/state_table/experiments_1_to_3/state_table.parquet")
 env = table[table["cluster_row"]]          # 환경 1시점당 1행
 train = env[env["split"] == "train"]
 features = [c for c in env.columns
@@ -188,10 +192,36 @@ TE(Tracking Error)는 `ctrl_spend_error_ratio`의 절댓값을 하루 평균한 
 env = env[env["window_filled_60m"]]
 ```
 
+## PI 그리드
+
+`experiment_4_pi_grid`(기본 15개 × 시드 42~46 × PI 21개)의 제어 결과다. 경매 환경은 PI 계수와
+무관해서 환경 변수는 넣지 않았다. 상태 테이블의 군집화용 행과 `scenario_id`, `seed`, `minute`으로
+합치면 레짐 라벨을 붙일 수 있다.
+
+| 파일                    | 내용                                                                            |
+| ----------------------- | ------------------------------------------------------------------------------- |
+| `control_table.parquet` | 캠페인 × 시나리오 × 시드 × PI × 분. 키 열, `ctrl_` 열(상태 테이블과 같음), `split` |
+| `run_summary.csv`       | run별 `te`, `budget_spent_ratio`(하루 지출 / 예산), `signal_change_per_minute`(분당 승수 변화 절댓값 평균). 캠페인 10개 평균 |
+
+```python
+ctrl = pd.read_parquet("outputs/v1/control_table/experiment_4_pi_grid/control_table.parquet")
+labels = env[["scenario_id", "seed", "minute", "regime"]]   # 군집화 결과
+te = (ctrl.merge(labels, on=["scenario_id", "seed", "minute"])
+          .assign(abs_err=lambda d: d["ctrl_spend_error_ratio"].abs())
+          .groupby(["regime", "kp", "ki"])["abs_err"].mean()
+          .unstack(["kp", "ki"]))                            # 행 레짐, 열 PI, 값 TE
+```
+
+- 학습 시드 기준으로는 15개 시나리오 모두 가장 강한 `(50, 1.5)`의 TE가 가장 낮다. 대신 승수 변화가
+  `(5, 0.05)`보다 약 4배 크다. 허용할 승수 변동 수준을 먼저 정하거나 탐색 범위를 더 넓혀야 한다.
+- 하루 내내 한 PI로 돌린 결과라, 레짐별 TE에는 앞 레짐에서 쌓인 오차도 섞여 있다.
+- 기본 15개에 없는 레짐(고정 그룹 나머지 70개에만 나오는 레짐)은 아래 방법으로 다시 실행해야 한다.
+- PI 3개(`(1, 0.01)`, `(5, 0.05)`, `(50, 0.5)`)는 상태 테이블의 같은 run과 값이 같다.
+
 ## 새 PI 계수로 다시 실행
 
 설정 파일의 `pi_coefficients`만 바꿔 실행하면 같은 시나리오·시드의 같은 경매 환경에서
-PI만 다르게 비교할 수 있다. 예를 들어 `configs/experiment_1_1.json`을 복사해 아래 부분을 바꾼다.
+PI만 다르게 비교할 수 있다. 예를 들어 `configs/v1/experiment_1_1.json`을 복사해 아래 부분을 바꾼다.
 
 ```json
 {

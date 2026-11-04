@@ -1,6 +1,6 @@
 """docs/scenario_design_proposal.md의 실행 계획대로 설정 파일을 만든다.
 
-configs/experiment_2_test_seeds.json ~ experiment_6_shocks.json을 생성한다.
+configs/v1/experiment_2_test_seeds.json ~ experiment_6_shocks.json을 생성한다.
 
     .venv/bin/python experiments/data_collection/make_configs.py
 """
@@ -16,7 +16,7 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 from simulator.experiment_config import ExperimentConfig
 
 
-CONFIG_DIR = PROJECT_ROOT / "configs"
+CONFIG_DIR = PROJECT_ROOT / "configs" / "v1"
 
 CAMPAIGNS = {"count": 10, "daily_budget": 1000.0}
 PHASE = 0.5

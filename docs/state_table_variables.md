@@ -14,7 +14,7 @@
 | 열 | 의미 | 단위 | 계산 방법 | 군집화 사용 |
 | --- | --- | --- | --- | --- |
 | `run_id` | 실행 ID | - | `<scenario>__seed<seed>__kp<kp>__ki<ki>` | 아니오 |
-| `scenario_id` | 시나리오 ID | - | `configs/experiment_1_1.json`의 `scenarios[].id` | 아니오 |
+| `scenario_id` | 시나리오 ID | - | `configs/v1/experiment_1_1.json`의 `scenarios[].id` | 아니오 |
 | `seed` | 환경 난수 시드 | - | 같은 시나리오·시드면 PI 계수와 무관하게 경매 입력이 같다 | 아니오 |
 | `kp` | PI 비례 계수 | - | 실행 설정값 | 아니오 |
 | `ki` | PI 적분 계수 | - | 실행 설정값 | 아니오 |

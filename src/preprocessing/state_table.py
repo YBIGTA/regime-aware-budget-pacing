@@ -109,7 +109,7 @@ COLUMNS = [
     Column("run_id", "key", "실행 ID", "-",
            "`<scenario>__seed<seed>__kp<kp>__ki<ki>`", "아니오"),
     Column("scenario_id", "key", "시나리오 ID", "-",
-           "`configs/experiment_1_1.json`의 `scenarios[].id`", "아니오"),
+           "`configs/v1/experiment_1_1.json`의 `scenarios[].id`", "아니오"),
     Column("seed", "key", "환경 난수 시드", "-",
            "같은 시나리오·시드면 PI 계수와 무관하게 경매 입력이 같다", "아니오"),
     Column("kp", "key", "PI 비례 계수", "-", "실행 설정값", "아니오"),
@@ -340,6 +340,15 @@ def _group_runs(runs):
     return dict(sorted(groups.items()))
 
 
+def same_environment(a, b):
+    """기기마다 다른 부동소수점 오차(1e-15 수준)는 같은 값으로 본다."""
+    if list(a.columns) != list(b.columns) or len(a) != len(b):
+        return False
+    return bool(
+        np.allclose(a.to_numpy(float), b.to_numpy(float), rtol=1e-9, atol=1e-12)
+    )
+
+
 def _environment_for_group(group):
     """같은 시나리오·시드의 모든 PI 실행에서 환경이 같은지 확인하고 반환한다."""
     reference = None
@@ -348,7 +357,7 @@ def _environment_for_group(group):
         environment = _minute_environment(trace)
         if reference is None:
             reference = environment
-        elif not reference.equals(environment):
+        elif not same_environment(reference, environment):
             raise ValueError(
                 "environment differs between PI runs of "
                 f"{run['scenario_id']} seed {run['seed']}"

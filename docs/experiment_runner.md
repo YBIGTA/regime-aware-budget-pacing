@@ -9,7 +9,7 @@ Fixed PI 실험을 수행한다.
 
 ```bash
 .venv/bin/python src/simulator/run_experiments.py \
-  --config configs/experiment_1_1.json
+  --config configs/v1/experiment_1_1.json
 ```
 
 기본 출력 루트는 `outputs/simulation_runs/<experiment_id>/`이다.
@@ -38,7 +38,7 @@ Fixed PI 실험을 수행한다.
 
 ```bash
 .venv/bin/python src/simulator/run_experiments.py \
-  --config configs/experiment_1_1.json --workers 8
+  --config configs/v1/experiment_1_1.json --workers 8
 ```
 
 ```

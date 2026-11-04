@@ -6,8 +6,8 @@
 
 ## 파일
 
-`outputs/state_table/experiments_1_to_3/` (실험 1~3 수집 후 생성. 그 전 버전은
-`outputs/state_table/experiment_1_1/`)
+`outputs/v1/state_table/experiments_1_to_3/` (실험 1~3 수집 후 생성. 그 전 버전은
+`outputs/v1/state_table/experiment_1_1/`)
 
 | 파일 | 내용 |
 | --- | --- |
@@ -19,7 +19,7 @@
 ```python
 import pandas as pd
 
-table = pd.read_parquet("outputs/state_table/experiments_1_to_3/state_table.parquet")
+table = pd.read_parquet("outputs/v1/state_table/experiments_1_to_3/state_table.parquet")
 env = table[table["cluster_row"]]                  # 군집화용 (환경 1시점당 1행)
 train = env[env["split"] == "train"]
 features = [c for c in env.columns
@@ -128,14 +128,14 @@ cd regime-aware-budget-pacing
 
 # 1. 원본 로그 생성 (이미 trace.csv가 있는 실행은 건너뛴다)
 .venv/bin/python src/simulator/run_experiments.py \
-  --config configs/experiment_2_test_seeds.json --workers 8
+  --config configs/v1/experiment_2_test_seeds.json --workers 8
 
 # 2. 상태 테이블 생성 (실험 폴더 여러 개를 합친다. 같은 실행은 하나만 쓴다)
 .venv/bin/python src/preprocessing/build_state_table.py \
-  --experiment-dir outputs/simulation_runs/experiment_1_1 \
-                   outputs/simulation_runs/experiment_2_test_seeds \
-                   outputs/simulation_runs/experiment_3_static \
-  --output-dir outputs/state_table/experiments_1_to_3 \
+  --experiment-dir outputs/v1/simulation_runs/experiment_1_1 \
+                   outputs/v1/simulation_runs/experiment_2_test_seeds \
+                   outputs/v1/simulation_runs/experiment_3_static \
+  --output-dir outputs/v1/state_table/experiments_1_to_3 \
   --train-seeds 42 43 44 45 --validation-seeds 46 --test-seeds $(seq 47 61)
 ```
 

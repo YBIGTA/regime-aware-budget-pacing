@@ -4,7 +4,8 @@ __pycache__/
 *.py[cod]
 
 data/**/*.csv
-outputs/simulation_runs/
-outputs/calibration/runs/
-outputs/calibration/_config_*
-outputs/state_table/
+outputs/**/simulation_runs/
+outputs/**/state_table/
+outputs/**/control_table/
+outputs/**/calibration/runs/
+outputs/**/calibration/_config_*

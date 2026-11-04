@@ -24,8 +24,8 @@ import pandas as pd
 from simulator.experiment_config import load_experiment_config
 from simulator.experiment_runner import run_simulation
 
-OUTPUT_DIR = PROJECT_ROOT / "outputs" / "calibration"
-CONFIG_PATH = PROJECT_ROOT / "configs" / "experiment_1_1.json"
+OUTPUT_DIR = PROJECT_ROOT / "outputs" / "v1" / "calibration"
+CONFIG_PATH = PROJECT_ROOT / "configs" / "v1" / "experiment_1_1.json"
 
 
 def _scenario(scenario_id, daily_budget):

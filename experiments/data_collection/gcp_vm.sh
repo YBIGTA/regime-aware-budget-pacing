@@ -7,10 +7,11 @@
 #   experiments/data_collection/gcp_vm.sh run [실험 ID ...]  # 백그라운드 실행, 끝나면 VM 자동 정지
 #   experiments/data_collection/gcp_vm.sh status     # 진행 상황
 #   experiments/data_collection/gcp_vm.sh start      # 정지된 VM 다시 켜기 (Spot 회수 후 재개 등)
-#   experiments/data_collection/gcp_vm.sh download [실험 ID ...]  # 결과를 outputs/simulation_runs로
+#   experiments/data_collection/gcp_vm.sh download [실험 ID ...]  # 결과를 $RUNS_DIR로
 #   experiments/data_collection/gcp_vm.sh delete     # VM과 디스크 삭제 (비용 종료)
 #
-# 실험 ID를 생략하면 experiment_2 ~ experiment_6 전체를 대상으로 한다.
+# 실험 ID를 생략하면 v2 설정 6개 전체를 대상으로 한다.
+# 설정 파일은 $CONFIG_DIR/<실험 ID>.json, 결과는 $RUNS_DIR/<실험 ID>/에 생긴다.
 # Spot VM이 회수되면 VM이 정지된다. start 후 run을 다시 실행하면 남은 run만 이어서 실행된다.
 set -euo pipefail
 
@@ -20,14 +21,17 @@ MACHINE_TYPE="${MACHINE_TYPE:-c2d-highcpu-32}"
 WORKERS="${WORKERS:-32}"
 DISK_SIZE="${DISK_SIZE:-100GB}"
 REMOTE_DIR="rabp"
+CONFIG_DIR="${CONFIG_DIR:-configs/v2}"
+RUNS_DIR="${RUNS_DIR:-outputs/v2/simulation_runs}"
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 DEFAULT_EXPERIMENTS=(
-  experiment_2_test_seeds
-  experiment_3_static
-  experiment_4_pi_grid
-  experiment_5_transitions
-  experiment_6_shocks
+  v2_train_s42
+  v2_train_s43
+  v2_train_s44
+  v2_train_s45
+  v2_validation
+  v2_test
 )
 
 remote() {
@@ -85,7 +89,8 @@ case "$cmd" in
       for experiment in $experiments; do
         echo \"=== \$experiment \$(date)\"
         .venv/bin/python src/simulator/run_experiments.py \
-          --config configs/\$experiment.json --workers $WORKERS
+          --config $CONFIG_DIR/\$experiment.json \
+          --output-dir $RUNS_DIR --workers $WORKERS
       done
       echo \"=== finished \$(date)\"
       touch DONE
@@ -97,7 +102,7 @@ case "$cmd" in
   status)
     remote "cd ~/$REMOTE_DIR
       if [ -f DONE ]; then echo 'state: DONE'; else echo 'state: running or stopped'; fi
-      for dir in outputs/simulation_runs/*/; do
+      for dir in $RUNS_DIR/*/; do
         [ -d \"\$dir\" ] || continue
         echo \"\$(basename \$dir): \$(ls \$dir/runs 2>/dev/null | wc -l) run folders, \$(find \$dir/runs -name trace.csv 2>/dev/null | wc -l) finished\"
       done
@@ -111,11 +116,11 @@ case "$cmd" in
 
   download)
     experiments="$(experiments_or_default "$@")"
-    mkdir -p "$PROJECT_ROOT/outputs/simulation_runs"
-    archive="$PROJECT_ROOT/outputs/simulation_runs/download.tar.gz"
+    mkdir -p "$PROJECT_ROOT/$RUNS_DIR"
+    archive="$PROJECT_ROOT/$RUNS_DIR/download.tar.gz"
     paths=""
     for experiment in $experiments; do
-      paths="$paths outputs/simulation_runs/$experiment"
+      paths="$paths $RUNS_DIR/$experiment"
     done
     gcloud compute ssh "$VM_NAME" --zone "$ZONE" --quiet \
       --command "cd ~/$REMOTE_DIR && tar -czf - $paths" > "$archive"

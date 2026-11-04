@@ -12,8 +12,8 @@ cd "$PROJECT_ROOT"
 VM_SCRIPT=experiments/data_collection/gcp_vm.sh
 VM_NAME="${VM_NAME:-pacing-sim}"
 ZONE="${ZONE:-asia-northeast3-a}"
-RUNS="${RUNS:-outputs/simulation_runs}"
-STATE_OUT="${STATE_OUT:-outputs/state_table/experiments_1_to_3}"
+RUNS="${RUNS:-outputs/v1/simulation_runs}"
+STATE_OUT="${STATE_OUT:-outputs/v1/state_table/experiments_1_to_3}"
 # 맥미니: Tailscale + SSH 키(이 노트북에서만 허용)로 접속한다.
 MINI_HOST="${MINI_HOST:-chanwoong@100.102.68.41}"
 MINI_KEY="${MINI_KEY:-$HOME/.ssh/id_ed25519_macmini}"
