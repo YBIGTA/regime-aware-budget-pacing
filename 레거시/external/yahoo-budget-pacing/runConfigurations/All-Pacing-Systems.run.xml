@@ -1,0 +1,12 @@
+<!-- Copyright Yahoo, Licensed under the terms of the Apache license . See LICENSE file in project root for terms.-->
+
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All-Pacing-Systems" type="CompoundRunConfigurationType">
+    <toRun name="Linear-Hard" type="PythonConfigurationType" />
+    <toRun name="Linear-Soft" type="PythonConfigurationType" />
+    <toRun name="No-Pacing" type="PythonConfigurationType" />
+    <toRun name="Non-Linear-Hard" type="PythonConfigurationType" />
+    <toRun name="Non-Linear-Soft" type="PythonConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>
