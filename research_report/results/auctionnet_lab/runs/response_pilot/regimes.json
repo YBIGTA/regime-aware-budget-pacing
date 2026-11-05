@@ -1,0 +1,29 @@
+{
+  "features_used": [
+    "volume",
+    "volume_change",
+    "volume_cv",
+    "value_median",
+    "value_spread",
+    "price_value_median",
+    "price_value_q90",
+    "price_value_change",
+    "time_left",
+    "urgency",
+    "burn_rate",
+    "price_shift",
+    "value_shift",
+    "volume_shift",
+    "reference_win",
+    "reference_capacity",
+    "spend_sensitivity"
+  ],
+  "cluster_counts": {
+    "-1": 1023,
+    "0": 87,
+    "1": 318
+  },
+  "min_cluster_size": 42,
+  "min_samples": 10,
+  "preset": "response"
+}

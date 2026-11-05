@@ -1,0 +1,20 @@
+{
+  "winner": {
+    "method": "soft_cost",
+    "penalty": 0.1,
+    "key": "soft_cost_0.1",
+    "te": 0.04805368472001782,
+    "j": 0.05100055818017022,
+    "value": 36.20924886880654
+  },
+  "time_only": {
+    "method": "time_only",
+    "penalty": 0.1,
+    "key": "time_only_0.1",
+    "te": 0.06310478142542697,
+    "j": 0.06593996709689152,
+    "value": 34.57016215115864
+  },
+  "enabled": true,
+  "baseline": 9
+}

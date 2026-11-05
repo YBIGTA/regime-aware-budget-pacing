@@ -1,0 +1,118 @@
+{
+  "features": [
+    "time_left",
+    "remaining_ratio",
+    "error",
+    "integral",
+    "log_alpha",
+    "last_spend_ratio",
+    "recent_spend_ratio",
+    "log_volume",
+    "volume_change",
+    "volume_cv",
+    "value_median",
+    "value_spread",
+    "price_value_median",
+    "price_value_q90",
+    "price_value_change",
+    "price_shift",
+    "value_shift",
+    "volume_shift",
+    "reference_capacity",
+    "spend_sensitivity"
+  ],
+  "gains": [
+    [
+      4.0,
+      0.0
+    ],
+    [
+      4.0,
+      0.06278467600183289
+    ],
+    [
+      4.0,
+      0.3
+    ],
+    [
+      4.0,
+      3.0
+    ],
+    [
+      16.0,
+      0.0
+    ],
+    [
+      16.0,
+      0.06278467600183289
+    ],
+    [
+      16.0,
+      0.3
+    ],
+    [
+      16.0,
+      3.0
+    ],
+    [
+      19.188179966639105,
+      0.0
+    ],
+    [
+      19.188179966639105,
+      0.06278467600183289
+    ],
+    [
+      19.188179966639105,
+      0.3
+    ],
+    [
+      19.188179966639105,
+      3.0
+    ],
+    [
+      64.0,
+      0.0
+    ],
+    [
+      64.0,
+      0.06278467600183289
+    ],
+    [
+      64.0,
+      0.3
+    ],
+    [
+      64.0,
+      3.0
+    ]
+  ],
+  "tree": {
+    "feature": 0,
+    "cut": 0.625,
+    "left": {
+      "feature": 2,
+      "cut": 0.040361188601008346,
+      "left": {
+        "action": 9,
+        "n": 161
+      },
+      "right": {
+        "action": 11,
+        "n": 40
+      }
+    },
+    "right": {
+      "feature": 14,
+      "cut": -0.10492201286350496,
+      "left": {
+        "action": 15,
+        "n": 21
+      },
+      "right": {
+        "action": 2,
+        "n": 75
+      }
+    }
+  }
+}

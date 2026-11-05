@@ -1,0 +1,43 @@
+{
+  "code": "1412b714122726eac0e7012d73547b98bf82f4722da43c0d0a92d063f74059bd",
+  "training": [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "selection": [
+    22,
+    23
+  ],
+  "locked_test": [
+    24,
+    25,
+    26,
+    27
+  ],
+  "advertisers": "All48 census, not an arbitrary four-advertiser sample",
+  "state_seed": 20261105,
+  "primary": "Period-macro TE improvement while retaining >=98% baseline mean expected conversions; 2% validation TE activation threshold",
+  "fixed_search": "10 gain pairs x3 common offsets, validation only, train-only calibration",
+  "learners": "Depth2 direct-cost policy tree,64-tree ExtraTrees,maxdepth5; matched time-only tree; two declared cost penalties",
+  "decision_schedule": [
+    1,
+    7,
+    13,
+    19,
+    25,
+    31,
+    37,
+    43
+  ],
+  "training_sampling": "3 without-replacement timepoints per episode. Evaluations use all eligible decisions and all episodes.",
+  "cost": "Remaining-to-day-end tracking+output variation plus shortfall penalty. Round0 fixed continuation, round1 current-policy continuation for every relabelled example.",
+  "uncertainty": "Deterministic simulator; do not inflate N with overlapping windows or repeated identical seeds. Only four final market periods, no population significance claim.",
+  "sources": {
+    "gain_policy_v10.py": "43ed2f280ce876015674daa45219308015ef34f103b445f2f6742c1e0f66b77f",
+    "gain_final_v9.py": "0972308be6d82f5527bee995acf1010be1e3d4422835322f4688ec13d613274a"
+  }
+}

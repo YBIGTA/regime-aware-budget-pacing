@@ -1,0 +1,35 @@
+RUNNING preparing_train_labels
+LABELLED 7 1
+LABELLED 7 13
+LABELLED 7 25
+LABELLED 7 37
+LABELLED 8 1
+LABELLED 8 13
+LABELLED 8 25
+LABELLED 8 37
+LABELLED 9 1
+LABELLED 9 13
+LABELLED 9 25
+LABELLED 9 37
+LABELLED 10 1
+LABELLED 10 13
+LABELLED 10 25
+LABELLED 10 37
+RUNNING fit_policy_tree_0.1
+RUNNING fit_policy_tree_1.0
+RUNNING fit_soft_cost_0.1
+RUNNING fit_soft_cost_1.0
+RUNNING fit_forest_cost_0.1
+RUNNING fit_forest_cost_1.0
+RUNNING fit_time_only_0.1
+RUNNING fit_time_only_1.0
+RUNNING fetching_frozen_test14_15
+Downloading official data: https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/final/autoBidding_general_track_final_data_period_14-15.zip
+period-14-15.zip: 0.25 GiB
+period-14-15.zip: 0.50 GiB
+period-14-15.zip: 0.75 GiB
+period-14-15.zip: 1.00 GiB
+period-14-15.zip: 1.25 GiB
+period-14-15.zip: 1.50 GiB
+Prepared 14-15: 3,999,808 rows for selected advertisers
+COMPLETE all_done

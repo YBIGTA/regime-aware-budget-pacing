@@ -1,0 +1,40 @@
+{
+  "source": "/Users/jgyu480/3_personal/26-2/regime-aware-budget-pacing/auctionnet_lab/runs/gain_feasibility_v4_20261104T143941_410717Z",
+  "features": [
+    "time_left",
+    "remaining_ratio",
+    "error_before",
+    "log_alpha_before",
+    "log_volume",
+    "volume_change",
+    "volume_cv",
+    "value_median",
+    "value_spread",
+    "price_value_median",
+    "price_value_q90",
+    "price_value_change",
+    "price_shift",
+    "value_shift",
+    "volume_shift"
+  ],
+  "settings": {
+    "6": {
+      "enabled_by_train_cv": true,
+      "neighbors": 10,
+      "minimum_predicted_relative_gain": 0.0,
+      "train_oof_score": -0.00033822939304681434,
+      "common_candidate": 26
+    },
+    "12": {
+      "enabled_by_train_cv": false,
+      "neighbors": 20,
+      "minimum_predicted_relative_gain": 0.1,
+      "train_oof_score": 0.0,
+      "common_candidate": 24
+    }
+  },
+  "validation_used_for_tuning": false,
+  "scope": "Local windows from baseline states; not continuous replay.",
+  "weighting": "Equal period weighting.",
+  "cv": "Leave one training period out."
+}

@@ -1,0 +1,226 @@
+{
+  "settings": {
+    "6": {
+      "nonlinear": false,
+      "penalty": 100.0,
+      "threshold": 0.02,
+      "enabled": false,
+      "raw_train_cv_score": 0.632463618530169
+    },
+    "12": {
+      "nonlinear": false,
+      "penalty": 100.0,
+      "threshold": 0.1,
+      "enabled": false,
+      "raw_train_cv_score": 0.07343750312650539
+    }
+  },
+  "features": [
+    "time_left",
+    "remaining_ratio",
+    "error_before",
+    "log_alpha_before",
+    "log_volume",
+    "volume_change",
+    "volume_cv",
+    "value_median",
+    "value_spread",
+    "price_value_median",
+    "price_value_q90",
+    "price_value_change",
+    "price_shift",
+    "value_shift",
+    "volume_shift"
+  ],
+  "source": "/Users/jgyu480/3_personal/26-2/regime-aware-budget-pacing/auctionnet_lab/runs/gain_feasibility_v4_20261104T143941_410717Z",
+  "config": {
+    "trials_per_variant": 60,
+    "seed": 42,
+    "split": {
+      "train": [
+        7,
+        8,
+        9
+      ],
+      "validation": [
+        10
+      ],
+      "test": [
+        11,
+        12
+      ]
+    },
+    "reference": {
+      "kp": 39.91104432124081,
+      "ki": 60.94072564881213,
+      "offset": -3.353208052271132
+    },
+    "initial_bias": {
+      "1": 0.4139728436674508,
+      "13": -0.06057147832857853,
+      "25": 1.3913164874672275,
+      "37": -0.1923894372382791
+    },
+    "calibration": [
+      {
+        "period": 7,
+        "advertiser": 1,
+        "alpha": 1.6620376391171288,
+        "target": 362.5,
+        "target_available": true
+      },
+      {
+        "period": 7,
+        "advertiser": 13,
+        "alpha": 0.9936197749277289,
+        "target": 241.66666666666666,
+        "target_available": true
+      },
+      {
+        "period": 7,
+        "advertiser": 25,
+        "alpha": 8.14969876711127,
+        "target": 400.0,
+        "target_available": true
+      },
+      {
+        "period": 7,
+        "advertiser": 37,
+        "alpha": 0.6121075818207149,
+        "target": 175.0,
+        "target_available": true
+      },
+      {
+        "period": 8,
+        "advertiser": 1,
+        "alpha": 1.2518192219913709,
+        "target": 362.5,
+        "target_available": true
+      },
+      {
+        "period": 8,
+        "advertiser": 13,
+        "alpha": 0.5746358813356022,
+        "target": 241.66666666666666,
+        "target_available": true
+      },
+      {
+        "period": 8,
+        "advertiser": 25,
+        "alpha": 4.020139033446128,
+        "target": 400.0,
+        "target_available": true
+      },
+      {
+        "period": 8,
+        "advertiser": 37,
+        "alpha": 0.824985525839543,
+        "target": 175.0,
+        "target_available": true
+      },
+      {
+        "period": 9,
+        "advertiser": 1,
+        "alpha": 1.512816043790993,
+        "target": 362.5,
+        "target_available": true
+      },
+      {
+        "period": 9,
+        "advertiser": 13,
+        "alpha": 0.9412264893176437,
+        "target": 241.66666666666666,
+        "target_available": true
+      },
+      {
+        "period": 9,
+        "advertiser": 25,
+        "alpha": 1.9998556575351156,
+        "target": 400.0,
+        "target_available": true
+      },
+      {
+        "period": 9,
+        "advertiser": 37,
+        "alpha": 2.315620557551582,
+        "target": 175.0,
+        "target_available": true
+      }
+    ],
+    "bounds": [
+      -6,
+      4
+    ],
+    "rate": 0.5,
+    "tracking": 0.5,
+    "value_floor": 0.98,
+    "baseline": {
+      "train": {
+        "te": 0.09197286462144288,
+        "multiplier_tv": 0.4765566648111304,
+        "unspent": 0.058353342402347214,
+        "expected_conversions": 25.569193108716814,
+        "objective": 0.10840909975002362,
+        "rate_hit_fraction": 0.8971631205673757,
+        "initial_zero_ticks": 7.166666666666667,
+        "exhausted_by_90pct": 0.25,
+        "remaining_at_75pct": 0.30604342309460525
+      },
+      "validation": {
+        "te": 0.06908374288122453,
+        "multiplier_tv": 0.46442781764960683,
+        "unspent": 0.007027503260017241,
+        "expected_conversions": 35.36513040563721,
+        "objective": 0.07513352170972404,
+        "rate_hit_fraction": 0.8617021276595744,
+        "initial_zero_ticks": 6.75,
+        "exhausted_by_90pct": 0.25,
+        "remaining_at_75pct": 0.3069982826968939
+      }
+    },
+    "hashes": {
+      "retune_global_v3.py": "14c041a02747bbcc640bbe806fc18539e275d0ab746427f9e3b9eadb31d53d76",
+      "run.py": "a3c41ec3385587dc75a551e7f16acf1fdfdb30dabe6273a50e5800d87b83e41c",
+      "controller_diagnostic_v2.py": "30ad7108a35ba1876e92a1f16b7d83528b173cac776204d8de2ee0063842cfc2"
+    },
+    "data_hashes": {
+      "data/pack-9-10/manifest.json": "c4c60f914c0ace3829c3dfc63161e52c834da3c5b29eef0e78712ef136a4ca15",
+      "data/pack-11-12/manifest.json": "c2bdb07bf1e84f2c9a8dd3d68dff41e0a2bec07078180a47347824cac52377ca",
+      "data/pack-7-8/manifest.json": "31e30d53ed8bfdb19d27522dc859317a03cd498c09b80abc28857973a647f9e5"
+    }
+  },
+  "source_controller": {
+    "method": "calibrated_clamp",
+    "parameters": {
+      "kp": 19.188179966639105,
+      "ki": 0.06278467600183289,
+      "offset": -0.3791887678743252
+    },
+    "calibrated": true,
+    "antiwindup": "clamp",
+    "trial": 47,
+    "validation_objective": 0.044076687053736296,
+    "validation_metrics": {
+      "te": 0.04047075843593676,
+      "multiplier_tv": 0.31118941554442364,
+      "unspent": 0.0024701723117764897,
+      "expected_conversions": 37.36433066875457,
+      "objective": 0.044076687053736296,
+      "rate_hit_fraction": 0.23404255319148937,
+      "initial_zero_ticks": 0.0,
+      "exhausted_by_90pct": 0.25,
+      "remaining_at_75pct": 0.23096441778907578
+    },
+    "initial_bias": {
+      "1": 0.4139728436674508,
+      "13": -0.06057147832857853,
+      "25": 1.3913164874672275,
+      "37": -0.1923894372382791
+    },
+    "note": "Validation selection; >=98% mean expected conversions on both train and validation."
+  },
+  "code_sha256": "84095a2855883e40428b1b01ac05ce44fb2631407adcefbb6d932bf5c3e4fd8c",
+  "candidate_csv_sha256": "ec0e39c03eaf0e9055b4929c11d1a7bb349eb14c1ba9d0fc1db705210821a80d",
+  "scope": "Exploratory; PI preselected with period 10; CV labels share that frozen PI. Periods 11/12 already inspected previously.",
+  "continuous_replay": "Validation only; carried budget/integral/previous output; no reset on switch."
+}

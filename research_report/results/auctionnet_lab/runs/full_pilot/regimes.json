@@ -1,0 +1,32 @@
+{
+  "features_used": [
+    "volume",
+    "volume_change",
+    "volume_cv",
+    "value_median",
+    "value_spread",
+    "price_value_median",
+    "price_value_q90",
+    "price_value_change",
+    "time_left",
+    "urgency",
+    "burn_rate",
+    "price_shift",
+    "value_shift",
+    "volume_shift",
+    "reference_win",
+    "reference_capacity",
+    "spend_sensitivity",
+    "actual_win",
+    "actual_cpm",
+    "log_multiplier"
+  ],
+  "cluster_counts": {
+    "-1": 854,
+    "0": 63,
+    "1": 580
+  },
+  "min_cluster_size": 44,
+  "min_samples": 10,
+  "preset": "full"
+}

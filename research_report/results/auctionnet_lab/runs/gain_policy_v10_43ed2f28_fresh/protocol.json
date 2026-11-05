@@ -1,0 +1,30 @@
+{
+  "code": "43ed2f280ce876015674daa45219308015ef34f103b445f2f6742c1e0f66b77f",
+  "source_v9": "0972308be6d82f5527bee995acf1010be1e3d4422835322f4688ec13d613274a",
+  "train": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "tune": [
+    11,
+    12
+  ],
+  "development": [
+    13
+  ],
+  "fresh_test": [
+    14,
+    15
+  ],
+  "source_manifest_sha256": "aa73134df30c9d881a7cc93c6171f3229497a72b61ce5c8ed7738b2aab67f646",
+  "cost": "tail-to-day-end TE/48 + .01 log-output variation/47 + lambda*max(0,.98*future_baseline_value-future_value)/max(future_baseline_value,1)",
+  "methods": [
+    "greedy direct-cost tree depth2, not exact SPOT",
+    "linear softmax expected-cost objective, deterministic argmax deployment",
+    "ExtraTrees cost regression,64 trees"
+  ],
+  "aggregation": "One policy-induced TRAIN-only state collection/relabel round; DAgger-inspired, no theory guarantee",
+  "limits": "Simulator full-information adaptation; no doubly robust causal claim; fixed prices; 4 advertisers; one-step deviation followed by fixed baseline labels, not optimal Q; existing period13 is development only"
+}

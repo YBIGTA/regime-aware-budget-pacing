@@ -1,0 +1,34 @@
+{
+  "winner": {
+    "key": "forest_cost_0.1",
+    "family": "forest_cost",
+    "penalty": 0.1,
+    "te": 0.05860447108707943,
+    "j": 0.06156896125407487,
+    "value": 31.292085977267384
+  },
+  "time_only": {
+    "key": "time_only_0.1",
+    "family": "time_only",
+    "penalty": 0.1,
+    "te": 0.06964531427421694,
+    "j": 0.07269865795858074,
+    "value": 31.284542979215303
+  },
+  "matched_full_tree": {
+    "key": "policy_tree_0.1",
+    "family": "policy_tree",
+    "penalty": 0.1,
+    "te": 0.06513744838523788,
+    "j": 0.0686807670326293,
+    "value": 29.67474068070797
+  },
+  "enabled": true,
+  "baseline": {
+    "base": 6,
+    "offset": -0.4,
+    "te": 0.08011831289215578,
+    "j": 0.08323376868869732,
+    "value": 29.541637588698315
+  }
+}

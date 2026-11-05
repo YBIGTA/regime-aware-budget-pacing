@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-11-05T02:56:32.642441+00:00",
+  "source_code_sha256": "1412b714122726eac0e7012d73547b98bf82f4722da43c0d0a92d063f74059bd",
+  "protocol_code_sha256": "1412b714122726eac0e7012d73547b98bf82f4722da43c0d0a92d063f74059bd",
+  "completed_run": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714",
+  "validation": "5 methods x192 matched episodes; finite metrics; summary/by-period parity; source hash parity",
+  "git_head_before_report": {
+    "returncode": 0,
+    "stdout": "1b30166ef6c03baa10765005d90a9c430f257ba4",
+    "stderr": ""
+  },
+  "python": "3.12.16 | packaged by Anaconda, Inc. | (main, Oct 26 2026, 20:15:26) [Clang 20.1.8 ]",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "packages_at_report_generation": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.14.1",
+    "scikit-learn": "1.5.2",
+    "joblib": "1.6.0",
+    "pyarrow": "19.0.1",
+    "optuna": "4.2.1",
+    "hdbscan": "0.8.40",
+    "torch": "not installed"
+  },
+  "result_roots_scanned": [
+    "auctionnet_lab/runs",
+    "pacing_v11/auctionnet_lab/runs",
+    "auctionnet_paper_v7/outputs",
+    "레거시/outputs",
+    "레거시/experiments",
+    "pacing_report_tools/historical_reference"
+  ],
+  "Q_cache_files_exported": 7099,
+  "data_parquet_files_inventoried": 604,
+  "warnings": [],
+  "excluded": "Raw auction Parquet/ZIP, episode feature caches, virtual environments, secret configuration, historical large neural checkpoints. Result text/CSV and v11 top-level joblib models included. Other directories outside declared roots not recursively searched.",
+  "statistical_inference": "Descriptive. No p-values, no independence claim, no unperformed experiment.",
+  "build_status": "COMPLETE"
+}

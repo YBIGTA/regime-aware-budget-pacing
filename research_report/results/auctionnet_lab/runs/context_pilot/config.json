@@ -1,0 +1,16 @@
+{
+  "data": {
+    "data/pack-9-10/manifest.json": "c4c60f914c0ace3829c3dfc63161e52c834da3c5b29eef0e78712ef136a4ca15",
+    "data/pack-11-12/manifest.json": "c2bdb07bf1e84f2c9a8dd3d68dff41e0a2bec07078180a47347824cac52377ca",
+    "data/pack-7-8/manifest.json": "31e30d53ed8bfdb19d27522dc859317a03cd498c09b80abc28857973a647f9e5"
+  },
+  "code_sha256": "a3c41ec3385587dc75a551e7f16acf1fdfdb30dabe6273a50e5800d87b83e41c",
+  "preset": "context",
+  "trials": 30,
+  "seed": 42,
+  "max_value_loss": 0.02,
+  "min_cluster_size": 0,
+  "min_samples": 10,
+  "protocol": "fixed_price_expected_value_random_rationing_v1",
+  "upstream": "c20de631a40e24669d1d6a8e2acefd8f492f172d"
+}

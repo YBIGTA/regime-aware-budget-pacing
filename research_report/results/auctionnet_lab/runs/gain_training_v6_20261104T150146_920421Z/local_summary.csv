@@ -1,0 +1,9 @@
+split,horizon_hours,method,windows,local_j,gain_vs_PI_pct,value_pass_fraction,switch_fraction,gain_at_least_2pct_fraction
+train,3.0,PI,61,0.09661006374579402,0.0,1.0,0.0,0.0
+train,3.0,selector,61,0.09661006374579402,0.0,1.0,0.0,0.0
+validation,3.0,PI,24,0.044950901410315776,0.0,1.0,0.0,0.0
+validation,3.0,selector,24,0.044950901410315776,0.0,1.0,0.0,0.0
+train,6.0,PI,61,0.10739381696579685,0.0,1.0,0.0,0.0
+train,6.0,selector,61,0.10739381696579685,0.0,1.0,0.0,0.0
+validation,6.0,PI,24,0.043004589210571625,0.0,1.0,0.0,0.0
+validation,6.0,selector,24,0.043004589210571625,0.0,1.0,0.0,0.0

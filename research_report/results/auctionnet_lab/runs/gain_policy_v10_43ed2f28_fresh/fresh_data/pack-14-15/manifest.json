@@ -1,0 +1,11 @@
+{
+  "source": "https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/final/autoBidding_general_track_final_data_period_14-15.zip",
+  "sha256": "f4a87f67610930f09d53229bbf3fca13be172b1e4f771483e395fa07183d5614",
+  "advertisers": [
+    1,
+    13,
+    25,
+    37
+  ],
+  "rows": 3999808
+}

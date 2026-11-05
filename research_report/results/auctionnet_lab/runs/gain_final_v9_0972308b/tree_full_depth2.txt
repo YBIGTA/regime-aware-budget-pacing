@@ -1,0 +1,4 @@
+error <= -0.0517498 AND remaining_ratio <= 0.149983 -> leaf=2, kp/ki=(19.188179966639105, 0.06278467600183289), predicted_delta_j=0.000000, predicted_relative_value=0.000000
+error <= -0.0517498 AND remaining_ratio > 0.149983 -> leaf=3, kp/ki=(19.188179966639105, 0.06278467600183289), predicted_delta_j=0.000000, predicted_relative_value=0.000000
+error > -0.0517498 AND log_alpha <= 1.56218 -> leaf=5, kp/ki=(19.188179966639105, 0.06278467600183289), predicted_delta_j=0.000000, predicted_relative_value=0.000000
+error > -0.0517498 AND log_alpha > 1.56218 -> leaf=6, kp/ki=(19.188179966639105, 0.06278467600183289), predicted_delta_j=0.000000, predicted_relative_value=0.000000

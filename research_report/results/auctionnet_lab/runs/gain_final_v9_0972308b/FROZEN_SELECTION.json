@@ -1,0 +1,21 @@
+{
+  "family": "full",
+  "depth": 2,
+  "threshold": 0.003,
+  "te": 0.05362335920328962,
+  "value": 33.372280658673844,
+  "j": 0.05671902471877788,
+  "value_ratio": 1.0,
+  "enabled": false,
+  "baseline": 9,
+  "common_local": 9,
+  "time_only_selection": {
+    "family": "time_only",
+    "depth": 2,
+    "threshold": 0.003,
+    "te": 0.05362335920328962,
+    "value": 33.372280658673844,
+    "j": 0.05671902471877788,
+    "value_ratio": 1.0
+  }
+}

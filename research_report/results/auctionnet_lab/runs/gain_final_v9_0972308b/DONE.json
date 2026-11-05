@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETE",
+  "baseline": 9,
+  "tree_enabled": false,
+  "oracle_improvement_pct": 10.830510440486718,
+  "oracle_vs_future_common_gain_pct": 10.830510440486718,
+  "tree_te_improvement_pct": 0.0,
+  "tree_value_ratio": 1.0
+}

@@ -1,0 +1,25 @@
+AuctionNet regime/PI exploratory protocol v1
+Source: alimama-tech/AuctionNet commit c20de631a40e24669d1d6a8e2acefd8f492f172d.
+Official general_track_final ZIPs; default periods 7-12 and advertiser IDs 1,13,25,37.
+All 48 ticks and all opportunities of each selected advertiser are retained.
+Fixed-price replay, NOT full multi-agent GSP simulation or official leaderboard reproduction.
+Win/cost threshold matches official offline_env.py. pValueSigma is normal scale, as in code.
+Use analytic E[clip(N(pValue,pValueSigma),0,1)] as expected conversions; no sampled-score claim.
+At budget exhaustion, seeded random-priority truncation replaces upstream random-drop/re-draw loop.
+All features use previous ticks only. Current competitors' future prices are not inputs.
+Counterfactual reference features use previous observed fixed-price traffic only.
+Price/value ratio is normalized by fixed campaign CPA. Reference base bid = CPA*pValue.
+Feature pool: 20 candidates + no-impression flag. No-impression CPM=0 plus flag, not a cheap-market assertion.
+Market feature fitting avoids duplicated trajectories; context fitting uses 3 train-only policies and deduplicates identical vectors.
+Period order: floor(60%) train, floor(20%) validation, remainder test; no row-random split.
+HDBSCAN settings are pilot defaults; not selected using held-out test performance.
+Fewer than 2 clusters: export diagnosis and stop, rather than fabricate regimes.
+PI uses normalized cumulative error and log bid multiplier, anti-windup, common bounds/rate limit.
+Hysteresis: 2 consecutive known-cluster predictions; noise/strength<0.5 -> tuned global PI.
+30 TPE trials per method are a pilot budget, not proof of optimal coefficients.
+Objective: mean absolute tracking error + .01 log-multiplier TV + .2 unspent budget fraction.
+Regime tuning penalizes >2% expected-value loss vs fixed PI on train/validation; no test guarantee.
+Per-period paired test summary/bootstrap; two test periods are exploratory, not significance evidence.
+Validate on more periods/advertisers/seeds; add clustering sweeps and full official simulator before publication.
+References: NeurIPS2024 AuctionNet; CIKM2018 DRLB; WWW Companion2025 GAS;
+Complexity2017 A Gain-Scheduling PI Control Based on Neural Networks.

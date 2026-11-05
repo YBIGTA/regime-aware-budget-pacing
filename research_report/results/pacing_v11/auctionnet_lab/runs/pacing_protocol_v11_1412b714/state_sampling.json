@@ -1,0 +1,1447 @@
+{
+  "seed": 20261105,
+  "sampling": "3 of 8 prespecified decision times per advertiser-period, without replacement. Exhausted states ineligible; full episodes always evaluated.",
+  "states": 772,
+  "coverage": [
+    {
+      "period": 16,
+      "advertiser": 0,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 1,
+      "states": 2
+    },
+    {
+      "period": 16,
+      "advertiser": 2,
+      "states": 1
+    },
+    {
+      "period": 16,
+      "advertiser": 3,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 4,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 5,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 6,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 7,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 8,
+      "states": 1
+    },
+    {
+      "period": 16,
+      "advertiser": 9,
+      "states": 1
+    },
+    {
+      "period": 16,
+      "advertiser": 10,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 11,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 12,
+      "states": 1
+    },
+    {
+      "period": 16,
+      "advertiser": 13,
+      "states": 1
+    },
+    {
+      "period": 16,
+      "advertiser": 14,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 15,
+      "states": 1
+    },
+    {
+      "period": 16,
+      "advertiser": 16,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 17,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 18,
+      "states": 1
+    },
+    {
+      "period": 16,
+      "advertiser": 19,
+      "states": 2
+    },
+    {
+      "period": 16,
+      "advertiser": 20,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 21,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 22,
+      "states": 1
+    },
+    {
+      "period": 16,
+      "advertiser": 23,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 24,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 25,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 26,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 27,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 28,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 29,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 30,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 31,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 32,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 33,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 34,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 35,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 36,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 37,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 38,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 39,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 40,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 41,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 42,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 43,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 44,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 45,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 46,
+      "states": 3
+    },
+    {
+      "period": 16,
+      "advertiser": 47,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 0,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 1,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 2,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 3,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 4,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 5,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 6,
+      "states": 1
+    },
+    {
+      "period": 17,
+      "advertiser": 7,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 8,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 9,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 10,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 11,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 12,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 13,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 14,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 15,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 16,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 17,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 18,
+      "states": 1
+    },
+    {
+      "period": 17,
+      "advertiser": 19,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 20,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 21,
+      "states": 2
+    },
+    {
+      "period": 17,
+      "advertiser": 22,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 23,
+      "states": 2
+    },
+    {
+      "period": 17,
+      "advertiser": 24,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 25,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 26,
+      "states": 2
+    },
+    {
+      "period": 17,
+      "advertiser": 27,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 28,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 29,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 30,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 31,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 32,
+      "states": 2
+    },
+    {
+      "period": 17,
+      "advertiser": 33,
+      "states": 2
+    },
+    {
+      "period": 17,
+      "advertiser": 34,
+      "states": 1
+    },
+    {
+      "period": 17,
+      "advertiser": 35,
+      "states": 1
+    },
+    {
+      "period": 17,
+      "advertiser": 36,
+      "states": 2
+    },
+    {
+      "period": 17,
+      "advertiser": 37,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 38,
+      "states": 2
+    },
+    {
+      "period": 17,
+      "advertiser": 39,
+      "states": 1
+    },
+    {
+      "period": 17,
+      "advertiser": 40,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 41,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 42,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 43,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 44,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 45,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 46,
+      "states": 3
+    },
+    {
+      "period": 17,
+      "advertiser": 47,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 0,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 1,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 2,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 3,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 4,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 5,
+      "states": 2
+    },
+    {
+      "period": 18,
+      "advertiser": 6,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 7,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 8,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 9,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 10,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 11,
+      "states": 0
+    },
+    {
+      "period": 18,
+      "advertiser": 12,
+      "states": 0
+    },
+    {
+      "period": 18,
+      "advertiser": 13,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 14,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 15,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 16,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 17,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 18,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 19,
+      "states": 2
+    },
+    {
+      "period": 18,
+      "advertiser": 20,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 21,
+      "states": 2
+    },
+    {
+      "period": 18,
+      "advertiser": 22,
+      "states": 2
+    },
+    {
+      "period": 18,
+      "advertiser": 23,
+      "states": 2
+    },
+    {
+      "period": 18,
+      "advertiser": 24,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 25,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 26,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 27,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 28,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 29,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 30,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 31,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 32,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 33,
+      "states": 2
+    },
+    {
+      "period": 18,
+      "advertiser": 34,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 35,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 36,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 37,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 38,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 39,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 40,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 41,
+      "states": 2
+    },
+    {
+      "period": 18,
+      "advertiser": 42,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 43,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 44,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 45,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 46,
+      "states": 3
+    },
+    {
+      "period": 18,
+      "advertiser": 47,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 0,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 1,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 2,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 3,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 4,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 5,
+      "states": 2
+    },
+    {
+      "period": 19,
+      "advertiser": 6,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 7,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 8,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 9,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 10,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 11,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 12,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 13,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 14,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 15,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 16,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 17,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 18,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 19,
+      "states": 1
+    },
+    {
+      "period": 19,
+      "advertiser": 20,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 21,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 22,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 23,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 24,
+      "states": 2
+    },
+    {
+      "period": 19,
+      "advertiser": 25,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 26,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 27,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 28,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 29,
+      "states": 1
+    },
+    {
+      "period": 19,
+      "advertiser": 30,
+      "states": 2
+    },
+    {
+      "period": 19,
+      "advertiser": 31,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 32,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 33,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 34,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 35,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 36,
+      "states": 2
+    },
+    {
+      "period": 19,
+      "advertiser": 37,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 38,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 39,
+      "states": 2
+    },
+    {
+      "period": 19,
+      "advertiser": 40,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 41,
+      "states": 2
+    },
+    {
+      "period": 19,
+      "advertiser": 42,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 43,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 44,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 45,
+      "states": 3
+    },
+    {
+      "period": 19,
+      "advertiser": 46,
+      "states": 2
+    },
+    {
+      "period": 19,
+      "advertiser": 47,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 0,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 1,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 2,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 3,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 4,
+      "states": 2
+    },
+    {
+      "period": 20,
+      "advertiser": 5,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 6,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 7,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 8,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 9,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 10,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 11,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 12,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 13,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 14,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 15,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 16,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 17,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 18,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 19,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 20,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 21,
+      "states": 1
+    },
+    {
+      "period": 20,
+      "advertiser": 22,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 23,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 24,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 25,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 26,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 27,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 28,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 29,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 30,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 31,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 32,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 33,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 34,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 35,
+      "states": 1
+    },
+    {
+      "period": 20,
+      "advertiser": 36,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 37,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 38,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 39,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 40,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 41,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 42,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 43,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 44,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 45,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 46,
+      "states": 3
+    },
+    {
+      "period": 20,
+      "advertiser": 47,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 0,
+      "states": 2
+    },
+    {
+      "period": 21,
+      "advertiser": 1,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 2,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 3,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 4,
+      "states": 2
+    },
+    {
+      "period": 21,
+      "advertiser": 5,
+      "states": 2
+    },
+    {
+      "period": 21,
+      "advertiser": 6,
+      "states": 2
+    },
+    {
+      "period": 21,
+      "advertiser": 7,
+      "states": 1
+    },
+    {
+      "period": 21,
+      "advertiser": 8,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 9,
+      "states": 1
+    },
+    {
+      "period": 21,
+      "advertiser": 10,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 11,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 12,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 13,
+      "states": 2
+    },
+    {
+      "period": 21,
+      "advertiser": 14,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 15,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 16,
+      "states": 1
+    },
+    {
+      "period": 21,
+      "advertiser": 17,
+      "states": 1
+    },
+    {
+      "period": 21,
+      "advertiser": 18,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 19,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 20,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 21,
+      "states": 1
+    },
+    {
+      "period": 21,
+      "advertiser": 22,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 23,
+      "states": 2
+    },
+    {
+      "period": 21,
+      "advertiser": 24,
+      "states": 2
+    },
+    {
+      "period": 21,
+      "advertiser": 25,
+      "states": 1
+    },
+    {
+      "period": 21,
+      "advertiser": 26,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 27,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 28,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 29,
+      "states": 1
+    },
+    {
+      "period": 21,
+      "advertiser": 30,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 31,
+      "states": 2
+    },
+    {
+      "period": 21,
+      "advertiser": 32,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 33,
+      "states": 2
+    },
+    {
+      "period": 21,
+      "advertiser": 34,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 35,
+      "states": 1
+    },
+    {
+      "period": 21,
+      "advertiser": 36,
+      "states": 1
+    },
+    {
+      "period": 21,
+      "advertiser": 37,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 38,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 39,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 40,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 41,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 42,
+      "states": 2
+    },
+    {
+      "period": 21,
+      "advertiser": 43,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 44,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 45,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 46,
+      "states": 3
+    },
+    {
+      "period": 21,
+      "advertiser": 47,
+      "states": 3
+    }
+  ]
+}

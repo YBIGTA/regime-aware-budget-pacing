@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/Users/jgyu480/3_personal/26-2/regime-aware-budget-pacing/auctionnet_paper_v7/overnight.py", line 277, in <module>
+    try:main()
+        ^^^^^^
+  File "/Users/jgyu480/3_personal/26-2/regime-aware-budget-pacing/auctionnet_paper_v7/overnight.py", line 273, in main
+    prepare_pack(pack)
+  File "/Users/jgyu480/3_personal/26-2/regime-aware-budget-pacing/auctionnet_paper_v7/overnight.py", line 98, in prepare_pack
+    raise ValueError('Nonfinite raw values')
+ValueError: Nonfinite raw values

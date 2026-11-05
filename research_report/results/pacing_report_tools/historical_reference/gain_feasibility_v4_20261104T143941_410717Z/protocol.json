@@ -1,0 +1,52 @@
+{
+  "source_controller": {
+    "method": "calibrated_clamp",
+    "parameters": {
+      "kp": 19.188179966639105,
+      "ki": 0.06278467600183289,
+      "offset": -0.3791887678743252
+    },
+    "calibrated": true,
+    "antiwindup": "clamp",
+    "trial": 47,
+    "validation_objective": 0.044076687053736296,
+    "validation_metrics": {
+      "te": 0.04047075843593676,
+      "multiplier_tv": 0.31118941554442364,
+      "unspent": 0.0024701723117764897,
+      "expected_conversions": 37.36433066875457,
+      "objective": 0.044076687053736296,
+      "rate_hit_fraction": 0.23404255319148937,
+      "initial_zero_ticks": 0.0,
+      "exhausted_by_90pct": 0.25,
+      "remaining_at_75pct": 0.23096441778907578
+    },
+    "initial_bias": {
+      "1": 0.4139728436674508,
+      "13": -0.06057147832857853,
+      "25": 1.3913164874672275,
+      "37": -0.1923894372382791
+    },
+    "note": "Validation selection; >=98% mean expected conversions on both train and validation."
+  },
+  "horizons": [
+    6,
+    12
+  ],
+  "anchors": [
+    6,
+    12,
+    18,
+    24,
+    30,
+    36
+  ],
+  "selection": "Oracle uses future outcomes; NOT a deployable policy or performance result.",
+  "scope": "Train and validation only.",
+  "p_ablation": "Same kp/bias; ki=0. P-only has NOT been independently optimized.",
+  "code_hash": "bd9e07deec78219706f3473b3d7b5149a0c2eebcdca45f69afe04705480a1a4d",
+  "source_hashes": {
+    "selected_controller.json": "8d6422de5c39a0cbcf9e517e53e6b6d59172bbf90bdd3df5ca2ef3902732ee40",
+    "config.json": "f59ed8a5f99406fc9475bdd96c541e7c176adfd61d35e8b9d38ff88f5066145b"
+  }
+}

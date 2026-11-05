@@ -1,0 +1,33 @@
+RUNNING fixed_baseline_selection {}
+RUNNING experiment_2_matched_forks {'baseline': 9}
+FORKS 7 1 21
+FORKS 7 13 18
+FORKS 7 25 9
+FORKS 7 37 21
+FORKS 8 1 21
+FORKS 8 13 21
+FORKS 8 25 21
+FORKS 8 37 21
+FORKS 9 1 6
+FORKS 9 13 6
+FORKS 9 25 21
+FORKS 9 37 21
+FORKS 10 1 21
+FORKS 10 13 21
+FORKS 10 25 21
+FORKS 10 37 18
+RUNNING experiment_3_tree_tuning {}
+TREE TUNED {'family': 'full', 'depth': 2, 'threshold': 0.001, 'te': 0.05362335920328962, 'value': 33.372280658673844, 'j': 0.05671902471877788, 'value_ratio': 1.0}
+TREE TUNED {'family': 'full', 'depth': 2, 'threshold': 0.003, 'te': 0.05362335920328962, 'value': 33.372280658673844, 'j': 0.05671902471877788, 'value_ratio': 1.0}
+TREE TUNED {'family': 'full', 'depth': 3, 'threshold': 0.001, 'te': 0.05362335920328962, 'value': 33.372280658673844, 'j': 0.05671902471877788, 'value_ratio': 1.0}
+TREE TUNED {'family': 'full', 'depth': 3, 'threshold': 0.003, 'te': 0.05362335920328962, 'value': 33.372280658673844, 'j': 0.05671902471877788, 'value_ratio': 1.0}
+TREE TUNED {'family': 'time_only', 'depth': 2, 'threshold': 0.001, 'te': 0.05452377862148052, 'value': 33.23694440956232, 'j': 0.05761955315545429, 'value_ratio': 0.9959446508767045}
+TREE TUNED {'family': 'time_only', 'depth': 2, 'threshold': 0.003, 'te': 0.05362335920328962, 'value': 33.372280658673844, 'j': 0.05671902471877788, 'value_ratio': 1.0}
+TREE TUNED {'family': 'time_only', 'depth': 3, 'threshold': 0.001, 'te': 0.05452377862148052, 'value': 33.23694440956232, 'j': 0.05761955315545429, 'value_ratio': 0.9959446508767045}
+TREE TUNED {'family': 'time_only', 'depth': 3, 'threshold': 0.003, 'te': 0.05362335920328962, 'value': 33.372280658673844, 'j': 0.05671902471877788, 'value_ratio': 1.0}
+RUNNING frozen_period13_evaluation {'selection': {'family': 'full', 'depth': 2, 'threshold': 0.003, 'te': 0.05362335920328962, 'value': 33.372280658673844, 'j': 0.05671902471877788, 'value_ratio': 1.0, 'enabled': False, 'baseline': 9, 'common_local': 9, 'time_only_selection': {'family': 'time_only', 'depth': 2, 'threshold': 0.003, 'te': 0.05362335920328962, 'value': 33.372280658673844, 'j': 0.05671902471877788, 'value_ratio': 1.0}}}
+REPORT EPISODE DONE 13 1
+REPORT EPISODE DONE 13 13
+REPORT EPISODE DONE 13 25
+REPORT EPISODE DONE 13 37
+COMPLETE all_done {'report': '/Users/jgyu480/3_personal/26-2/regime-aware-budget-pacing/auctionnet_lab/runs/gain_final_v9_0972308b/REPORT.md'}

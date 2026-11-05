@@ -1,0 +1,68 @@
+{
+  "code": "0972308be6d82f5527bee995acf1010be1e3d4422835322f4688ec13d613274a",
+  "controller": {
+    "method": "calibrated_clamp",
+    "parameters": {
+      "kp": 19.188179966639105,
+      "ki": 0.06278467600183289,
+      "offset": -0.3791887678743252
+    },
+    "calibrated": true,
+    "antiwindup": "clamp",
+    "trial": 47,
+    "validation_objective": 0.044076687053736296,
+    "validation_metrics": {
+      "te": 0.04047075843593676,
+      "multiplier_tv": 0.31118941554442364,
+      "unspent": 0.0024701723117764897,
+      "expected_conversions": 37.36433066875457,
+      "objective": 0.044076687053736296,
+      "rate_hit_fraction": 0.23404255319148937,
+      "initial_zero_ticks": 0.0,
+      "exhausted_by_90pct": 0.25,
+      "remaining_at_75pct": 0.23096441778907578
+    },
+    "initial_bias": {
+      "1": 0.4139728436674508,
+      "13": -0.06057147832857853,
+      "25": 1.3913164874672275,
+      "37": -0.1923894372382791
+    },
+    "note": "Validation selection; >=98% mean expected conversions on both train and validation."
+  },
+  "files": {
+    "auctionnet_lab/data/pack-7-8/p7-a1.parquet": "7058afbeb812b3796221701c211327cb55fefe37eb331ea1a3596bbb5af388c9",
+    "auctionnet_lab/data/pack-7-8/p7-a13.parquet": "d1f12a64d2a42093d14dbcf2760842332e663173483ce42869170d15abf1d58c",
+    "auctionnet_lab/data/pack-7-8/p7-a25.parquet": "0b8422f060330a8b11fcb5091cd97691ed64a5d903d56ac4b2a8862658243250",
+    "auctionnet_lab/data/pack-7-8/p7-a37.parquet": "7fa9f79a2f8804a351ceee41de3e29ccb9d13c33eb4e5a1dbbee645eb07a6fba",
+    "auctionnet_lab/data/pack-7-8/p8-a1.parquet": "1011b4f5071a8a425c578e5bbca4727a64ef727041c14c9547235c44cc22162d",
+    "auctionnet_lab/data/pack-7-8/p8-a13.parquet": "067711c7ef8c9ed2d08d525e93b4bff783d690687a04e9a9a49c77533dc9e1c8",
+    "auctionnet_lab/data/pack-7-8/p8-a25.parquet": "e535153a7c8ff3c4cad99365b152ff4af23869dbce69c546ab97cf7527c377b8",
+    "auctionnet_lab/data/pack-7-8/p8-a37.parquet": "d285221e58c274eff573f0874fed2a2dbb176ea9abf0f550f5c52c1e37732bd2",
+    "auctionnet_lab/data/pack-9-10/p9-a1.parquet": "a089c2df80911a4279a3686c3d47679ec71f74df953efb09e2ba86dc84365d45",
+    "auctionnet_lab/data/pack-9-10/p9-a13.parquet": "13268d11f5e1a8ed91682118304cd9aed6489b02fbfe2ffc84e6fc1679838475",
+    "auctionnet_lab/data/pack-9-10/p9-a25.parquet": "39a2b4ce7702c639649395a15c59ecb3a4faee3911c8e1baba3a96eb481837c5",
+    "auctionnet_lab/data/pack-9-10/p9-a37.parquet": "efe7e08c8ec7c134b1a272f10b698f4bfabf10966b56494179f5507107e389bd",
+    "auctionnet_lab/data/pack-9-10/p10-a1.parquet": "a045ab6917ee02713bafadfaf5f6802ae10a4bf3c1959a0ffe74373d82588ebc",
+    "auctionnet_lab/data/pack-9-10/p10-a13.parquet": "a3d032b8e0f93e964fdc172c46899753605011a6c700f48da04292ee6dcc2ae8",
+    "auctionnet_lab/data/pack-9-10/p10-a25.parquet": "c6f56a8493c2541e4b8572edec260f298f1f7fd4f77ce984dab90b8e96534752",
+    "auctionnet_lab/data/pack-9-10/p10-a37.parquet": "8a7bc2ffdddb0cbe7621c859f80919cd2d36dfeaa8b9e975211722ea72e2e2ca",
+    "auctionnet_lab/data/pack-11-12/p11-a1.parquet": "0e7d2a48cb6ca14551bb17fa9798ddb87b6aa2436b4fb78d51e72605db0a03d1",
+    "auctionnet_lab/data/pack-11-12/p11-a13.parquet": "f570235276cf6a80905111ffa31e81cd70a1cddf1a32f0d8128dba23ae834db7",
+    "auctionnet_lab/data/pack-11-12/p11-a25.parquet": "8c9f1fba47d8e558b5748f37ac8e9f8d57528d8bb8d73575d63e6927e2a7866e",
+    "auctionnet_lab/data/pack-11-12/p11-a37.parquet": "750cbd527648641f15546518665d7c7cbfae785173296fbd891cf75f847031ad",
+    "auctionnet_lab/data/pack-11-12/p12-a1.parquet": "31e43b906c7ceb5e50cd95e319196cd8ff01e902e7dd63844f2ed7e4000ac925",
+    "auctionnet_lab/data/pack-11-12/p12-a13.parquet": "e0efbf5894021ad67d6d2c667418bc3d4fc9ee21aa4d7a3a26cecc766092a504",
+    "auctionnet_lab/data/pack-11-12/p12-a25.parquet": "b632d083c95fef9ef585111177ada77360c0204a3cea081360e68b444bd5ed85",
+    "auctionnet_lab/data/pack-11-12/p12-a37.parquet": "825b248a7a548ec1b508100b65f1ec194186a3375679a7319e87a5c76a5b5f27",
+    "auctionnet_paper_v7/data/eval_p13_a1.parquet": "b0eac55f6507534a5c68f75b60f99f89bc0b3f6d9c883f066221a743585a9de1",
+    "auctionnet_paper_v7/data/eval_p13_a13.parquet": "c60534a60f14eb60c95663affe16be1d7c5d6a67f8529ac355482a1fd2d76f62",
+    "auctionnet_paper_v7/data/eval_p13_a25.parquet": "a569b7fb38fc706f0f188fe00572a574aede89f58ee6cc268a3c500fea8de271",
+    "auctionnet_paper_v7/data/eval_p13_a37.parquet": "9c54dd70613b6f9d9ac8711a82a2cb87aa16dc8e5700237cf030902307ccfdfe"
+  },
+  "dependencies": {
+    "run.py": "a3c41ec3385587dc75a551e7f16acf1fdfdb30dabe6273a50e5800d87b83e41c",
+    "gain_feasibility_v4.py": "bd9e07deec78219706f3473b3d7b5149a0c2eebcdca45f69afe04705480a1a4d",
+    "controller_diagnostic_v2.py": "30ad7108a35ba1876e92a1f16b7d83528b173cac776204d8de2ee0063842cfc2"
+  }
+}

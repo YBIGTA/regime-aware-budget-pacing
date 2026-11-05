@@ -1,0 +1,9 @@
+{
+  "regime_minus_fixed": -0.0005121256945380629,
+  "periods": 2,
+  "bootstrap_95": [
+    -0.0010242513890761258,
+    0.0
+  ],
+  "warning": "Exploratory only, especially with few held-out periods. No automatic significance claim."
+}

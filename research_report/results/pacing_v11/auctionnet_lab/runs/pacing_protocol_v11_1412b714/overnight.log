@@ -1,0 +1,64 @@
+RUNNING fetch_training_and_selection_periods
+Downloading official data: https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/final/autoBidding_general_track_final_data_period_16-17.zip
+period-16-17.zip: 0.25 GiB
+period-16-17.zip: 0.50 GiB
+RETRY DOWNLOAD 16-17 1
+Downloading official data: https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/final/autoBidding_general_track_final_data_period_16-17.zip
+RETRY DOWNLOAD 16-17 2
+Downloading official data: https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/final/autoBidding_general_track_final_data_period_16-17.zip
+period-16-17.zip: 0.82 GiB
+period-16-17.zip: 1.07 GiB
+period-16-17.zip: 1.32 GiB
+period-16-17.zip: 1.57 GiB
+Prepared 16-17: 47,997,648 rows for selected advertisers
+Downloading official data: https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/final/autoBidding_general_track_final_data_period_18-19.zip
+period-18-19.zip: 0.25 GiB
+period-18-19.zip: 0.50 GiB
+period-18-19.zip: 0.75 GiB
+period-18-19.zip: 1.00 GiB
+period-18-19.zip: 1.25 GiB
+period-18-19.zip: 1.50 GiB
+Prepared 18-19: 47,997,648 rows for selected advertisers
+Downloading official data: https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/final/autoBidding_general_track_final_data_period_20-21.zip
+period-20-21.zip: 0.25 GiB
+period-20-21.zip: 0.50 GiB
+period-20-21.zip: 0.75 GiB
+period-20-21.zip: 1.00 GiB
+period-20-21.zip: 1.25 GiB
+period-20-21.zip: 1.50 GiB
+Prepared 20-21: 47,998,032 rows for selected advertisers
+Downloading official data: https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/final/autoBidding_general_track_final_data_period_22-23.zip
+period-22-23.zip: 0.25 GiB
+period-22-23.zip: 0.50 GiB
+period-22-23.zip: 0.75 GiB
+period-22-23.zip: 1.00 GiB
+period-22-23.zip: 1.25 GiB
+period-22-23.zip: 1.50 GiB
+Prepared 22-23: 47,997,888 rows for selected advertisers
+RUNNING train_only_initialization
+RUNNING select_fixed_baseline_on22_23
+RUNNING collect_representative_training_states
+RUNNING fit_policy_tree_0.1
+RUNNING fit_policy_tree_1.0
+RUNNING fit_forest_cost_0.1
+RUNNING fit_forest_cost_1.0
+RUNNING fit_time_only_0.1
+RUNNING fit_time_only_1.0
+RUNNING fetch_once_locked_final_test24_27
+Downloading official data: https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/final/autoBidding_general_track_final_data_period_24-25.zip
+period-24-25.zip: 0.25 GiB
+period-24-25.zip: 0.50 GiB
+period-24-25.zip: 0.75 GiB
+period-24-25.zip: 1.00 GiB
+period-24-25.zip: 1.25 GiB
+period-24-25.zip: 1.50 GiB
+Prepared 24-25: 47,997,888 rows for selected advertisers
+Downloading official data: https://alimama-bidding-competition.oss-cn-beijing.aliyuncs.com/share/final/autoBidding_general_track_final_data_period_26-27.zip
+period-26-27.zip: 0.25 GiB
+period-26-27.zip: 0.50 GiB
+period-26-27.zip: 0.75 GiB
+period-26-27.zip: 1.00 GiB
+period-26-27.zip: 1.25 GiB
+period-26-27.zip: 1.50 GiB
+Prepared 26-27: 47,997,696 rows for selected advertisers
+COMPLETE all_done

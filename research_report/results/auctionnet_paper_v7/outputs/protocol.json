@@ -1,0 +1,41 @@
+{
+  "commit": "c20de631a40e24669d1d6a8e2acefd8f492f172d",
+  "train_periods": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "validation_periods": [
+    13
+  ],
+  "test_periods": "Not downloaded or evaluated",
+  "training_advertisers": "All 48 except audited NaN-bid trajectories",
+  "validation_advertisers": [
+    1,
+    13,
+    25,
+    37
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "steps": 20000,
+  "objective": "Official continuous reward IQL; CPA-penalized conversion validation score; TE reported separately",
+  "adaptations": [
+    "Streaming exact tick aggregation",
+    "Train-only normalization, same transform at evaluation",
+    "Correct last-three history at inference (official wrapper uses a faulty slice)",
+    "CPU training; checkpoint/resume; explicit zero participation below minimum budget"
+  ],
+  "source_hashes": {
+    "bc.py": "3732b32fcf2ae2dd1740cfd991060e91829f07513f10b3fff35a66a8fec17a25",
+    "iql.py": "6122f7ae435f0ed0184ccf6126ecb5265f564731d6d7620cddddd56303b0ea94",
+    "offline_env.py": "5682f6779f03435d2eea71d708309365c32bb00e05ee94a58a171d8fe29d387f",
+    "generator.py": "eedd82377c9141b3c3f3fc198fe98ca721254b19827bf04c1dfc0d20221415ad"
+  }
+}

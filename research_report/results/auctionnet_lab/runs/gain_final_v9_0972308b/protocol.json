@@ -1,0 +1,118 @@
+{
+  "train_periods": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "tuning_periods": [
+    11,
+    12
+  ],
+  "report_periods": [
+    13
+  ],
+  "advertisers": [
+    1,
+    13,
+    25,
+    37
+  ],
+  "baseline": "Best validation-selected fixed gain from the same 16 candidates; original initialization shared by all methods",
+  "prior_information": "Original initialization/controller was developed using periods 7..10 (now training). Period 13 has already been inspected in other analyses; limited development holdout, not a pristine final test.",
+  "stage_A": "Matched state cloning; six-tick lookahead; future oracle diagnostic versus a train-selected common pair",
+  "stage_B": "Full and time-only depth 2/3 multioutput trees (four fits total), fixed minimum leaf; predict tracking-cost and value changes; thresholds .001/.003; select on whole-day periods 11/12 only",
+  "selection": "Minimize TE+0.01*log-output-TV subject to >=98% baseline mean expected value. Activate only if validation TE also improves at least 2%. Raw tree results always retained.",
+  "observation": "Past ticks only; platform-level access to losing prices assumed. Budget, integral and previous output carried across switches.",
+  "randomness": "Deterministic expected clipped conversion value and common per-tick budget ordering; no repeated stochastic conversion draws needed",
+  "limitations": "Fixed-price replay; 4 advertisers, one reporting period; windows overlap and are NOT independent samples; no significance or population-generalization claim",
+  "features": [
+    "time_left",
+    "remaining_ratio",
+    "error",
+    "integral",
+    "log_alpha",
+    "last_spend_ratio",
+    "recent_spend_ratio",
+    "log_volume",
+    "volume_change",
+    "volume_cv",
+    "value_median",
+    "value_spread",
+    "price_value_median",
+    "price_value_q90",
+    "price_value_change",
+    "price_shift",
+    "value_shift",
+    "volume_shift",
+    "reference_capacity",
+    "spend_sensitivity"
+  ],
+  "gains": [
+    [
+      4.0,
+      0.0
+    ],
+    [
+      4.0,
+      0.06278467600183289
+    ],
+    [
+      4.0,
+      0.3
+    ],
+    [
+      4.0,
+      3.0
+    ],
+    [
+      16.0,
+      0.0
+    ],
+    [
+      16.0,
+      0.06278467600183289
+    ],
+    [
+      16.0,
+      0.3
+    ],
+    [
+      16.0,
+      3.0
+    ],
+    [
+      19.188179966639105,
+      0.0
+    ],
+    [
+      19.188179966639105,
+      0.06278467600183289
+    ],
+    [
+      19.188179966639105,
+      0.3
+    ],
+    [
+      19.188179966639105,
+      3.0
+    ],
+    [
+      64.0,
+      0.0
+    ],
+    [
+      64.0,
+      0.06278467600183289
+    ],
+    [
+      64.0,
+      0.3
+    ],
+    [
+      64.0,
+      3.0
+    ]
+  ],
+  "expected_data_files": 28
+}

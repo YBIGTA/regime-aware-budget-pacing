@@ -1,0 +1,4 @@
+time_left <= 0.8125 AND time_left <= 0.6875 AND time_left <= 0.5625 -> leaf=3, kp/ki=(19.188179966639105, 0.06278467600183289), predicted_delta_j=0.000000, predicted_relative_value=0.000000
+time_left <= 0.8125 AND time_left <= 0.6875 AND time_left > 0.5625 -> leaf=4, kp/ki=(19.188179966639105, 0.06278467600183289), predicted_delta_j=0.000000, predicted_relative_value=0.000000
+time_left <= 0.8125 AND time_left > 0.6875 -> leaf=5, kp/ki=(19.188179966639105, 3.0), predicted_delta_j=-0.001130, predicted_relative_value=0.006786
+time_left > 0.8125 -> leaf=6, kp/ki=(19.188179966639105, 0.06278467600183289), predicted_delta_j=0.000000, predicted_relative_value=0.000000

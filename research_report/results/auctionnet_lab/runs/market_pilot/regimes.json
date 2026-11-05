@@ -1,0 +1,18 @@
+{
+  "features_used": [
+    "volume",
+    "volume_change",
+    "volume_cv",
+    "value_median",
+    "value_spread",
+    "price_value_median",
+    "price_value_q90",
+    "price_value_change"
+  ],
+  "cluster_counts": {
+    "-1": 540
+  },
+  "min_cluster_size": 30,
+  "min_samples": 10,
+  "preset": "market"
+}
