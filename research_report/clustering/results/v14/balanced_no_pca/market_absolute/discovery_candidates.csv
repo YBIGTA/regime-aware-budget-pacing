@@ -1,0 +1,10 @@
+key,family,parameter,clusters,coverage,noise_fraction,largest_cluster_share,silhouette_assigned
+kmeans_2,kmeans,"{""k"": 2}",2,1,0,0.68340773809523814,0.20371692583284084
+kmeans_3,kmeans,"{""k"": 3}",3,1,0,0.45027281746031744,0.1744662660955984
+kmeans_4,kmeans,"{""k"": 4}",4,1,0,0.36917162698412698,0.15980789860343836
+kmeans_5,kmeans,"{""k"": 5}",5,1,0,0.29749503968253971,0.12928705149524417
+kmeans_6,kmeans,"{""k"": 6}",6,1,0,0.2374751984126984,0.12856016447003626
+hdbscan_0.02_10,hdbscan,"{""fraction"": 0.02, ""min_samples"": 10}",0,0,1,0,
+hdbscan_0.02_30,hdbscan,"{""fraction"": 0.02, ""min_samples"": 30}",0,0,1,0,
+hdbscan_0.05_10,hdbscan,"{""fraction"": 0.05, ""min_samples"": 10}",0,0,1,0,
+hdbscan_0.05_30,hdbscan,"{""fraction"": 0.05, ""min_samples"": 30}",0,0,1,0,

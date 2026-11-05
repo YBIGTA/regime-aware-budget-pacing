@@ -1,0 +1,9 @@
+variant,family,period,clusters,coverage,noise_fraction,largest_cluster_share,silhouette_assigned,advertiser_AMI,time_bin_AMI,mean_LOPO_ARI,mean_LOPO_common_inlier_fraction,representation
+market_absolute,kmeans,20,2,1,0,0.61904761904761907,0.20276453338249584,0.020005608418106918,0.15189871192577706,0.49981047311747162,1,balanced_no_pca
+market_absolute,kmeans,21,2,1,0,0.56646825396825395,0.19433243424731395,0.0072229263783515612,0.16910509199978785,0.49981047311747162,1,balanced_no_pca
+market_absolute,hdbscan,20,0,0,1,0,,,,,0,balanced_no_pca
+market_absolute,hdbscan,21,0,0,1,0,,,,,0,balanced_no_pca
+advertiser_centered,kmeans,20,2,1,0,0.83085317460317465,0.33310283132087204,-0.0046012015339452553,0.30143408500597624,0.79628816658891444,1,balanced_no_pca
+advertiser_centered,kmeans,21,2,1,0,0.78472222222222221,0.2720477611426671,-0.0045865167946054775,0.34123496240970319,0.79628816658891444,1,balanced_no_pca
+advertiser_centered,hdbscan,20,0,0,1,0,,,,,0,balanced_no_pca
+advertiser_centered,hdbscan,21,0,0,1,0,,,,,0,balanced_no_pca

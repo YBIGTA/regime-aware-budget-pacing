@@ -1,0 +1,32 @@
+{
+  "code_sha256": "ef0e3cce770a10a46b920df098c3bb2bbb37b1cf28f9aee14716a4732ea93215",
+  "dependencies": {
+    "cluster_v13/domain_clusters.py": "1b178778fd1929e6aadb6c1786f75514c7d6d6b67345c537d900ff08c433da3e",
+    "cluster_v12/cluster_diagnostic.py": "c5dfe577eca305ec981139fae04b466ef0d2941da49044157552782d5c5adffe"
+  },
+  "input_sha256": "9ab37ef330aa34cca3c2e7f468963f78de2eb060dde0aa55e48c2184f5d31c61",
+  "discovery": [
+    16,
+    17,
+    18,
+    19
+  ],
+  "internal_transfer": [
+    20,
+    21
+  ],
+  "primary": "balanced_no_pca/advertiser_centered",
+  "controls": [
+    "absolute levels",
+    "PCA90 sensitivity"
+  ],
+  "distance": "피처를 발견 기간에서 표준화한 뒤 각 도메인 묶음의 평균 제곱거리를 합산. 발견 기간 묶음별 총분산 1.",
+  "tail_policy": "기존 v13의 0.5/99.5% 제한 유지. 보편적 최적값이라는 주장 없음.",
+  "selection": "v12 발견 기간 전용 후보 선택 유지. KMeans k2~6, HDBSCAN 4설정. 이전 기간 결과로 표현을 재선택하지 않음.",
+  "scope": "사후 개발 진단. 22~27을 읽지 않음. 군집 수·유의성·정책 개선을 보장하지 않음.",
+  "references": [
+    "https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.StandardScaler.html",
+    "https://scikit-learn.org/1.5/modules/clustering.html",
+    "https://hdbscan.readthedocs.io/en/latest/parameter_selection.html"
+  ]
+}

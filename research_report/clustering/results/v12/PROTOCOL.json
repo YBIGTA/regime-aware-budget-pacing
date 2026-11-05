@@ -1,0 +1,54 @@
+{
+  "code_sha256": "c5dfe577eca305ec981139fae04b466ef0d2941da49044157552782d5c5adffe",
+  "discovery": [
+    16,
+    17,
+    18,
+    19
+  ],
+  "internal_transfer": [
+    20,
+    21
+  ],
+  "excluded_final_periods": [
+    24,
+    25,
+    26,
+    27
+  ],
+  "advertisers": 48,
+  "features": [
+    "log_volume",
+    "volume_change",
+    "volume_cv",
+    "value_median",
+    "value_spread",
+    "price_value_median",
+    "price_value_q90",
+    "price_value_change",
+    "price_shift",
+    "value_shift",
+    "volume_shift"
+  ],
+  "variants": [
+    "market_absolute",
+    "advertiser_centered"
+  ],
+  "kmeans_k": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "hdbscan_min_cluster_fractions": [
+    0.02,
+    0.05
+  ],
+  "hdbscan_min_samples": [
+    10,
+    30
+  ],
+  "selection": "발견 기간에서만 선택. KMeans는 silhouette, HDBSCAN은 coverage*max(0,silhouette). 2군집 이상·coverage .5 이상 후보를 우선. 없으면 진단용 후보만 남기고 성공으로 간주하지 않음.",
+  "scope": "사후 군집 탐색. 정책 개선·통계적 유의성을 검정하지 않음."
+}

@@ -1,0 +1,37 @@
+{
+  "code_sha256": "1b178778fd1929e6aadb6c1786f75514c7d6d6b67345c537d900ff08c433da3e",
+  "diagnostic_engine_sha256": "c5dfe577eca305ec981139fae04b466ef0d2941da49044157552782d5c5adffe",
+  "discovery": [
+    16,
+    17,
+    18,
+    19
+  ],
+  "internal_transfer": [
+    20,
+    21
+  ],
+  "excluded": [
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "prior": "v12 이후의 사후 개발 분석",
+  "raw": "기존 훈련 Parquet에서 재추출. 과거 6틱만 사용.",
+  "representations": [
+    "absolute",
+    "discovery-advertiser-median centered"
+  ],
+  "preprocessing": "로그 변환, 발견 기간 0.5/99.5% 꼬리 제한, 상수·상관계수 절댓값>.95 중복 제거, 도메인 묶음별 피처 수 가중, PCA90%",
+  "scope": "군집 수를 성공 목표로 삼지 않음. 정책 성능 향상을 검증하는 실험 아님.",
+  "references": [
+    "https://arxiv.org/abs/2412.10798",
+    "https://arxiv.org/abs/1905.03028",
+    "https://arxiv.org/abs/1706.03161",
+    "https://link.springer.com/article/10.1007/s10618-019-00647-x",
+    "https://researchonline.jcu.edu.au/47065/"
+  ]
+}

@@ -1,0 +1,1154 @@
+[
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a0.parquet",
+    "bytes": 14937694
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a1.parquet",
+    "bytes": 15038592
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a2.parquet",
+    "bytes": 15045047
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a3.parquet",
+    "bytes": 15140553
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a4.parquet",
+    "bytes": 14638705
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a5.parquet",
+    "bytes": 14706686
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a6.parquet",
+    "bytes": 15001879
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a7.parquet",
+    "bytes": 14830423
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a8.parquet",
+    "bytes": 14952316
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a9.parquet",
+    "bytes": 15102503
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a10.parquet",
+    "bytes": 14781480
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a11.parquet",
+    "bytes": 15043544
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a12.parquet",
+    "bytes": 15000428
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a13.parquet",
+    "bytes": 15105242
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a14.parquet",
+    "bytes": 14865487
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a15.parquet",
+    "bytes": 15009575
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a16.parquet",
+    "bytes": 14817112
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a17.parquet",
+    "bytes": 15033157
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a18.parquet",
+    "bytes": 14911887
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a19.parquet",
+    "bytes": 15094340
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a20.parquet",
+    "bytes": 14763431
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a21.parquet",
+    "bytes": 14929954
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a22.parquet",
+    "bytes": 14905888
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a23.parquet",
+    "bytes": 14922941
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a24.parquet",
+    "bytes": 15150220
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a25.parquet",
+    "bytes": 14771023
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a26.parquet",
+    "bytes": 14548469
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a27.parquet",
+    "bytes": 15180103
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a28.parquet",
+    "bytes": 15158025
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a29.parquet",
+    "bytes": 15179986
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a30.parquet",
+    "bytes": 14764155
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a31.parquet",
+    "bytes": 14888206
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a32.parquet",
+    "bytes": 14760442
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a33.parquet",
+    "bytes": 14828181
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a34.parquet",
+    "bytes": 14897764
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a35.parquet",
+    "bytes": 14920747
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a36.parquet",
+    "bytes": 15006913
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a37.parquet",
+    "bytes": 14820668
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a38.parquet",
+    "bytes": 15139525
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a39.parquet",
+    "bytes": 15075469
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a40.parquet",
+    "bytes": 14852569
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a41.parquet",
+    "bytes": 14541308
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a42.parquet",
+    "bytes": 15086054
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a43.parquet",
+    "bytes": 15156002
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a44.parquet",
+    "bytes": 15059999
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a45.parquet",
+    "bytes": 14768648
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a46.parquet",
+    "bytes": 14996746
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p16-a47.parquet",
+    "bytes": 14644690
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a0.parquet",
+    "bytes": 14581931
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a1.parquet",
+    "bytes": 15164782
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a2.parquet",
+    "bytes": 14844500
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a3.parquet",
+    "bytes": 15118218
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a4.parquet",
+    "bytes": 14988044
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a5.parquet",
+    "bytes": 15040130
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a6.parquet",
+    "bytes": 15196275
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a7.parquet",
+    "bytes": 14965615
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a8.parquet",
+    "bytes": 15131077
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a9.parquet",
+    "bytes": 14148952
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a10.parquet",
+    "bytes": 14877335
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a11.parquet",
+    "bytes": 15007421
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a12.parquet",
+    "bytes": 15025930
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a13.parquet",
+    "bytes": 15060670
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a14.parquet",
+    "bytes": 15148331
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a15.parquet",
+    "bytes": 15064137
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a16.parquet",
+    "bytes": 14928910
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a17.parquet",
+    "bytes": 14998565
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a18.parquet",
+    "bytes": 14758262
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a19.parquet",
+    "bytes": 15007757
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a20.parquet",
+    "bytes": 14966538
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a21.parquet",
+    "bytes": 14632611
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a22.parquet",
+    "bytes": 14861291
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a23.parquet",
+    "bytes": 15062731
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a24.parquet",
+    "bytes": 14996413
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a25.parquet",
+    "bytes": 14873371
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a26.parquet",
+    "bytes": 14456579
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a27.parquet",
+    "bytes": 15041640
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a28.parquet",
+    "bytes": 14998616
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a29.parquet",
+    "bytes": 14753432
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a30.parquet",
+    "bytes": 15102846
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a31.parquet",
+    "bytes": 14992524
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a32.parquet",
+    "bytes": 14764677
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a33.parquet",
+    "bytes": 14796389
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a34.parquet",
+    "bytes": 14961995
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a35.parquet",
+    "bytes": 14853042
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a36.parquet",
+    "bytes": 15151742
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a37.parquet",
+    "bytes": 14771692
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a38.parquet",
+    "bytes": 15149816
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a39.parquet",
+    "bytes": 15172962
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a40.parquet",
+    "bytes": 14906649
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a41.parquet",
+    "bytes": 14698297
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a42.parquet",
+    "bytes": 15086598
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a43.parquet",
+    "bytes": 15125471
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a44.parquet",
+    "bytes": 14971600
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a45.parquet",
+    "bytes": 14928893
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a46.parquet",
+    "bytes": 14719152
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-16-17/p17-a47.parquet",
+    "bytes": 14857259
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a0.parquet",
+    "bytes": 15084409
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a1.parquet",
+    "bytes": 14942390
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a2.parquet",
+    "bytes": 14565277
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a3.parquet",
+    "bytes": 14837502
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a4.parquet",
+    "bytes": 15141666
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a5.parquet",
+    "bytes": 14970840
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a6.parquet",
+    "bytes": 15092370
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a7.parquet",
+    "bytes": 14951860
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a8.parquet",
+    "bytes": 15150789
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a9.parquet",
+    "bytes": 14898387
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a10.parquet",
+    "bytes": 14904752
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a11.parquet",
+    "bytes": 14625863
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a12.parquet",
+    "bytes": 14892361
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a13.parquet",
+    "bytes": 14838535
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a14.parquet",
+    "bytes": 15158380
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a15.parquet",
+    "bytes": 14522432
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a16.parquet",
+    "bytes": 15153379
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a17.parquet",
+    "bytes": 14820416
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a18.parquet",
+    "bytes": 14995825
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a19.parquet",
+    "bytes": 15090214
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a20.parquet",
+    "bytes": 15080051
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a21.parquet",
+    "bytes": 15062096
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a22.parquet",
+    "bytes": 14839024
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a23.parquet",
+    "bytes": 14991268
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a24.parquet",
+    "bytes": 14636676
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a25.parquet",
+    "bytes": 15169274
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a26.parquet",
+    "bytes": 14951442
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a27.parquet",
+    "bytes": 15122531
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a28.parquet",
+    "bytes": 14721477
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a29.parquet",
+    "bytes": 15164233
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a30.parquet",
+    "bytes": 15007874
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a31.parquet",
+    "bytes": 14849362
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a32.parquet",
+    "bytes": 15162081
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a33.parquet",
+    "bytes": 14790614
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a34.parquet",
+    "bytes": 14880393
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a35.parquet",
+    "bytes": 14748874
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a36.parquet",
+    "bytes": 14781242
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a37.parquet",
+    "bytes": 15123294
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a38.parquet",
+    "bytes": 15081839
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a39.parquet",
+    "bytes": 15010308
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a40.parquet",
+    "bytes": 14827141
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a41.parquet",
+    "bytes": 14836362
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a42.parquet",
+    "bytes": 15081499
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a43.parquet",
+    "bytes": 15110941
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a44.parquet",
+    "bytes": 15093771
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a45.parquet",
+    "bytes": 15058143
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a46.parquet",
+    "bytes": 14990394
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p18-a47.parquet",
+    "bytes": 14987662
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a0.parquet",
+    "bytes": 15125550
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a1.parquet",
+    "bytes": 15145002
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a2.parquet",
+    "bytes": 14982818
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a3.parquet",
+    "bytes": 14854432
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a4.parquet",
+    "bytes": 14703878
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a5.parquet",
+    "bytes": 14978398
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a6.parquet",
+    "bytes": 15079077
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a7.parquet",
+    "bytes": 15078291
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a8.parquet",
+    "bytes": 14761833
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a9.parquet",
+    "bytes": 14695831
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a10.parquet",
+    "bytes": 14907775
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a11.parquet",
+    "bytes": 15143240
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a12.parquet",
+    "bytes": 15087957
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a13.parquet",
+    "bytes": 14658543
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a14.parquet",
+    "bytes": 14870816
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a15.parquet",
+    "bytes": 15167825
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a16.parquet",
+    "bytes": 15024888
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a17.parquet",
+    "bytes": 15158853
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a18.parquet",
+    "bytes": 15034373
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a19.parquet",
+    "bytes": 15070339
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a20.parquet",
+    "bytes": 15070756
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a21.parquet",
+    "bytes": 14817105
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a22.parquet",
+    "bytes": 14936225
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a23.parquet",
+    "bytes": 15046329
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a24.parquet",
+    "bytes": 14866896
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a25.parquet",
+    "bytes": 14798452
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a26.parquet",
+    "bytes": 15187384
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a27.parquet",
+    "bytes": 15025492
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a28.parquet",
+    "bytes": 15122148
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a29.parquet",
+    "bytes": 14987351
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a30.parquet",
+    "bytes": 15150718
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a31.parquet",
+    "bytes": 14972375
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a32.parquet",
+    "bytes": 14967909
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a33.parquet",
+    "bytes": 14963293
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a34.parquet",
+    "bytes": 15155312
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a35.parquet",
+    "bytes": 15031948
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a36.parquet",
+    "bytes": 15137796
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a37.parquet",
+    "bytes": 15162398
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a38.parquet",
+    "bytes": 14948581
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a39.parquet",
+    "bytes": 15145594
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a40.parquet",
+    "bytes": 14640582
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a41.parquet",
+    "bytes": 14756876
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a42.parquet",
+    "bytes": 15181864
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a43.parquet",
+    "bytes": 14889949
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a44.parquet",
+    "bytes": 15119148
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a45.parquet",
+    "bytes": 14922334
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a46.parquet",
+    "bytes": 14938415
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-18-19/p19-a47.parquet",
+    "bytes": 15160993
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a0.parquet",
+    "bytes": 14800612
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a1.parquet",
+    "bytes": 14547741
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a2.parquet",
+    "bytes": 15145439
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a3.parquet",
+    "bytes": 14955782
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a4.parquet",
+    "bytes": 14756009
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a5.parquet",
+    "bytes": 14714137
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a6.parquet",
+    "bytes": 14856082
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a7.parquet",
+    "bytes": 14646663
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a8.parquet",
+    "bytes": 14882729
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a9.parquet",
+    "bytes": 14874552
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a10.parquet",
+    "bytes": 14877930
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a11.parquet",
+    "bytes": 15166738
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a12.parquet",
+    "bytes": 15122428
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a13.parquet",
+    "bytes": 14889257
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a14.parquet",
+    "bytes": 15059667
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a15.parquet",
+    "bytes": 14685216
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a16.parquet",
+    "bytes": 14797148
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a17.parquet",
+    "bytes": 14533515
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a18.parquet",
+    "bytes": 14993627
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a19.parquet",
+    "bytes": 14626185
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a20.parquet",
+    "bytes": 15093856
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a21.parquet",
+    "bytes": 15107893
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a22.parquet",
+    "bytes": 14974880
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a23.parquet",
+    "bytes": 14870739
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a24.parquet",
+    "bytes": 15146351
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a25.parquet",
+    "bytes": 15142995
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a26.parquet",
+    "bytes": 14849055
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a27.parquet",
+    "bytes": 15063697
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a28.parquet",
+    "bytes": 14707491
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a29.parquet",
+    "bytes": 14823953
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a30.parquet",
+    "bytes": 14874597
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a31.parquet",
+    "bytes": 14863869
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a32.parquet",
+    "bytes": 14802717
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a33.parquet",
+    "bytes": 14981603
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a34.parquet",
+    "bytes": 14735708
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a35.parquet",
+    "bytes": 14979760
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a36.parquet",
+    "bytes": 14967810
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a37.parquet",
+    "bytes": 15137408
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a38.parquet",
+    "bytes": 14823585
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a39.parquet",
+    "bytes": 14870252
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a40.parquet",
+    "bytes": 15145182
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a41.parquet",
+    "bytes": 14546472
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a42.parquet",
+    "bytes": 15053246
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a43.parquet",
+    "bytes": 14945661
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a44.parquet",
+    "bytes": 14877383
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a45.parquet",
+    "bytes": 14623031
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a46.parquet",
+    "bytes": 15051295
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p20-a47.parquet",
+    "bytes": 14831166
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a0.parquet",
+    "bytes": 14874379
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a1.parquet",
+    "bytes": 14940248
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a2.parquet",
+    "bytes": 14819865
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a3.parquet",
+    "bytes": 14941565
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a4.parquet",
+    "bytes": 15093797
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a5.parquet",
+    "bytes": 14903509
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a6.parquet",
+    "bytes": 14657269
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a7.parquet",
+    "bytes": 14769134
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a8.parquet",
+    "bytes": 15087269
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a9.parquet",
+    "bytes": 15143985
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a10.parquet",
+    "bytes": 15053535
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a11.parquet",
+    "bytes": 15008021
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a12.parquet",
+    "bytes": 15148274
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a13.parquet",
+    "bytes": 14991975
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a14.parquet",
+    "bytes": 15127744
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a15.parquet",
+    "bytes": 15121291
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a16.parquet",
+    "bytes": 15048115
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a17.parquet",
+    "bytes": 15007102
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a18.parquet",
+    "bytes": 14926382
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a19.parquet",
+    "bytes": 14767805
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a20.parquet",
+    "bytes": 14952376
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a21.parquet",
+    "bytes": 14662734
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a22.parquet",
+    "bytes": 15083625
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a23.parquet",
+    "bytes": 14875891
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a24.parquet",
+    "bytes": 14809484
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a25.parquet",
+    "bytes": 14915185
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a26.parquet",
+    "bytes": 15061535
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a27.parquet",
+    "bytes": 15078655
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a28.parquet",
+    "bytes": 15014440
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a29.parquet",
+    "bytes": 14925229
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a30.parquet",
+    "bytes": 15139308
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a31.parquet",
+    "bytes": 14987290
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a32.parquet",
+    "bytes": 14999221
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a33.parquet",
+    "bytes": 14847666
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a34.parquet",
+    "bytes": 14949280
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a35.parquet",
+    "bytes": 14876822
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a36.parquet",
+    "bytes": 15040173
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a37.parquet",
+    "bytes": 15003657
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a38.parquet",
+    "bytes": 14850311
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a39.parquet",
+    "bytes": 14772105
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a40.parquet",
+    "bytes": 15139822
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a41.parquet",
+    "bytes": 14569207
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a42.parquet",
+    "bytes": 14642103
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a43.parquet",
+    "bytes": 14810169
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a44.parquet",
+    "bytes": 14937543
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a45.parquet",
+    "bytes": 15016903
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a46.parquet",
+    "bytes": 14672027
+  },
+  {
+    "path": "pacing_v11/auctionnet_lab/runs/pacing_protocol_v11_1412b714/data/pack-20-21/p21-a47.parquet",
+    "bytes": 14589461
+  }
+]

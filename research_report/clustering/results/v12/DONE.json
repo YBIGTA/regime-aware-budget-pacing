@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE",
+  "rows": 13536,
+  "hdbscan_available": true,
+  "notes": [
+    "matplotlib 미설치: 그림 대신 PCA CSV를 확인하세요.",
+    "matplotlib 미설치: 그림 대신 PCA CSV를 확인하세요.",
+    "matplotlib 미설치: 그림 대신 PCA CSV를 확인하세요.",
+    "matplotlib 미설치: 그림 대신 PCA CSV를 확인하세요."
+  ]
+}

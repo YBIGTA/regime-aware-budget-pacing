@@ -1,0 +1,22 @@
+{
+  "kmeans": {
+    "key": "kmeans_2",
+    "family": "kmeans",
+    "parameter": "{\"k\": 2}",
+    "clusters": 2,
+    "coverage": 1.0,
+    "noise_fraction": 0.0,
+    "largest_cluster_share": 0.9642857142857143,
+    "silhouette_assigned": 0.9193495535965986
+  },
+  "hdbscan": {
+    "key": "hdbscan_0.02_30",
+    "family": "hdbscan",
+    "parameter": "{\"fraction\": 0.02, \"min_samples\": 30}",
+    "clusters": 2,
+    "coverage": 0.7139136904761905,
+    "noise_fraction": 0.28608630952380953,
+    "largest_cluster_share": 0.6898561507936508,
+    "silhouette_assigned": 0.761855564226226
+  }
+}

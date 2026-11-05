@@ -1,0 +1,5 @@
+predictor,evaluated_inliers,accuracy,balanced_accuracy
+global_majority,4496,0.96129893238434161,0.5
+advertiser_only,4496,0.96129893238434161,0.5
+time_only,4496,0.96129893238434161,0.5
+advertiser_and_time,4496,0.96129893238434161,0.5
