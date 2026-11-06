@@ -1,0 +1,169 @@
+{
+  "episodes": [
+    {
+      "day": 1000,
+      "tape_sha256": "078481caf6fb57c1d4d7c0022a12fbe9748d923550f765c96c1584e5b88f3a7b"
+    },
+    {
+      "day": 1001,
+      "tape_sha256": "4298a4e13739aa401ace1e7b3238c83e1ad6264e09e38a8af5fcf4b2b32b02bc"
+    },
+    {
+      "day": 1002,
+      "tape_sha256": "e00e7b841bfa98d1fa0d15ec9848c686504cdd24de92ff5c176bc16792b6cffa"
+    },
+    {
+      "day": 1003,
+      "tape_sha256": "41f689fe8c3b093a4f31445c9f439dfce5fcdcd12c7898a6003b92352a832e20"
+    },
+    {
+      "day": 1004,
+      "tape_sha256": "389cd34d68c9c29e08df35c1329b189be008eaedff0d684d432154cf99b2b297"
+    },
+    {
+      "day": 1005,
+      "tape_sha256": "5bf7cd548fd34c700abefc2f731bf6d548fe09babf92edecd8892df949b2bcd2"
+    },
+    {
+      "day": 1006,
+      "tape_sha256": "212822a4bf606c31ae98af77ebdeab2f417485c9434ca19dd989f324c6807848"
+    },
+    {
+      "day": 1007,
+      "tape_sha256": "512094a092bca07e2efd001e2cca74547a8661f53d7d41dce5a9852ab4944987"
+    },
+    {
+      "day": 1008,
+      "tape_sha256": "28241b119e2dc99c9d56733f12db699e19f279a596b25b038079a53f149c0058"
+    },
+    {
+      "day": 1009,
+      "tape_sha256": "e8326ed45a549a51c233b097bc42fb01834372918434dcdae977284a342abae1"
+    },
+    {
+      "day": 1010,
+      "tape_sha256": "cf11195964209a2637cfedca314ad66338fa7fc85687bdb1db333e65e44e947e"
+    },
+    {
+      "day": 1011,
+      "tape_sha256": "dff17c3da8cd87dfa20cad5ffaf9f29bbe5d89390de7c5621a6af07c07709a29"
+    },
+    {
+      "day": 1012,
+      "tape_sha256": "40ab040d87f81d4a123138359cf9383df5efee5deda18ac38248ba5267555c9e"
+    },
+    {
+      "day": 1013,
+      "tape_sha256": "77a0053a78d69e541484525a8fe1f382b62769e9672b05ca5db3251127a7ad51"
+    },
+    {
+      "day": 1014,
+      "tape_sha256": "e388b0fb5c17da00cc6e60f07eeeae4380fbae873c8bcd6a5b00758b550c8aa9"
+    },
+    {
+      "day": 1015,
+      "tape_sha256": "ef0ca4cc825a8355b4b819a84f02986f823ddba42c279720443a24ef9768d13e"
+    },
+    {
+      "day": 1016,
+      "tape_sha256": "e19e8454499be03e70a19a9f8b72ce26b8ded3398de87d39b2b36b14c526b05f"
+    },
+    {
+      "day": 1017,
+      "tape_sha256": "2838c42ad3c6900cf264f234e10bfed867a73f6f7f7624416bcb042ed40a4790"
+    },
+    {
+      "day": 1018,
+      "tape_sha256": "8fcc7932d549fa7e9e4def5b17d16d93e65d3cb965f822deb2d18d55a83deb34"
+    },
+    {
+      "day": 1019,
+      "tape_sha256": "b13a7fd0c2b37285ad7200d86f24112a118f54ecaa5cb6085217a4259d51cd41"
+    },
+    {
+      "day": 1020,
+      "tape_sha256": "43d6b82d7deb3f45b7082b2809c57cb4ed0245b9ecff3437f2455badd27b0eb7"
+    },
+    {
+      "day": 1021,
+      "tape_sha256": "12321afb83da48cd6615804f36b01a9565764d14566e3c2d82a5ed6ed67e6804"
+    },
+    {
+      "day": 1022,
+      "tape_sha256": "a6186a42afcedd5781edab38a815fb73fbe144816712b4aec7620baa0f665647"
+    },
+    {
+      "day": 1023,
+      "tape_sha256": "f642b98031619b43ac4f49e33279f01abc2e5f0084cd70d7a14174fb9ea01f07"
+    },
+    {
+      "day": 1024,
+      "tape_sha256": "40c2df88270ee52c28919387ffb8e708129e948af44b50da2381aa2924873d34"
+    },
+    {
+      "day": 1025,
+      "tape_sha256": "24d442a01b237805b438402742dd6055b30500dac56f52e407a7c6d976b36635"
+    },
+    {
+      "day": 1026,
+      "tape_sha256": "fb170b1d549a4393cc14974b43baf95be4491f44d3a681cbc51f846ce3fbb892"
+    },
+    {
+      "day": 1027,
+      "tape_sha256": "b4c12baf1965fabed94582396ef2050a8eb8b6766471d46a3accc3c6e10560d3"
+    },
+    {
+      "day": 1028,
+      "tape_sha256": "83844f3224722f970f918edf290caa8b2bd8bbfa36e123fae0a30bf14bb5c5ca"
+    },
+    {
+      "day": 1029,
+      "tape_sha256": "da66ae9a3b7dd9466ac79165b5abb20d50c31968ba06c1f6e2e5dd5859126fe7"
+    },
+    {
+      "day": 1030,
+      "tape_sha256": "1fa6ad7810f400904de00f7316346881650857d6f346ee452b6563a5a2b18573"
+    },
+    {
+      "day": 1031,
+      "tape_sha256": "597c2901685b281a3da9e4b8cee0f938aa45acf17df504be6e31b0fa0560e220"
+    },
+    {
+      "day": 1032,
+      "tape_sha256": "a64e7f8b2186d101a2e073e3317afdf1b23259aabc445884b8809963fa84425e"
+    },
+    {
+      "day": 1033,
+      "tape_sha256": "8cf54a7e1d5cd3c6f4f6c9edba9fa887339e54bb0c486ca0d56b5b77fac95d7c"
+    },
+    {
+      "day": 1034,
+      "tape_sha256": "508168ebdd7c3b789f5d5906c92a678546becbeff16061d618c66c2a261e9e5d"
+    },
+    {
+      "day": 1035,
+      "tape_sha256": "d7916239d2ef905a95a0088eb3ecce17e76865996732fcd9ea78b134a576780d"
+    },
+    {
+      "day": 1036,
+      "tape_sha256": "73771bb25001d71906fdf84fc68d52cf04eb407e94b218e728cd7b3f6f56f544"
+    },
+    {
+      "day": 1037,
+      "tape_sha256": "1d6a6d09f3fdec38b30f4067dbd46a3c2b10328dfe441b981d53743b8f7b5846"
+    },
+    {
+      "day": 1038,
+      "tape_sha256": "0b6890ffe2e11ae7aa10a012f775f9cc111f582698ec4d68627197a3b9a317ec"
+    },
+    {
+      "day": 1039,
+      "tape_sha256": "50e3ab31df3bf9df729bcecab46122244d74132c237359e01de11cfc1d24cd20"
+    }
+  ],
+  "sha256": "449a5a814b8f2c45f5bce3f4a21a42171e617615f64ef42a9ffeb3b7f5786e80",
+  "target": "realized next interval spend / budget",
+  "fit_rule": "B/C use all same rows including budget-censored outcomes; predict realized budget-constrained spend. Remaining budget is encoded by budget and spent fraction. Current-row censor flag is label metadata, NOT a model input",
+  "features": "candidate, time fraction, log budget, spent fraction, error; then H past intervals: present mask, action, spend/B, log1p count, win rate, base mean, censor flag",
+  "row_count": 11520
+}

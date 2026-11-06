@@ -1,0 +1,11 @@
+{
+  "added_search_equivalent": false,
+  "delta_mean": -0.0002691937793641151,
+  "bootstrap95": [
+    -0.0003088504905994315,
+    -0.00023228937778880878
+  ],
+  "practical_margin": 0.0002,
+  "parameter_near_boundary": true,
+  "note": "Development convergence diagnostic, not final-test significance or a proof of optimality."
+}

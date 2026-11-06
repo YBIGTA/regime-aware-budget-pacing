@@ -1,0 +1,13 @@
+{
+  "archive_sha256": "624b766c090f1abcc6740777dfc169ff05855ad0291e9602c8ba4985df75a687",
+  "archive_bytes": 29012652,
+  "original_file_count": 47008,
+  "original_total_bytes": 366342617,
+  "parts": [
+    {
+      "name": "A_originals.tar.gz.part0001",
+      "bytes": 29012652,
+      "sha256": "624b766c090f1abcc6740777dfc169ff05855ad0291e9602c8ba4985df75a687"
+    }
+  ]
+}

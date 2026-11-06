@@ -1,0 +1,39 @@
+{
+  "status": "KI_RANGE_CHECK_PASSED",
+  "model": "A",
+  "parameters": {
+    "kp": 49.54338501800235,
+    "ki": 3000.0,
+    "m0": 0.26387675332473387
+  },
+  "validation": {
+    "ki": 3000.0,
+    "objective": 0.002241257322991008,
+    "tracking_error": 0.001359149835363006,
+    "unspent": 0.0008821074876280021,
+    "multiplier_tv": 0.08585295319327348
+  },
+  "same_day_audit_before": {
+    "objective": 0.00251035574561981,
+    "tracking_error": 0.0017742948090048347,
+    "unspent": 0.0007360609366149757,
+    "multiplier_tv": 0.07444911205462026
+  },
+  "same_day_audit_after": {
+    "objective": 0.0023203505577877597,
+    "tracking_error": 0.001611698760139136,
+    "unspent": 0.0007086517976486234,
+    "multiplier_tv": 0.08498686490688842
+  },
+  "audit_J_difference": -0.00019000518783205092,
+  "audit_difference_bootstrap95": [
+    -0.00024945065510722006,
+    -0.000131999293438793
+  ],
+  "ki_upper_checked": 1000000.0,
+  "ki_upper_worse_on_development": true,
+  "common_cold_start_for_ABC": 0.26387675332473387,
+  "comparison_rule": "Primary ABC: common selected PI gains and cold start; secondary: equal end-to-end search budgets.",
+  "test_opened": false,
+  "scope": "Completed declared finite search and Ki range check. Not proof of global optimum or real-market validity."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "MORE_DEVELOPMENT_REQUIRED",
+  "selected": {
+    "kp": 49.54338501800235,
+    "ki": 1000.0,
+    "m0": 0.26387675332473387,
+    "objective": 0.0024251724547666308,
+    "tracking_error": 0.0015167287531349216,
+    "unspent": 0.0009084437016317093,
+    "multiplier_tv": 0.07532664329994553
+  },
+  "audit": {
+    "added_search_equivalent": false,
+    "delta_mean": -0.0002691937793641151,
+    "bootstrap95": [
+      -0.0003088504905994315,
+      -0.00023228937778880878
+    ],
+    "practical_margin": 0.0002,
+    "parameter_near_boundary": true,
+    "note": "Development convergence diagnostic, not final-test significance or a proof of optimality."
+  },
+  "test_opened": false
+}
