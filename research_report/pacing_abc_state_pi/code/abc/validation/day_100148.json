@@ -1,0 +1,38 @@
+{
+  "A": {
+    "day": 100148,
+    "tape_sha256": "5a0fa08b4e2778fa5fa5811a9d8b436f7f391e7b4d3bf7fad2a709072934b0be",
+    "tracking_error": 0.0009389741346705889,
+    "unspent": 6.61893646237699e-05,
+    "objective": 0.0010051634992943588,
+    "multiplier_tv": 0.06254102531785875,
+    "max_ahead": 0.004321214852689215,
+    "saturation_fraction": 0.0,
+    "capacity_shortfall": 0.0,
+    "budget_censored_ticks": 1
+  },
+  "B": {
+    "day": 100148,
+    "tape_sha256": "5a0fa08b4e2778fa5fa5811a9d8b436f7f391e7b4d3bf7fad2a709072934b0be",
+    "tracking_error": 0.0009327577691335783,
+    "unspent": 4.0719599070593304e-05,
+    "objective": 0.0009734773682041716,
+    "multiplier_tv": 0.08041163097371182,
+    "max_ahead": 0.0043771803673584575,
+    "saturation_fraction": 0.0,
+    "capacity_shortfall": 0.0,
+    "budget_censored_ticks": 1
+  },
+  "C": {
+    "day": 100148,
+    "tape_sha256": "5a0fa08b4e2778fa5fa5811a9d8b436f7f391e7b4d3bf7fad2a709072934b0be",
+    "tracking_error": 0.0009721114816986598,
+    "unspent": 9.896038822876374e-05,
+    "objective": 0.0010710718699274235,
+    "multiplier_tv": 0.08186103899115033,
+    "max_ahead": 0.006337882423338383,
+    "saturation_fraction": 0.0,
+    "capacity_shortfall": 0.0,
+    "budget_censored_ticks": 1
+  }
+}
