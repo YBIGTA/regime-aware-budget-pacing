@@ -1,0 +1,42 @@
+{
+  "100065": {
+    "budget": 4063.158032174229,
+    "score_cap1_0": {
+      "tracking_error": 0.00322959468188779,
+      "unspent": 0.021605190785831452
+    },
+    "score_cap1_2": {
+      "tracking_error": 0.0013106856511500696,
+      "unspent": 0.0012873026038873192
+    },
+    "common_payment_delta": 37.157561084218074,
+    "common_wins": 3651,
+    "only12_spend": 114.74407347550198,
+    "only12_wins": 85,
+    "only1_spend_neg": -69.34684399643618,
+    "only1_wins": 67,
+    "total_spend_delta": 82.55479056328386,
+    "spend_delta_check": 82.55479056328431,
+    "net_win_change": 18
+  },
+  "100080": {
+    "budget": 625.3493911166235,
+    "score_cap1_0": {
+      "tracking_error": 0.0017328159080848208,
+      "unspent": 1.644172438364233e-05
+    },
+    "score_cap1_2": {
+      "tracking_error": 0.0017349912204656325,
+      "unspent": 0.0010850693911544917
+    },
+    "common_payment_delta": 0.2045832045796151,
+    "common_wins": 1253,
+    "only12_spend": 8.454181490051132,
+    "only12_wins": 13,
+    "only1_spend_neg": -9.327030355375694,
+    "only1_wins": 17,
+    "total_spend_delta": -0.6682656607449466,
+    "spend_delta_check": -0.6682656607455328,
+    "net_win_change": -4
+  }
+}
