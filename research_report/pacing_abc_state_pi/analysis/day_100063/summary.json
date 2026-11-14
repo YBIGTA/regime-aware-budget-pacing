@@ -1,0 +1,25 @@
+{
+  "day": 100063,
+  "model": "B_state_PI",
+  "tape_sha256": "b0c2c7ef61fc37f7c6306769be59bb7b1e82f49a01066cd713edf5df51ace0fe",
+  "budget": 2827.5964725620097,
+  "tracking_error": 0.008560937338769132,
+  "unspent": 0.0001453014620592663,
+  "objective": 0.008706238800828398,
+  "max_absolute_gap": 171.32057589647138,
+  "max_gap_fraction_of_budget": 0.060588764188562724,
+  "max_gap_direction": "below target",
+  "max_gap_tick": 232,
+  "max_gap_hour": 19.416666666666668,
+  "final_gap": 0.41085390157695656,
+  "final_gap_fraction_of_budget": 0.00014530146205929195,
+  "gap_recovered_fraction": 0.9976018414634257,
+  "recovery_hours": {
+    "50_percent_of_peak_gap": 19.75,
+    "25_percent_of_peak_gap": 19.916666666666668,
+    "10_percent_of_peak_gap": 20.0,
+    "1_percent_of_peak_gap": 20.25
+  },
+  "first_target_crossing_hour_after_peak": 20.333333333333332,
+  "stored_metrics_reproduced": true
+}
