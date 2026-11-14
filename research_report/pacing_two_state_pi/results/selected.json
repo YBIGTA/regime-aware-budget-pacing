@@ -1,0 +1,24 @@
+{
+  "fixed": {
+    "kp": 49.54338501800235,
+    "ki": 210.0
+  },
+  "two_state": {
+    "behind": {
+      "kp": 58.461194321242765,
+      "ki": 3000.0
+    },
+    "other": {
+      "kp": 49.54338501800235,
+      "ki": 63.75
+    }
+  },
+  "two_state_behind_fraction_mean": 0.011319444444444446,
+  "two_state_days_with_behind": 116,
+  "two_state_switches_per_day": 1.825,
+  "fixed_behind_fraction_mean": 0.013645833333333334,
+  "candidates_200": {
+    "fixed": 60,
+    "two_state": 102
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "check": {
+    "seconds": 2.5
+  },
+  "search40": {
+    "seconds": 150.0,
+    "rollouts": 36000
+  },
+  "eval200": {
+    "seconds": 75.7,
+    "rollouts": 18000,
+    "fixed": 30,
+    "two_state": 60
+  },
+  "refine1": {
+    "seconds": 51.1,
+    "rollouts": 11200,
+    "candidates": 56
+  },
+  "refine2": {
+    "seconds": 16.0,
+    "rollouts": 3200,
+    "candidates": 16
+  }
+}

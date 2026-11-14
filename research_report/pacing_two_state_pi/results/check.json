@@ -1,0 +1,174 @@
+{
+  "checks": {
+    "A": "883c715751539a3364d6537dd43a37ec321eb2ee7bca1d17744456626d1ed0c0",
+    "protocol": "0ca23474bcfa47c47da74a1d912c36e441ae77ad9f69bf35d56a280392faa640",
+    "predictors": "74660874f26914876aacf80fed8954044ef6751338d8887eb968206a2da64155",
+    "core": "c7ad433fedd4cdb3744e1c8753547b092b6ad10211346258663d49f4c408442c",
+    "numpy": "2.3.5",
+    "sklearn": "1.8.0"
+  },
+  "threshold": 0.005,
+  "seconds_per_rollout_reference_fixed": 0.02605891227722168,
+  "seconds_per_rollout_two_state": 0.025679826736450195,
+  "same_gains_equals_fixed": [
+    {
+      "day": 100000,
+      "gains": [
+        49.54338501800235,
+        300.0
+      ],
+      "identical_trace": true,
+      "objective_fixed": 0.0013261870828189673,
+      "objective_two_state": 0.0013261870828189673
+    },
+    {
+      "day": 100000,
+      "gains": [
+        99.0867700360047,
+        1000.0
+      ],
+      "identical_trace": true,
+      "objective_fixed": 0.0016332513949316426,
+      "objective_two_state": 0.0016332513949316426
+    },
+    {
+      "day": 100000,
+      "gains": [
+        24.771692509001173,
+        0.0
+      ],
+      "identical_trace": true,
+      "objective_fixed": 0.002538626671949267,
+      "objective_two_state": 0.002538626671949267
+    },
+    {
+      "day": 100001,
+      "gains": [
+        49.54338501800235,
+        300.0
+      ],
+      "identical_trace": true,
+      "objective_fixed": 0.0012304490869599442,
+      "objective_two_state": 0.0012304490869599442
+    },
+    {
+      "day": 100001,
+      "gains": [
+        99.0867700360047,
+        1000.0
+      ],
+      "identical_trace": true,
+      "objective_fixed": 0.0016253361057448046,
+      "objective_two_state": 0.0016253361057448046
+    },
+    {
+      "day": 100001,
+      "gains": [
+        24.771692509001173,
+        0.0
+      ],
+      "identical_trace": true,
+      "objective_fixed": 0.0023554426859517725,
+      "objective_two_state": 0.0023554426859517725
+    },
+    {
+      "day": 100002,
+      "gains": [
+        49.54338501800235,
+        300.0
+      ],
+      "identical_trace": true,
+      "objective_fixed": 0.0010508696827295039,
+      "objective_two_state": 0.0010508696827295039
+    },
+    {
+      "day": 100002,
+      "gains": [
+        99.0867700360047,
+        1000.0
+      ],
+      "identical_trace": true,
+      "objective_fixed": 0.0009630636677835184,
+      "objective_two_state": 0.0009630636677835184
+    },
+    {
+      "day": 100002,
+      "gains": [
+        24.771692509001173,
+        0.0
+      ],
+      "identical_trace": true,
+      "objective_fixed": 0.0021977658836410904,
+      "objective_two_state": 0.0021977658836410904
+    }
+  ],
+  "stored_reproduction": [
+    {
+      "model": "B_fixed_PI",
+      "day": 100000,
+      "tape_match": true,
+      "abs_diff_objective": 0.0
+    },
+    {
+      "model": "B_fixed_PI",
+      "day": 100001,
+      "tape_match": true,
+      "abs_diff_objective": 0.0
+    },
+    {
+      "model": "B_fixed_PI",
+      "day": 100002,
+      "tape_match": true,
+      "abs_diff_objective": 0.0
+    },
+    {
+      "model": "B_state_PI",
+      "day": 100000,
+      "tape_match": true,
+      "abs_diff_objective": 0.0
+    }
+  ],
+  "state_switch_checks": {
+    "ticks": 1440,
+    "behind_ticks": 23,
+    "switch_ticks": 42,
+    "class_errors": 0,
+    "gain_errors": 0,
+    "integral_carry_errors": 0,
+    "days": [
+      100000,
+      100001,
+      100002,
+      100003,
+      100004
+    ]
+  },
+  "switch_example": [
+    {
+      "tick": 1,
+      "error_before": 0.003369538307947409,
+      "behind": false,
+      "kp": 24.771692509001173,
+      "ki": 75.0,
+      "integral_before": 0.0,
+      "integral": 0.0008774839343613044,
+      "integral_blocked": false
+    },
+    {
+      "tick": 2,
+      "error_before": 0.006416903721425573,
+      "behind": true,
+      "kp": 99.0867700360047,
+      "ki": 1000.0,
+      "integral_before": 0.0008774839343613044,
+      "integral": 0.0008774839343613044,
+      "integral_blocked": true
+    }
+  ],
+  "parallel": {
+    "workers": 10,
+    "rollouts": 200,
+    "seconds": 1.7505009174346924,
+    "rollouts_per_second": 114.25301067142205
+  }
+}
