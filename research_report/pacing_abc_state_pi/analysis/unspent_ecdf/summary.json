@@ -1,0 +1,53 @@
+{
+  "validation_days": [
+    100000,
+    100199
+  ],
+  "day_count": 200,
+  "stored_values_are": "ratios; multiplied by 100 for percent display",
+  "threshold_ratio": 0.001,
+  "threshold_percent": 0.1,
+  "sources": {
+    "fixed_and_state_cap_1_0": "research_report/pacing_abc_state_pi/results/daily_scores.csv",
+    "state_cap_1_2": "research_report/pacing_abc_state_pi/analysis/unspent_ecdf/cap_1_2_daily.csv"
+  },
+  "tape_hash_mismatches": 0,
+  "cap_1_2_replay_seconds": 7.395422125002369,
+  "groups": {
+    "B_fixed_PI": {
+      "mean_unspent_ratio": 0.00076141105564894,
+      "mean_unspent_percent": 0.07614110556489401,
+      "at_or_below_0_1_percent_days": 150,
+      "at_or_below_0_1_percent_fraction": 0.75,
+      "at_or_below_0_1_percent_percent": 75.0
+    },
+    "B_state_PI_cap_1_0": {
+      "mean_unspent_ratio": 0.0005589390457615151,
+      "mean_unspent_percent": 0.05589390457615151,
+      "at_or_below_0_1_percent_days": 174,
+      "at_or_below_0_1_percent_fraction": 0.87,
+      "at_or_below_0_1_percent_percent": 87.0
+    },
+    "B_state_PI_cap_1_2": {
+      "mean_unspent_ratio": 0.00044548828732651204,
+      "mean_unspent_percent": 0.0445488287326512,
+      "at_or_below_0_1_percent_days": 174,
+      "at_or_below_0_1_percent_fraction": 0.87,
+      "at_or_below_0_1_percent_percent": 87.0
+    }
+  },
+  "comparisons": {
+    "state_pi_vs_fixed_pi": {
+      "improved_days": 141,
+      "worsened_days": 59,
+      "tied_days": 0,
+      "tie_atol_ratio": 1e-12
+    },
+    "cap_1_2_vs_cap_1_0": {
+      "improved_days": 83,
+      "worsened_days": 113,
+      "tied_days": 4,
+      "tie_atol_ratio": 1e-12
+    }
+  }
+}
