@@ -1,0 +1,44 @@
+{
+  "validation_days": [
+    100000,
+    100199
+  ],
+  "day_count": 200,
+  "ticks_per_day": 288,
+  "interval_minutes": 5,
+  "rows_per_condition": 57600,
+  "date_alignment": true,
+  "time_alignment": true,
+  "tape_hash_mismatches": 0,
+  "metric_atol": 1e-09,
+  "maximum_tracking_error_replay_difference": 1.9068178242973022e-11,
+  "maximum_unspent_replay_difference": 1.2923251357932486e-10,
+  "replay_seconds": 22.2803547908552,
+  "sources": {
+    "stored_fixed_and_state_cap_1_0_daily": "research_report/pacing_abc_state_pi/results/daily_scores.csv",
+    "stored_state_cap_1_2_daily": "research_report/pacing_abc_state_pi/analysis/unspent_ecdf/cap_1_2_daily.csv",
+    "replayed_5_minute_records": "research_report/pacing_abc_state_pi/analysis/tracking_error_profiles/tracking_error_5min.csv.gz",
+    "daily_replay_check": "research_report/pacing_abc_state_pi/analysis/tracking_error_profiles/daily_replay_check.csv",
+    "time_profile_summary": "research_report/pacing_abc_state_pi/analysis/tracking_error_profiles/time_profile_summary.csv"
+  },
+  "figures": {
+    "state_pi": {
+      "png": "research_report/pacing_abc_state_pi/analysis/tracking_error_profiles/state-pi-tracking-profile.png",
+      "svg": "research_report/pacing_abc_state_pi/analysis/tracking_error_profiles/state-pi-tracking-profile.svg"
+    },
+    "cap": {
+      "png": "research_report/pacing_abc_state_pi/analysis/tracking_error_profiles/cap-tracking-profile.png",
+      "svg": "research_report/pacing_abc_state_pi/analysis/tracking_error_profiles/cap-tracking-profile.svg"
+    }
+  },
+  "profile_checks": {
+    "state_pi": {
+      "nonzero_median_ticks": 287,
+      "nonzero_iqr_ticks": 287
+    },
+    "cap": {
+      "nonzero_median_ticks": 0,
+      "nonzero_iqr_ticks": 0
+    }
+  }
+}
