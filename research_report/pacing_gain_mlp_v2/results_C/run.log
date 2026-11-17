@@ -1,0 +1,110 @@
+/Users/chanwoong/pacing_two_state_20261114/.venv/lib/python3.14/site-packages/cma/s.py:15: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+[E1b_sum_s1] 10/60 최저 0.186900% | 세대 최저 0.186900% | 58s
+[E1b_sum_s1] 20/60 최저 0.175254% | 세대 최저 0.175550% | 114s
+[E1b_sum_s1] 30/60 최저 0.172435% | 세대 최저 0.176179% | 171s
+[E1b_sum_s1] 40/60 최저 0.170822% | 세대 최저 0.170822% | 227s
+[E1b_sum_s1] 50/60 최저 0.165678% | 세대 최저 0.172050% | 283s
+[E1b_sum_s1] 60/60 최저 0.165678% | 세대 최저 0.168613% | 340s
+/Users/chanwoong/pacing_two_state_20261114/.venv/lib/python3.14/site-packages/cma/s.py:15: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+[E1b_guard_s1] 10/60 최저 0.189920% | 세대 최저 0.195732% | 58s
+[E1b_guard_s1] 20/60 최저 0.181149% | 세대 최저 0.181149% | 114s
+[E1b_guard_s1] 30/60 최저 0.177299% | 세대 최저 0.184648% | 171s
+[E1b_guard_s1] 40/60 최저 0.172598% | 세대 최저 0.178872% | 227s
+[E1b_guard_s1] 50/60 최저 0.172598% | 세대 최저 0.176291% | 284s
+[E1b_guard_s1] 60/60 최저 0.170916% | 세대 최저 0.172315% | 340s
+/Users/chanwoong/pacing_two_state_20261114/.venv/lib/python3.14/site-packages/cma/s.py:15: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+[E2_sum_s1] 10/60 최저 0.179113% | 세대 최저 0.183535% | 59s
+[E2_sum_s1] 20/60 최저 0.174898% | 세대 최저 0.177328% | 116s
+[E2_sum_s1] 30/60 최저 0.170674% | 세대 최저 0.172618% | 174s
+[E2_sum_s1] 40/60 최저 0.168577% | 세대 최저 0.170476% | 231s
+[E2_sum_s1] 50/60 최저 0.168003% | 세대 최저 0.174609% | 288s
+[E2_sum_s1] 60/60 최저 0.166137% | 세대 최저 0.168558% | 346s
+/Users/chanwoong/pacing_two_state_20261114/.venv/lib/python3.14/site-packages/cma/s.py:15: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+[E2_guard_s1] 10/60 최저 0.178401% | 세대 최저 0.182444% | 59s
+[E2_guard_s1] 20/60 최저 0.175871% | 세대 최저 0.180855% | 116s
+[E2_guard_s1] 30/60 최저 0.175243% | 세대 최저 0.178541% | 173s
+[E2_guard_s1] 40/60 최저 0.172631% | 세대 최저 0.176268% | 231s
+[E2_guard_s1] 50/60 최저 0.170481% | 세대 최저 0.173224% | 288s
+[E2_guard_s1] 60/60 최저 0.170002% | 세대 최저 0.173072% | 345s
+/Users/chanwoong/pacing_two_state_20261114/.venv/lib/python3.14/site-packages/cma/s.py:15: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+[E1b_sum_s2] 10/60 최저 0.182290% | 세대 최저 0.182290% | 58s
+[E1b_sum_s2] 20/60 최저 0.174329% | 세대 최저 0.174329% | 114s
+[E1b_sum_s2] 30/60 최저 0.171243% | 세대 최저 0.175232% | 171s
+[E1b_sum_s2] 40/60 최저 0.169994% | 세대 최저 0.174825% | 227s
+[E1b_sum_s2] 50/60 최저 0.169592% | 세대 최저 0.172614% | 284s
+[E1b_sum_s2] 60/60 최저 0.169592% | 세대 최저 0.170770% | 340s
+/Users/chanwoong/pacing_two_state_20261114/.venv/lib/python3.14/site-packages/cma/s.py:15: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+[E1b_guard_s2] 10/60 최저 0.185404% | 세대 최저 0.189572% | 58s
+[E1b_guard_s2] 20/60 최저 0.176856% | 세대 최저 0.181348% | 114s
+[E1b_guard_s2] 30/60 최저 0.174251% | 세대 최저 0.177487% | 170s
+[E1b_guard_s2] 40/60 최저 0.173898% | 세대 최저 0.176364% | 227s
+[E1b_guard_s2] 50/60 최저 0.171533% | 세대 최저 0.172669% | 283s
+[E1b_guard_s2] 60/60 최저 0.169703% | 세대 최저 0.170637% | 339s
+/Users/chanwoong/pacing_two_state_20261114/.venv/lib/python3.14/site-packages/cma/s.py:15: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+[E2_sum_s2] 10/60 최저 0.175268% | 세대 최저 0.176082% | 59s
+[E2_sum_s2] 20/60 최저 0.171979% | 세대 최저 0.172775% | 116s
+[E2_sum_s2] 30/60 최저 0.170965% | 세대 최저 0.175037% | 174s
+[E2_sum_s2] 40/60 최저 0.168486% | 세대 최저 0.170574% | 232s
+[E2_sum_s2] 50/60 최저 0.167896% | 세대 최저 0.171155% | 289s
+[E2_sum_s2] 60/60 최저 0.167653% | 세대 최저 0.168750% | 347s
+/Users/chanwoong/pacing_two_state_20261114/.venv/lib/python3.14/site-packages/cma/s.py:15: UserWarning: Could not import matplotlib.pyplot, therefore ``cma.plot()`` etc. is not available
+  _warnings.warn('Could not import matplotlib.pyplot, therefore'
+[E2_guard_s2] 10/60 최저 0.177437% | 세대 최저 0.185688% | 59s
+[E2_guard_s2] 20/60 최저 0.175168% | 세대 최저 0.175702% | 116s
+[E2_guard_s2] 30/60 최저 0.175168% | 세대 최저 0.178107% | 173s
+[E2_guard_s2] 40/60 최저 0.171605% | 세대 최저 0.173268% | 231s
+[E2_guard_s2] 50/60 최저 0.171605% | 세대 최저 0.173541% | 288s
+[E2_guard_s2] 60/60 최저 0.171605% | 세대 최저 0.172352% | 345s
+E2_guard_s1      mean_weights 추종 0.12269% 미소진 0.02740% 합산 0.15009% 벌점 0.15009%
+E1b_guard_s2     mean_weights 추종 0.12138% 미소진 0.03182% 합산 0.15320% 벌점 0.15320%
+E1b_guard_s2     weights      추종 0.12153% 미소진 0.03169% 합산 0.15322% 벌점 0.15322%
+E2_guard_s2      mean_weights 추종 0.12338% 미소진 0.03288% 합산 0.15626% 벌점 0.15626%
+E1b_guard_s1     mean_weights 추종 0.12424% 미소진 0.03005% 합산 0.15428% 벌점 0.15641%
+E2_guard_s1      weights      추종 0.12522% 미소진 0.02663% 합산 0.15185% 벌점 0.16380%
+E2_guard_s2      weights      추종 0.12520% 미소진 0.03126% 합산 0.15645% 벌점 0.16819%
+E1b_guard_s1     weights      추종 0.12603% 미소진 0.02439% 합산 0.15042% 벌점 0.17051%
+E2_sum_s1        mean_weights 추종 0.12893% 미소진 0.02028% 합산 0.14920% 벌점 0.19824%
+E2_sum_s2        mean_weights 추종 0.12825% 미소진 0.02224% 합산 0.15049% 벌점 0.19276%
+E2_sum_s1        weights      추종 0.12642% 미소진 0.02468% 합산 0.15110% 벌점 0.17511%
+E2_sum_s2        weights      추종 0.12744% 미소진 0.02504% 합산 0.15248% 벌점 0.18669%
+E1b_sum_s2       weights      추종 0.12692% 미소진 0.02679% 합산 0.15370% 벌점 0.18264%
+E1b_sum_s2       mean_weights 추종 0.12760% 미소진 0.02623% 합산 0.15384% 벌점 0.18963%
+E1b_sum_s1       weights      추종 0.13236% 미소진 0.02293% 합산 0.15529% 벌점 0.23870%
+E1b_sum_s1       mean_weights 추종 0.12690% 미소진 0.02945% 합산 0.15635% 벌점 0.18511%
+{
+ "sum": {
+  "model": "E2_sum_s1",
+  "weights": "mean_weights"
+ },
+ "guard": {
+  "model": "E2_guard_s1",
+  "weights": "mean_weights"
+ }
+}
+new_sum      추종 0.139204% 미소진 0.040530% 합산 0.179734% 변동 0.107031
+new_guard    추종 0.133148% 미소진 0.051535% 합산 0.184683% 변동 0.091747
+C_state_PI   추종 0.138814% 미소진 0.063211% 합산 0.202025% 변동 0.103108
+C_fixed_PI   추종 0.139151% 미소진 0.074232% 합산 0.213383% 변동 0.088812
+new_sum - C_state_PI tracking_error: +0.000390%p [-0.001232, +0.001970] 개선 84 악화 116
+new_sum - C_state_PI unspent: -0.022681%p [-0.029149, -0.016424] 개선 133 악화 67
+new_sum - C_state_PI objective: -0.022291%p [-0.029162, -0.015664] 개선 131 악화 69
+new_sum - C_state_PI multiplier_tv: +0.392289%p [+0.029366, +0.747170] 개선 79 악화 121
+new_sum - C_fixed_PI tracking_error: +0.000052%p [-0.001974, +0.002029] 개선 86 악화 114
+new_sum - C_fixed_PI unspent: -0.033702%p [-0.040997, -0.026610] 개선 144 악화 56
+new_sum - C_fixed_PI objective: -0.033649%p [-0.041636, -0.025902] 개선 142 악화 58
+new_sum - C_fixed_PI multiplier_tv: +1.821893%p [+1.492240, +2.148696] 개선 42 악화 158
+new_guard - C_state_PI tracking_error: -0.005666%p [-0.007096, -0.004299] 개선 141 악화 59
+new_guard - C_state_PI unspent: -0.011676%p [-0.017437, -0.006067] 개선 118 악화 82
+new_guard - C_state_PI objective: -0.017342%p [-0.023442, -0.011411] 개선 142 악화 58
+new_guard - C_state_PI multiplier_tv: -1.136186%p [-1.441459, -0.842387] 개선 130 악화 70
+new_guard - C_fixed_PI tracking_error: -0.006004%p [-0.007615, -0.004477] 개선 140 악화 60
+new_guard - C_fixed_PI unspent: -0.022697%p [-0.029186, -0.016539] 개선 132 악화 68
+new_guard - C_fixed_PI objective: -0.028700%p [-0.035784, -0.021964] 개선 137 악화 63
+new_guard - C_fixed_PI multiplier_tv: +0.293418%p [+0.035753, +0.545364] 개선 74 악화 126

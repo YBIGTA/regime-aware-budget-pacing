@@ -1,0 +1,21 @@
+{
+  "reproduce_B_state_PI": [
+    {
+      "day": 100000,
+      "tape_match": true,
+      "abs_diff_objective": 0.0
+    },
+    {
+      "day": 100001,
+      "tape_match": true,
+      "abs_diff_objective": 0.0
+    },
+    {
+      "day": 100002,
+      "tape_match": true,
+      "abs_diff_objective": 0.0
+    }
+  ],
+  "eight_input_zero_weight_equal": true,
+  "throughput_rollouts_per_s": 199.63500475074503
+}

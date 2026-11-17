@@ -1,0 +1,25 @@
+{
+  "te_ref_holdout": 0.0013249401089767744,
+  "picks": {
+    "sum": {
+      "model": "E2_sum_s1",
+      "weights": "mean_weights"
+    },
+    "guard": {
+      "model": "E2_guard_s1",
+      "weights": "weights"
+    }
+  },
+  "B_state_PI_holdout": {
+    "tracking_error": 0.0012870814907358845,
+    "unspent": 0.0003181226099510659,
+    "objective": 0.0016052041006869504,
+    "multiplier_tv": 0.08290833215023832
+  },
+  "anchor_holdout": {
+    "tracking_error": 0.0013249401089767744,
+    "unspent": 0.00037193411001618657,
+    "objective": 0.001696874218992961,
+    "multiplier_tv": 0.10071405811836094
+  }
+}

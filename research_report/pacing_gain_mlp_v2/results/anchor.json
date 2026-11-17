@@ -1,0 +1,29 @@
+{
+  "anchor": [
+    49.54338501800235,
+    150.0
+  ],
+  "anchor_train": {
+    "tracking_error": 0.0014524334097055392,
+    "unspent": 0.0004232309216929811,
+    "objective": 0.0018756643313985201
+  },
+  "B_state_PI_train": {
+    "tracking_error": 0.0014320267862382417,
+    "unspent": 0.00032395018887011046,
+    "objective": 0.0017559769751083522,
+    "multiplier_tv": 0.08122596003616885
+  },
+  "B_state_PI_holdout": {
+    "tracking_error": 0.0012870814907358845,
+    "unspent": 0.0003181226099510659,
+    "objective": 0.0016052041006869504,
+    "multiplier_tv": 0.08290833215023832
+  },
+  "anchor_holdout": {
+    "tracking_error": 0.0013249401089767744,
+    "unspent": 0.00037193411001618657,
+    "objective": 0.001696874218992961,
+    "multiplier_tv": 0.10071405811836094
+  }
+}
