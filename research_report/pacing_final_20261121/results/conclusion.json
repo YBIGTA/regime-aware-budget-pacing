@@ -1,0 +1,52 @@
+{
+  "primary_model": "G_A05",
+  "baseline": "B_CMA_sum",
+  "all_three_means_reduced": true,
+  "all_three_adjusted_upper_bounds_below_zero": true,
+  "comparisons": [
+    {
+      "new": "G_A05",
+      "baseline": "B_CMA_sum",
+      "metric": "tracking_error",
+      "difference": -8.33724143200084e-06,
+      "ci_low": -1.1257697216465408e-05,
+      "ci_high": -5.560590380566718e-06,
+      "interval_level": 0.9833333333333333,
+      "relative_reduction_pct": 0.5937357258181353,
+      "improved_days": 312,
+      "worsened_days": 188,
+      "tied_days": 0,
+      "scope": "confirmatory"
+    },
+    {
+      "new": "G_A05",
+      "baseline": "B_CMA_sum",
+      "metric": "unspent",
+      "difference": -2.6506813662442673e-05,
+      "ci_low": -4.832815616876711e-05,
+      "ci_high": -6.8481463275346385e-06,
+      "interval_level": 0.9833333333333333,
+      "relative_reduction_pct": 9.67202562706373,
+      "improved_days": 243,
+      "worsened_days": 257,
+      "tied_days": 0,
+      "scope": "confirmatory"
+    },
+    {
+      "new": "G_A05",
+      "baseline": "B_CMA_sum",
+      "metric": "multiplier_tv",
+      "difference": -0.0012425827541135306,
+      "ci_low": -0.0014438194594559505,
+      "ci_high": -0.0010432068066284197,
+      "interval_level": 0.9833333333333333,
+      "relative_reduction_pct": 1.274211590557266,
+      "improved_days": 388,
+      "worsened_days": 112,
+      "tied_days": 0,
+      "scope": "confirmatory"
+    }
+  ],
+  "candidate_changed_after_test": false,
+  "final_test_used": true
+}
