@@ -294,6 +294,57 @@ def replay_all(references):
     return errors, daily_checks, time.perf_counter() - started
 
 
+def read_existing_errors(references):
+    errors = {
+        condition: np.full((len(VALIDATION_DAYS), cfg.ticks), np.nan, dtype=float)
+        for condition in CONDITIONS
+    }
+    seen = {
+        condition: np.zeros((len(VALIDATION_DAYS), cfg.ticks), dtype=bool)
+        for condition in CONDITIONS
+    }
+    day_indexes = {day: index for index, day in enumerate(VALIDATION_DAYS)}
+
+    with gzip.open(TRACE_PATH, "rt", newline="") as file:
+        for row in csv.DictReader(file):
+            condition = row["condition"]
+            day = int(row["day"])
+            tick = int(row["tick"])
+            if condition not in errors or day not in day_indexes:
+                raise SystemExit(f"Unexpected trace row: {condition}, day {day}")
+            if not 0 <= tick < cfg.ticks:
+                raise SystemExit(f"Unexpected tick: {condition}, day {day}, tick {tick}")
+            day_index = day_indexes[day]
+            if seen[condition][day_index, tick]:
+                raise SystemExit(f"Duplicate trace row: {condition}, day {day}, tick {tick}")
+            if row["tape_sha256"] != references[condition][day]["tape_sha256"]:
+                raise SystemExit(f"Trace tape mismatch: {condition}, day {day}")
+            expected_minute = (tick + 1) * cfg.interval
+            if int(row["minute"]) != expected_minute:
+                raise SystemExit(
+                    f"Trace time mismatch: {condition}, day {day}, tick {tick}"
+                )
+            errors[condition][day_index, tick] = float(
+                row["abs_tracking_error_percent"]
+            )
+            seen[condition][day_index, tick] = True
+
+    for condition in CONDITIONS:
+        if not seen[condition].all():
+            missing = int(seen[condition].size - seen[condition].sum())
+            raise SystemExit(f"{condition}: missing {missing} five-minute trace rows")
+    return errors
+
+
+def read_daily_checks():
+    with DAILY_CHECK_PATH.open(newline="") as file:
+        rows = list(csv.DictReader(file))
+    expected = len(CONDITIONS) * len(VALIDATION_DAYS)
+    if len(rows) != expected:
+        raise SystemExit(f"Expected {expected} daily replay checks, found {len(rows)}")
+    return rows
+
+
 def summarize_profiles(errors):
     profiles = {}
     rows = []
@@ -301,12 +352,21 @@ def summarize_profiles(errors):
         control = errors[comparison["control"]]
         experiment = errors[comparison["experiment"]]
         reduction = control - experiment
+        control_mean = control.mean(axis=0)
+        experiment_mean = experiment.mean(axis=0)
+        reduction_mean = reduction.mean(axis=0)
+        identity_error = np.max(
+            np.abs(reduction_mean - (control_mean - experiment_mean))
+        )
+        if identity_error > 1e-12:
+            raise SystemExit(
+                f"Mean difference identity failed for {comparison['key']}: "
+                f"{identity_error}"
+            )
         profile = {
-            "control_mean": control.mean(axis=0),
-            "experiment_mean": experiment.mean(axis=0),
-            "reduction_median": np.median(reduction, axis=0),
-            "reduction_q25": np.quantile(reduction, 0.25, axis=0),
-            "reduction_q75": np.quantile(reduction, 0.75, axis=0),
+            "control_mean": control_mean,
+            "experiment_mean": experiment_mean,
+            "reduction_mean": reduction_mean,
         }
         profiles[comparison["key"]] = profile
         for tick in range(cfg.ticks):
@@ -366,51 +426,28 @@ def draw(comparison, profile):
     top.set_ylim(bottom=0)
     top.legend(loc="upper left", frameon=False, ncol=2)
 
-    bottom.fill_between(
-        hours,
-        profile["reduction_q25"],
-        profile["reduction_q75"],
-        color=reduction_color,
-        alpha=0.2,
-        linewidth=0,
-        label="25~75백분위수",
-    )
+    reduction = profile["reduction_mean"]
     bottom.plot(
         hours,
-        profile["reduction_median"],
+        reduction,
         color=reduction_color,
         linewidth=2.1,
-        label="중앙값",
     )
     bottom.axhline(0, color=neutral_color, linewidth=1.1)
-    bottom.set_ylabel("추종 오차 감소량 (%p)")
+    limit = max(float(np.max(np.abs(reduction))) * 1.1, 1e-6)
+    bottom.set_ylim(-limit, limit)
+    bottom.set_ylabel("평균 추종 오차 차이 (%p)")
     bottom.set_xlabel("시각")
-    bottom.legend(loc="upper left", frameon=False, ncol=2)
     bottom.text(
         0.99,
         0.04,
-        "양수 = 개선  ·  음수 = 악화",
+        "양수 = 실험군 개선  ·  음수 = 실험군 악화",
         transform=bottom.transAxes,
         ha="right",
         va="bottom",
         fontsize=10,
         color=neutral_color,
     )
-    if all(
-        np.all(np.abs(profile[key]) <= 1e-12)
-        for key in ("reduction_median", "reduction_q25", "reduction_q75")
-    ):
-        bottom.text(
-            0.5,
-            0.56,
-            "중앙값과 25~75백분위수가\n모든 시각에서 0선과 겹침",
-            transform=bottom.transAxes,
-            ha="center",
-            va="center",
-            fontsize=11,
-            color=neutral_color,
-        )
-
     for ax in axes:
         ax.set_xlim(0, 24)
         ax.set_xticks(np.arange(0, 25, 4))
@@ -438,7 +475,14 @@ def draw(comparison, profile):
 
 def main():
     references = read_daily_references()
-    errors, daily_checks, runtime_seconds = replay_all(references)
+    if "--replay" in sys.argv[1:] or not TRACE_PATH.exists():
+        errors, daily_checks, runtime_seconds = replay_all(references)
+        data_source_mode = "replayed_5_minute_trace"
+    else:
+        errors = read_existing_errors(references)
+        daily_checks = read_daily_checks()
+        runtime_seconds = None
+        data_source_mode = "existing_5_minute_trace"
     profiles = summarize_profiles(errors)
 
     plt.rcParams.update(
@@ -477,6 +521,7 @@ def main():
         "metric_atol": METRIC_ATOL,
         "maximum_tracking_error_replay_difference": maximum_tracking_difference,
         "maximum_unspent_replay_difference": maximum_unspent_difference,
+        "data_source_mode": data_source_mode,
         "replay_seconds": runtime_seconds,
         "sources": {
             "stored_fixed_and_state_cap_1_0_daily": str(STORED_DAILY.relative_to(REPO)),
@@ -494,16 +539,30 @@ def main():
         },
         "profile_checks": {
             comparison["key"]: {
-                "nonzero_median_ticks": int(
-                    np.sum(
-                        np.abs(profiles[comparison["key"]]["reduction_median"])
-                        > 1e-12
+                "difference_min_percent_points": float(
+                    np.min(profiles[comparison["key"]]["reduction_mean"])
+                ),
+                "difference_max_percent_points": float(
+                    np.max(profiles[comparison["key"]]["reduction_mean"])
+                ),
+                "symmetric_y_limit_percent_points": float(
+                    max(
+                        np.max(
+                            np.abs(profiles[comparison["key"]]["reduction_mean"])
+                        )
+                        * 1.1,
+                        1e-6,
                     )
                 ),
-                "nonzero_iqr_ticks": int(
-                    np.sum(
-                        (np.abs(profiles[comparison["key"]]["reduction_q25"]) > 1e-12)
-                        | (np.abs(profiles[comparison["key"]]["reduction_q75"]) > 1e-12)
+                "mean_identity_max_abs_error": float(
+                    np.max(
+                        np.abs(
+                            profiles[comparison["key"]]["reduction_mean"]
+                            - (
+                                profiles[comparison["key"]]["control_mean"]
+                                - profiles[comparison["key"]]["experiment_mean"]
+                            )
+                        )
                     )
                 ),
             }

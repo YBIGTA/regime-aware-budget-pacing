@@ -13,7 +13,8 @@
   "metric_atol": 1e-09,
   "maximum_tracking_error_replay_difference": 1.9068178242973022e-11,
   "maximum_unspent_replay_difference": 1.2923251357932486e-10,
-  "replay_seconds": 22.2803547908552,
+  "data_source_mode": "existing_5_minute_trace",
+  "replay_seconds": null,
   "sources": {
     "stored_fixed_and_state_cap_1_0_daily": "research_report/pacing_abc_state_pi/results/daily_scores.csv",
     "stored_state_cap_1_2_daily": "research_report/pacing_abc_state_pi/analysis/unspent_ecdf/cap_1_2_daily.csv",
@@ -33,12 +34,16 @@
   },
   "profile_checks": {
     "state_pi": {
-      "nonzero_median_ticks": 287,
-      "nonzero_iqr_ticks": 287
+      "difference_min_percent_points": -0.048128634128138705,
+      "difference_max_percent_points": 0.020247200015060134,
+      "symmetric_y_limit_percent_points": 0.05294149754095258,
+      "mean_identity_max_abs_error": 2.220446049250313e-16
     },
     "cap": {
-      "nonzero_median_ticks": 0,
-      "nonzero_iqr_ticks": 0
+      "difference_min_percent_points": -0.0037851112726683955,
+      "difference_max_percent_points": 0.026806293133879562,
+      "symmetric_y_limit_percent_points": 0.02948692244726752,
+      "mean_identity_max_abs_error": 1.6653345369377348e-16
     }
   }
 }
