@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "audited_utc": "2026-11-19T04:00:17.481070+00:00",
+  "selection_before_confirmation": true,
+  "frozen_sources_unchanged": true,
+  "shared_day_tapes": true,
+  "final_test_used": false,
+  "candidate_policies": 24,
+  "development_rollouts": 1920,
+  "selection_rollouts": 3840,
+  "reference_rollouts": 3000,
+  "max_fast_reference_difference": 4.163336342344337e-16
+}

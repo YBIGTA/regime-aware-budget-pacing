@@ -1,0 +1,11 @@
+{
+  "primary_family": "centered_ratio",
+  "primary": {
+    "primary": "centered_ratio_p1_m1",
+    "diagnostic": "centered_ratio_p1_m1",
+    "eligible": 4
+  },
+  "fresh_strict_mean_success": false,
+  "decision": "retain_CMA",
+  "final_test_used": false
+}

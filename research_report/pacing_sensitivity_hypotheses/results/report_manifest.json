@@ -1,0 +1,16 @@
+{
+  "source_sha256": "dbdaf5e80096472e2d52925fc8ec44b155424daed85a9d0ade0e9e70711c7ef4",
+  "input_sha256": {
+    "CMA_comparisons.csv": "78518e1fb85c344b6669e67b9c7fceb9ad9223e8a9bbab33dec8ce63f29f4c1a",
+    "diagnostics_daily.csv": "ab40c3f44968ff7e68fdd8bb25a276b0acadb05b796a6e9be35dbd20b35fa62e",
+    "diagnostics_paired.csv": "aa5647d46c658229edc5c2d21478514b7fa07f908fe6e3ec239932cc1dbc5983",
+    "diagnostics_summary.csv": "300de185dee4a37555939c7883e0079db51915ea7f1bc1cf0590388443356e18",
+    "evaluator_audit.csv": "806944c21d9f3e6a5cce108fb47e385f1ca9f165051777bfde9d0db0a74ca7d9",
+    "fresh_daily.csv": "e22c00f64f8b40d038d141bf3cb139cc8c9f66ab0469af8552ee15210da78c0b",
+    "fresh_daily_fast.csv": "93e58ea282ab67db7ff33a8fb02c52c2c324d0f0844de1d842d833ce9f806fb6",
+    "fresh_paired.csv": "723638bc4915046df25300175cd651709955efb930da841359d75153d573ef27",
+    "fresh_summary.csv": "d297f771ff6661952c8ca3a336ce203ef235c472b90fe7b2375de0be6ab72a17",
+    "time_profiles.csv": "841690719d47b9955eabe2098f35a6939be15c14f9fd70ea8a9fd556f734e591"
+  },
+  "no_new_rollouts": true
+}

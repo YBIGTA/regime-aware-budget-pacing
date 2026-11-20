@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "audited_utc": "2026-11-20T03:59:37.614086+00:00",
+  "source_and_plan_unchanged": true,
+  "parents_unchanged": true,
+  "protocol_before_confirmation": true,
+  "shared_tapes": true,
+  "no_fresh_selection": true,
+  "final_test_used": false,
+  "max_metric_difference": 4.718447854656915e-16,
+  "max_diagnostic_difference": 2.2737367544323206e-12
+}

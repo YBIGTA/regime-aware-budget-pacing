@@ -1,0 +1,11 @@
+{
+  "python": "3.14.4",
+  "numpy": "2.3.5",
+  "matplotlib": "3.11.2",
+  "report_sha256": "32f30fde1348b3cb6e0a7f3dc4c17b92b0df6696ef26715f22a44329f845204e",
+  "paper_sha256": "ac49d0a21bf7285ee1e39f173f6f71fe8486f76c194244f77c59aab518c7b21f",
+  "additional_trace_rollouts": 3000,
+  "additional_rollouts_reason": "Descriptive analysis only; no model selection or final test.",
+  "final_test_used": false,
+  "svg_whitespace_normalized": true
+}

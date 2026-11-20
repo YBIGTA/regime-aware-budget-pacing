@@ -1,0 +1,41 @@
+{
+  "primary": "G_T05_R",
+  "primary_strict_CMA_mean_success": false,
+  "main_UR": [
+    {
+      "new": "CMA_T05",
+      "baseline": "CMA",
+      "adjusted_improvement_supported": false,
+      "mean_difference": 7.893829632949756e-05,
+      "ci98_75_low": 5.177805905821043e-05,
+      "ci98_75_high": 0.00010689997900091858
+    },
+    {
+      "new": "G_T05",
+      "baseline": "G",
+      "adjusted_improvement_supported": false,
+      "mean_difference": 8.143445066887744e-05,
+      "ci98_75_low": 5.471609658711655e-05,
+      "ci98_75_high": 0.00010874418708408001
+    },
+    {
+      "new": "G_R",
+      "baseline": "G",
+      "adjusted_improvement_supported": false,
+      "mean_difference": -6.613457761149854e-06,
+      "ci98_75_low": -1.602749836593902e-05,
+      "ci98_75_high": 3.18156864507503e-06
+    },
+    {
+      "new": "G_T05_R",
+      "baseline": "G",
+      "adjusted_improvement_supported": false,
+      "mean_difference": 7.192603337585868e-05,
+      "ci98_75_low": 4.553563048778949e-05,
+      "ci98_75_high": 9.859642744676024e-05
+    }
+  ],
+  "decision": "retain_CMA",
+  "no_fresh_selection": true,
+  "final_test_used": false
+}

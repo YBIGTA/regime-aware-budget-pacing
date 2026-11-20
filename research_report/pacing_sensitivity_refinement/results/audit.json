@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "audited_utc": "2026-11-19T04:24:07.284755+00:00",
+  "source_and_plan_unchanged": true,
+  "previous_experiments_unchanged": true,
+  "model_calibration_selection_before_confirmation": true,
+  "shared_tapes": true,
+  "final_test_used": false,
+  "max_fast_reference_difference": 4.0245584642661925e-16
+}

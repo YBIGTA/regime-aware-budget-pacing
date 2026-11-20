@@ -1,0 +1,8 @@
+{
+  "B_unclipped_slope": 0.010895946590929947,
+  "identity": "q_target=1/N+lambda*error/(N-t), while 0<=S/B<=1",
+  "approximation": "delta_base ~= lambda*error/(B_slope*(N-t)), ignoring candidate quantization, prediction zero floor and action limits",
+  "extra_proportional_gain_last_tick_half": 45.88862434551692,
+  "extra_proportional_gain_last_tick_full": 91.77724869103383,
+  "caveat": "This describes the base multiplier adjustment on the same state, not the total closed-loop gain. Network outputs and later observations can also change."
+}

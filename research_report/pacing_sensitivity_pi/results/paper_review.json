@@ -1,0 +1,27 @@
+{
+  "checked_date": "2026-11-19",
+  "title": "Adaptive Spend Control for Programmatic Advertising via Input Reparameterization",
+  "authors": [
+    "Niklas Karlsson",
+    "Tina Fan",
+    "Dan Kirlin",
+    "Abhirup Mukherjee"
+  ],
+  "official_page": "https://www.amazon.science/publications/adaptive-spend-control-for-programmatic-advertising-via-input-reparameterization",
+  "pdf": "https://cdn.amazon.science/eb/30/86a891d6459a9550880f82df1836/scipub-approval152129-49286955-adaptive-spend-control-for-programmatic-advertising-via-input-reparameterization.pdf",
+  "conference": "IEEE CDC 2026",
+  "public_code_status": "No author-provided code repository or code-release link found in the checked sources; not proof none exists.",
+  "checks": [
+    "Official article has PDF download, no paper-specific repository link",
+    "Full seven-page PDF: no occurrence of code or github; no software availability section",
+    "Amazon Science Code and datasets listing: no title match",
+    "Web title/author/GitHub-targeted searches: no matching author implementation found"
+  ],
+  "equations": {
+    "4": "u=1/(alpha+lambda); private value=u*v, not necessarily final first-price bid",
+    "5-6": "First-day prior plus cumulative spend/input ratio estimate; estimate is explicitly biased relative to a derivative",
+    "7": "Day2 onwards daily smoothing, not every-five-minute EMA",
+    "8-9": "Pure incremental-spend I controller u=SAT[u_prev+(1-exp(-Delta/Tcl))/gain*error]"
+  },
+  "reproduction": "Independent project-specific implementation of inverse gain adaptation; no author code used and no full-paper reproduction claim."
+}

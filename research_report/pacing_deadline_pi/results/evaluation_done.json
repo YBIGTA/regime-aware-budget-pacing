@@ -1,0 +1,12 @@
+{
+  "finished_utc": "2026-11-20T03:54:39.390540+00:00",
+  "models": 9,
+  "days": 1000,
+  "fast_rollouts": 9000,
+  "reference_rollouts": 9000,
+  "seconds": 594.0516875999999,
+  "max_fast_reference_difference": 4.718447854656915e-16,
+  "max_diagnostic_difference": 2.2737367544323206e-12,
+  "protocol_sha256": "7b4dea86c80befc0960b319431a9b4c2728482e910803a25b50ab303ced846a2",
+  "final_test_used": false
+}

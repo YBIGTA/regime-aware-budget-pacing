@@ -1,0 +1,41 @@
+{
+  "primary": "G_A05",
+  "primary_strict_CMA_mean_success": true,
+  "main_UR": [
+    {
+      "new": "CMA_A05",
+      "baseline": "CMA",
+      "adjusted_improvement_supported": true,
+      "mean_difference": -5.2380547630858755e-05,
+      "ci98_75_low": -7.232946207711121e-05,
+      "ci98_75_high": -3.4333658530593423e-05
+    },
+    {
+      "new": "G_A05",
+      "baseline": "G",
+      "adjusted_improvement_supported": true,
+      "mean_difference": -4.166126190662378e-05,
+      "ci98_75_low": -6.136103486303462e-05,
+      "ci98_75_high": -2.366434501424074e-05
+    },
+    {
+      "new": "CMA_A05",
+      "baseline": "CMA_T05",
+      "adjusted_improvement_supported": true,
+      "mean_difference": -0.00012885816949278095,
+      "ci98_75_low": -0.00015474386172927221,
+      "ci98_75_high": -0.00010369788583091087
+    },
+    {
+      "new": "G_A05",
+      "baseline": "G_T05",
+      "adjusted_improvement_supported": true,
+      "mean_difference": -0.00011653888066655937,
+      "ci98_75_low": -0.00014228625649793778,
+      "ci98_75_high": -9.217413019795618e-05
+    }
+  ],
+  "decision": "candidate_for_final_validation",
+  "no_fresh_selection": true,
+  "final_test_used": false
+}

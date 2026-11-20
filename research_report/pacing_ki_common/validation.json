@@ -1,0 +1,136 @@
+{
+  "checked_utc": "2026-11-20T11:11:28.095163+00:00",
+  "purpose": "Ki-only publication verification, not a new performance experiment",
+  "python": "3.14.4",
+  "base_commit": "698b49a353b8c124ae9dd86b103b38529302bb43",
+  "source_commit": "de5fa3fd99af9f842a02f3941157f1ff9bc756ee",
+  "integrity": {
+    "status": "passed",
+    "check": "ki_publication_integrity",
+    "exported_files": 201,
+    "historical_source_hashes": 25,
+    "normalized_simulator_checks": 25,
+    "historical_results_unchanged": true,
+    "original_audits_reissued": false,
+    "nsga_experiment_folders_present": false,
+    "final_test_used": false
+  },
+  "bundles": [
+    {
+      "bundle": "pacing_sensitivity_pi",
+      "unittest_status": "passed",
+      "unittest_count": 9,
+      "replay": {
+        "status": "passed",
+        "check": "ki_publication_replay",
+        "bundle": "pacing_sensitivity_pi",
+        "days": [
+          520000,
+          520299
+        ],
+        "policies": 10,
+        "fast_rollouts": 20,
+        "reference_rollouts": 20,
+        "max_archived_metric_difference": 1.942890293094024e-16,
+        "max_fast_reference_difference": 1.942890293094024e-16,
+        "final_test_used": false,
+        "archived_results_unchanged": true,
+        "optimizer_modules_loaded": []
+      }
+    },
+    {
+      "bundle": "pacing_sensitivity_refinement",
+      "unittest_status": "passed",
+      "unittest_count": 9,
+      "replay": {
+        "status": "passed",
+        "check": "ki_publication_replay",
+        "bundle": "pacing_sensitivity_refinement",
+        "days": [
+          530000,
+          530399
+        ],
+        "policies": 16,
+        "fast_rollouts": 32,
+        "reference_rollouts": 32,
+        "max_archived_metric_difference": 3.191891195797325e-16,
+        "max_fast_reference_difference": 3.191891195797325e-16,
+        "final_test_used": false,
+        "archived_results_unchanged": true,
+        "optimizer_modules_loaded": []
+      }
+    },
+    {
+      "bundle": "pacing_sensitivity_hypotheses",
+      "unittest_status": "passed",
+      "unittest_count": 9,
+      "replay": {
+        "status": "passed",
+        "check": "ki_publication_replay",
+        "bundle": "pacing_sensitivity_hypotheses",
+        "days": [
+          540000,
+          540799
+        ],
+        "policies": 14,
+        "fast_rollouts": 28,
+        "reference_rollouts": 28,
+        "max_archived_metric_difference": 1.3877787807814457e-16,
+        "max_fast_reference_difference": 1.3877787807814457e-16,
+        "final_test_used": false,
+        "archived_results_unchanged": true,
+        "optimizer_modules_loaded": []
+      }
+    },
+    {
+      "bundle": "pacing_deadline_pi",
+      "unittest_status": "passed",
+      "unittest_count": 10,
+      "replay": {
+        "status": "passed",
+        "check": "ki_publication_replay",
+        "bundle": "pacing_deadline_pi",
+        "days": [
+          550000,
+          550999
+        ],
+        "policies": 9,
+        "fast_rollouts": 18,
+        "reference_rollouts": 18,
+        "max_archived_metric_difference": 2.220446049250313e-16,
+        "max_fast_reference_difference": 2.220446049250313e-16,
+        "final_test_used": false,
+        "archived_results_unchanged": true,
+        "optimizer_modules_loaded": []
+      }
+    },
+    {
+      "bundle": "pacing_asymmetric_pi",
+      "unittest_status": "passed",
+      "unittest_count": 9,
+      "replay": {
+        "status": "passed",
+        "check": "ki_publication_replay",
+        "bundle": "pacing_asymmetric_pi",
+        "days": [
+          560000,
+          560999
+        ],
+        "policies": 10,
+        "fast_rollouts": 20,
+        "reference_rollouts": 20,
+        "max_archived_metric_difference": 1.6653345369377348e-16,
+        "max_fast_reference_difference": 1.6653345369377348e-16,
+        "final_test_used": false,
+        "archived_results_unchanged": true,
+        "optimizer_modules_loaded": []
+      }
+    }
+  ],
+  "unit_tests_passed": 46,
+  "sample_fast_rollouts": 118,
+  "sample_reference_rollouts": 118,
+  "max_archived_metric_difference": 3.191891195797325e-16,
+  "final_test_used": false,
+  "historical_results_overwritten": false
+}

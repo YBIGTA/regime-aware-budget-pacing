@@ -1,0 +1,8 @@
+{
+  "python": "3.14.4",
+  "numpy": "2.3.5",
+  "matplotlib": "3.11.2",
+  "script_sha256": "73ce790521570ab85479d4a2a99440a393a6cfc68a5113e2a63c8cf035b9cf2a",
+  "extra_descriptive_rollouts": 6400,
+  "final_test_used": false
+}

@@ -1,0 +1,23 @@
+{
+  "analytic_slope": 0.010895946590929947,
+  "observations": 22960,
+  "B_slope_quantiles": [
+    0.01089592464268209,
+    0.010895943269133557,
+    0.010895947925746437,
+    0.01089595025405288,
+    0.010895961895585062
+  ],
+  "fraction_within_0_1_percent_of_constant": 1.0,
+  "actual_slope_quantiles": [
+    0.0,
+    0.004375506712276195,
+    0.016806968049781275,
+    0.03596669519065372,
+    0.08898793604317037
+  ],
+  "B_cv": 2.5298397857340156e-07,
+  "actual_cv": 0.5388919415658449,
+  "mean_absolute_error": 0.009078722764714641,
+  "caveat": "Counterfactual diagnostics only, at B selected base. Empirical finite differences include auction win thresholds; ratio estimators are intentionally biased and are not scored as unbiased derivatives."
+}

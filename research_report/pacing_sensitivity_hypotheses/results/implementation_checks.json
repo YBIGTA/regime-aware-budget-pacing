@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "tests": 9,
+  "seconds": 10.973,
+  "command": ".venv-nsga2/Scripts/python.exe -m unittest discover -s research_report/pacing_sensitivity_hypotheses/code -p test_*.py -v",
+  "notes": "Completed before protocol freezing. One initial test fixture omitted six padded observations; fixture corrected before the successful run. No confirmation data inspected at that time."
+}

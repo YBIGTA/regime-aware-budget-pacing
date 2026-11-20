@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "tests": 10,
+  "seconds": 15.522,
+  "command": ".venv-nsga2/Scripts/python.exe -m unittest discover -s research_report/pacing_deadline_pi/code -p test_*.py -v",
+  "completed_before_protocol": true
+}

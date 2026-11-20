@@ -1,0 +1,59 @@
+{
+  "hypotheses": [
+    {
+      "hypothesis": "H1",
+      "new": "G",
+      "baseline": "C_matched",
+      "TE_difference": -8.793834473010343e-07,
+      "TE_ci98_75": [
+        -2.17323673745789e-06,
+        4.1463248511803263e-07
+      ],
+      "additional_TE_improvement_supported": false,
+      "TE_worsening_supported": false,
+      "UR_one_sided95_upper": 5.828950670740371e-06
+    },
+    {
+      "hypothesis": "H2",
+      "new": "R_neutral",
+      "baseline": "R",
+      "TE_difference": -3.977529818971911e-07,
+      "TE_ci98_75": [
+        -1.750157324946172e-06,
+        9.941733005976826e-07
+      ],
+      "additional_TE_improvement_supported": false,
+      "TE_worsening_supported": false,
+      "UR_one_sided95_upper": 7.083721483129088e-07
+    },
+    {
+      "hypothesis": "H3",
+      "new": "L_noema",
+      "baseline": "L",
+      "TE_difference": 9.195549626206748e-07,
+      "TE_ci98_75": [
+        -8.118268981874297e-07,
+        2.7425918519179995e-06
+      ],
+      "additional_TE_improvement_supported": false,
+      "TE_worsening_supported": false,
+      "UR_one_sided95_upper": 2.7319628666406386e-06
+    },
+    {
+      "hypothesis": "H4",
+      "new": "L_wide",
+      "baseline": "L",
+      "TE_difference": -5.22609721950837e-07,
+      "TE_ci98_75": [
+        -1.0577857624881087e-06,
+        3.8734101271254616e-08
+      ],
+      "additional_TE_improvement_supported": false,
+      "TE_worsening_supported": false,
+      "UR_one_sided95_upper": 1.686262407173192e-06
+    }
+  ],
+  "CMA_decision": "retain_CMA_no_winner_selected",
+  "final_test_used": false,
+  "warning": "Main TE intervals adjusted for 4 fixed contrasts; other intervals descriptive. Strict sample means are not statistical noninferiority."
+}

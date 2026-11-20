@@ -1,0 +1,11 @@
+{
+  "split": "CAL80, no fit or model selection on these labels",
+  "observations": 22080,
+  "B_mae": 0.008848866676894659,
+  "learned_mae": 0.00648100678861496,
+  "B_rmse": 0.011848344383567898,
+  "learned_rmse": 0.008799535995742057,
+  "learned_correlation": 0.4889946280624583,
+  "actual_cv": 0.5455089782927788,
+  "learned_cv": 0.3566650855557032
+}
