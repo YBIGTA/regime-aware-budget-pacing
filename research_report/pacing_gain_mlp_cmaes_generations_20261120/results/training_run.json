@@ -1,0 +1,17 @@
+{
+  "finished_at": "2026-11-20T22:18:32+09:00",
+  "wall_seconds_this_invocation": 3525.465538740158,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "targets": [
+    60,
+    120,
+    240
+  ],
+  "candidate_evaluations_per_seed": 2880,
+  "training_day_simulations_per_seed": 230400,
+  "training_day_simulations_total": 691200
+}

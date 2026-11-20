@@ -1,0 +1,35 @@
+{
+  "60": {
+    "generation": 60,
+    "seed": 1,
+    "weights": "mean_weights",
+    "holdout": {
+      "tracking_error": 0.0012733025008555595,
+      "unspent": 0.0002110319812089756,
+      "objective": 0.0014843344820645351,
+      "multiplier_tv": 0.09482645551613866
+    }
+  },
+  "120": {
+    "generation": 120,
+    "seed": 1,
+    "weights": "mean_weights",
+    "holdout": {
+      "tracking_error": 0.0012784975635690174,
+      "unspent": 0.0001558653313127184,
+      "objective": 0.0014343628948817358,
+      "multiplier_tv": 0.0953916264131266
+    }
+  },
+  "240": {
+    "generation": 240,
+    "seed": 2,
+    "weights": "mean_weights",
+    "holdout": {
+      "tracking_error": 0.0012948607949464564,
+      "unspent": 0.00017702308217857065,
+      "objective": 0.0014718838771250271,
+      "multiplier_tv": 0.096422694092265
+    }
+  }
+}

@@ -1,0 +1,6 @@
+stage,seed,models,days,rollouts,seconds
+training_start_candidate,1,1,80,80,1.3330631256103516
+training_start_candidate,2,1,80,80,1.3430900573730469
+training_start_candidate,3,1,80,80,1.3438360691070557
+holdout_selection,all,18,40,720,4.56326699256897
+validation,representatives,4,200,800,5.016722917556763

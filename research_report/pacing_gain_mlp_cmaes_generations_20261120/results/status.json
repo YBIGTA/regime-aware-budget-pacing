@@ -1,0 +1,109 @@
+{
+  "experiment": "pacing_gain_mlp_cmaes_generations_20261120",
+  "started_at": "2026-11-20T21:19:30+09:00",
+  "stage": "완료",
+  "workers": 10,
+  "seeds": {
+    "1": {
+      "generation": 240,
+      "state": "완료",
+      "best_loss": 0.0015999407794205307,
+      "generation_min": 0.0016175766427261869,
+      "elapsed_seconds": 1174.046931028366,
+      "eta_seconds": 0.0
+    },
+    "2": {
+      "generation": 240,
+      "state": "완료",
+      "best_loss": 0.0016060256097582392,
+      "generation_min": 0.001620277244390526,
+      "elapsed_seconds": 1173.8130187988281,
+      "eta_seconds": 0.0
+    },
+    "3": {
+      "generation": 240,
+      "state": "완료",
+      "best_loss": 0.0016078175128699285,
+      "generation_min": 0.0016145984658348142,
+      "elapsed_seconds": 1173.490040063858,
+      "eta_seconds": 0.0
+    }
+  },
+  "updated_at": "2026-11-20T22:18:42+09:00",
+  "preflight": {
+    "started_at": "2026-11-20T21:19:30+09:00",
+    "workspace": "/Users/chanwoong/pacing_two_state_20261114",
+    "original_bundle": "/Users/chanwoong/pacing_two_state_20261114/research_report/pacing_gain_mlp_v2",
+    "workers": 10,
+    "cpu_logical": 10,
+    "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "numpy": "2.3.5",
+    "training_script_sha256": "fe0a0d297c54f020f5b9e49822d332c710f31eb249fb2b6c13cf86097268abea",
+    "original_anchor_sha256": "e1dcf765de4dcf87c3a36117cac4343df8b5f1c6de64d832451e6f2dd3a19057",
+    "original_e2_sum_s1_sha256": "c7963c7949abc537b892d5b3008d67cf9d450402058075033b7218e66b2ccf05",
+    "multiplier_max": 1.0,
+    "anti_windup_implementation": "원본 StatePI.act 재사용",
+    "rollouts": 244,
+    "reproduce_state_pi": [
+      {
+        "day": 100000,
+        "tape_match": true,
+        "abs_diff_objective": 0.0
+      },
+      {
+        "day": 100001,
+        "tape_match": true,
+        "abs_diff_objective": 0.0
+      },
+      {
+        "day": 100002,
+        "tape_match": true,
+        "abs_diff_objective": 0.0
+      }
+    ],
+    "eight_input_zero_weight_equal": true,
+    "throughput_seconds_240_rollouts": 1.2058091163635254,
+    "throughput_rollouts_per_second": 199.03647828089996,
+    "estimated_seconds_per_240_generations": 1157.5767517089844,
+    "seconds": 2.149744987487793,
+    "finished_at": "2026-11-20T21:19:32+09:00"
+  },
+  "active_seed": 3,
+  "picks": {
+    "60": {
+      "generation": 60,
+      "seed": 1,
+      "weights": "mean_weights",
+      "holdout": {
+        "tracking_error": 0.0012733025008555595,
+        "unspent": 0.0002110319812089756,
+        "objective": 0.0014843344820645351,
+        "multiplier_tv": 0.09482645551613866
+      }
+    },
+    "120": {
+      "generation": 120,
+      "seed": 1,
+      "weights": "mean_weights",
+      "holdout": {
+        "tracking_error": 0.0012784975635690174,
+        "unspent": 0.0001558653313127184,
+        "objective": 0.0014343628948817358,
+        "multiplier_tv": 0.0953916264131266
+      }
+    },
+    "240": {
+      "generation": 240,
+      "seed": 2,
+      "weights": "mean_weights",
+      "holdout": {
+        "tracking_error": 0.0012948607949464564,
+        "unspent": 0.00017702308217857065,
+        "objective": 0.0014718838771250271,
+        "multiplier_tv": 0.096422694092265
+      }
+    }
+  },
+  "completed_at": "2026-11-20T22:18:42+09:00",
+  "report": "/Users/chanwoong/pacing_two_state_20261114/research_report/pacing_gain_mlp_cmaes_generations_20261120/REPORT_KO.md"
+}

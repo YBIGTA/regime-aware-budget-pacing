@@ -1,0 +1,8 @@
+{
+  "seed": 2,
+  "generation": 60,
+  "best_loss_abs_diff": 0.0,
+  "weights_max_abs_diff": 0.0,
+  "mean_weights_max_abs_diff": 0.0,
+  "exact_path_reproduced": true
+}
