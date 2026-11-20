@@ -21,4 +21,6 @@ python research_report/pacing_abc_state_pi/analysis/unspent_ecdf/plot_unspent_ec
 
 - `cap_1_2_daily.csv`: 상한 1.2의 실제 일별 200일 결과
 - `summary.json`: 평균, 0.1% 기준 충족 건수, 개선·악화·동률 집계와 입력 경로
-- `unspent-ecdf.png`, `unspent-ecdf.svg`: 최종 그림
+- `unspent-ecdf-report.png`, `.svg`: 0.00~0.20% 구간의 보고서용 ECDF와 두 ECDF의 높이 차이
+- `unspent-ecdf-appendix.png`, `.svg`: 전체 미소진율 범위의 부록용 ECDF
+- `unspent-ecdf.png`, `.svg`: 이전 그림(비교 확인을 위해 보존)

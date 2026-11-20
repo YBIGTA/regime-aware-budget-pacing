@@ -12,7 +12,7 @@
     "state_cap_1_2": "research_report/pacing_abc_state_pi/analysis/unspent_ecdf/cap_1_2_daily.csv"
   },
   "tape_hash_mismatches": 0,
-  "cap_1_2_replay_seconds": 7.395422125002369,
+  "cap_1_2_replay_seconds": 7.603804250014946,
   "groups": {
     "B_fixed_PI": {
       "mean_unspent_ratio": 0.00076141105564894,
@@ -49,5 +49,11 @@
       "tied_days": 4,
       "tie_atol_ratio": 1e-12
     }
+  },
+  "figures": {
+    "report_png": "research_report/pacing_abc_state_pi/analysis/unspent_ecdf/unspent-ecdf-report.png",
+    "report_svg": "research_report/pacing_abc_state_pi/analysis/unspent_ecdf/unspent-ecdf-report.svg",
+    "appendix_png": "research_report/pacing_abc_state_pi/analysis/unspent_ecdf/unspent-ecdf-appendix.png",
+    "appendix_svg": "research_report/pacing_abc_state_pi/analysis/unspent_ecdf/unspent-ecdf-appendix.svg"
   }
 }

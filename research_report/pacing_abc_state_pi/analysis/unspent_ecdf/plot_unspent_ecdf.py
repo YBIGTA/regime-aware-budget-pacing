@@ -7,7 +7,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
-from mpl_toolkits.axes_grid1.inset_locator import inset_axes, mark_inset
+from matplotlib.ticker import FormatStrFormatter
 
 
 HERE = Path(__file__).resolve().parent
@@ -18,6 +18,10 @@ CAP12_DAILY = HERE / "cap_1_2_daily.csv"
 SUMMARY = HERE / "summary.json"
 PNG = HERE / "unspent-ecdf.png"
 SVG = HERE / "unspent-ecdf.svg"
+REPORT_PNG = HERE / "unspent-ecdf-report.png"
+REPORT_SVG = HERE / "unspent-ecdf-report.svg"
+APPENDIX_PNG = HERE / "unspent-ecdf-appendix.png"
+APPENDIX_SVG = HERE / "unspent-ecdf-appendix.svg"
 VALIDATION_DAYS = list(range(100000, 100200))
 TIE_ATOL = 1e-12
 THRESHOLD_RATIO = 0.001  # 0.1%
@@ -196,78 +200,212 @@ def ecdf(values):
     return np.r_[0.0, x], np.r_[0.0, y]
 
 
-def draw_panel(ax, title, control_label, experiment_label, control, experiment, paired):
-    control_color = "#365F91"
-    experiment_color = "#C65D3A"
-    series = (
-        (control_label, control, control_color, "-"),
-        (experiment_label, experiment, experiment_color, "--"),
+def ecdf_difference(control, experiment):
+    control_percent = np.sort(control * 100)
+    experiment_percent = np.sort(experiment * 100)
+    x = np.unique(
+        np.r_[0.0, control_percent, experiment_percent, THRESHOLD_RATIO * 100, 0.2]
     )
+    control_y = np.searchsorted(control_percent, x, side="right") / len(control) * 100
+    experiment_y = (
+        np.searchsorted(experiment_percent, x, side="right")
+        / len(experiment)
+        * 100
+    )
+    return x, experiment_y - control_y
 
-    for label, values, color, linestyle in series:
-        x, y = ecdf(values)
-        ax.step(
-            x,
-            y,
-            where="post",
-            color=color,
-            linestyle=linestyle,
-            linewidth=2.3,
-            label=f"{label}  ·  평균 {values.mean() * 100:.4f}%",
-        )
 
-    ax.axvline(0.1, color="#6B7280", linestyle=":", linewidth=1.25)
-    ax.set_title(title, loc="left", fontsize=14, fontweight="bold", pad=10)
-    ax.set_xlabel("최종 미소진율 (%)")
-    ax.set_ylabel("해당 값 이하로 마감한 시나리오 (%)")
-    ax.set_xlim(left=0)
-    ax.set_ylim(0, 101)
-    ax.set_yticks(np.arange(0, 101, 20))
-    ax.grid(axis="both", color="#D1D5DB", linewidth=0.7, alpha=0.65)
-    ax.spines[["top", "right"]].set_visible(False)
-    ax.legend(loc="lower right", frameon=False, fontsize=9.5)
-
+def threshold_line(control, experiment):
     control_hits = int(np.sum(control <= THRESHOLD_RATIO))
     experiment_hits = int(np.sum(experiment <= THRESHOLD_RATIO))
-    ax.text(
+    control_percent = control_hits / len(control) * 100
+    experiment_percent = experiment_hits / len(experiment) * 100
+    difference = experiment_percent - control_percent
+    extra_days = experiment_hits - control_hits
+    if extra_days:
+        detail = f"{difference:+.0f}%p, {abs(extra_days)}일 더 {'많음' if extra_days > 0 else '적음'}"
+    else:
+        detail = f"{difference:.0f}%p"
+    return (
+        f"0.10% 이하: {control_percent:.0f}% → {experiment_percent:.0f}% "
+        f"({detail})"
+    )
+
+
+def clean_svg(path):
+    path.write_text("\n".join(line.rstrip() for line in path.read_text().splitlines()) + "\n")
+
+
+def style_axis(ax):
+    ax.grid(color="#D1D5DB", linewidth=0.7, alpha=0.65)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.axvline(0.1, color="#6B7280", linestyle=":", linewidth=1.0)
+    ax.set_xlim(0, 0.2)
+    ax.set_xticks([0, 0.05, 0.10, 0.15, 0.20])
+    ax.xaxis.set_major_formatter(FormatStrFormatter("%.2f"))
+
+
+def draw_report(comparisons):
+    control_color = "#365F91"
+    experiment_color = "#C65D3A"
+    difference_color = "#397A5A"
+    neutral_color = "#4B5563"
+    fig, axes = plt.subplots(
+        2,
+        2,
+        figsize=(14.5, 8.8),
+        sharex="col",
+        gridspec_kw={"height_ratios": [1.35, 1], "hspace": 0.14, "wspace": 0.22},
+    )
+    fig.subplots_adjust(left=0.075, right=0.985, top=0.75, bottom=0.22)
+
+    column_centers = (0.275, 0.755)
+    for column, comparison in enumerate(comparisons):
+        top = axes[0, column]
+        bottom = axes[1, column]
+        control = comparison["control"]
+        experiment = comparison["experiment"]
+
+        x_control, y_control = ecdf(control)
+        x_experiment, y_experiment = ecdf(experiment)
+        control_line = top.step(
+            x_control,
+            y_control,
+            where="post",
+            color=control_color,
+            linestyle="-",
+            linewidth=2.3,
+            label=comparison["control_label"],
+        )[0]
+        experiment_line = top.step(
+            x_experiment,
+            y_experiment,
+            where="post",
+            color=experiment_color,
+            linestyle="--",
+            linewidth=2.3,
+            label=comparison["experiment_label"],
+        )[0]
+        style_axis(top)
+        top.set_ylim(0, 100)
+        top.set_yticks(np.arange(0, 101, 20))
+        top.set_ylabel("누적 시나리오 비율 (%)")
+
+        x_difference, difference = ecdf_difference(control, experiment)
+        bottom.step(
+            x_difference,
+            difference,
+            where="post",
+            color=difference_color,
+            linewidth=2.1,
+        )
+        style_axis(bottom)
+        bottom.axhline(0, color="#6B7280", linewidth=1.0)
+        bottom.set_ylabel("ECDF 차이 (%p)")
+        bottom.set_xlabel("최종 미소진율 (%)")
+
+        center = column_centers[column]
+        fig.text(
+            center,
+            0.875,
+            comparison["title"],
+            ha="center",
+            va="center",
+            fontsize=14,
+            fontweight="bold",
+        )
+        fig.text(
+            center,
+            0.84,
+            threshold_line(control, experiment),
+            ha="center",
+            va="center",
+            fontsize=10.5,
+            color=neutral_color,
+        )
+        fig.legend(
+            [control_line, experiment_line],
+            [comparison["control_label"], comparison["experiment_label"]],
+            loc="upper center",
+            bbox_to_anchor=(center, 0.815),
+            ncol=2,
+            frameon=False,
+            fontsize=9.5,
+        )
+        paired = comparison["paired"]
+        fig.text(
+            center,
+            0.075,
+            f"평균 {control.mean() * 100:.4f}% → {experiment.mean() * 100:.4f}%\n"
+            f"일별 짝비교: 개선 {paired['improved_days']}일 · "
+            f"악화 {paired['worsened_days']}일 · 동률 {paired['tied_days']}일",
+            ha="center",
+            va="center",
+            fontsize=9.5,
+            color="#374151",
+        )
+
+    fig.suptitle("최종 미소진율 누적분포 · 검증 200일", fontsize=17, fontweight="bold", y=0.97)
+    fig.text(
+        0.5,
+        0.93,
+        "전체 200일을 분모로 계산 · 표시 구간 0.00~0.20%",
+        ha="center",
+        fontsize=10.5,
+        color=neutral_color,
+    )
+    fig.text(
+        0.5,
+        0.145,
+        "ECDF 차이 = 실험군 − 대조군 · 양수는 해당 미소진율 이하로 마감한 날이 실험군에서 더 많다는 뜻",
+        ha="center",
+        fontsize=10,
+        color=neutral_color,
+    )
+    fig.text(
+        0.5,
         0.025,
-        0.97,
-        "0.1% 이하\n"
-        f"대조군  {control_hits}/200 ({control_hits / 2:.1f}%)\n"
-        f"실험군  {experiment_hits}/200 ({experiment_hits / 2:.1f}%)",
-        transform=ax.transAxes,
-        ha="left",
-        va="top",
-        fontsize=9.5,
-        bbox={"boxstyle": "round,pad=0.35", "facecolor": "white", "edgecolor": "#D1D5DB"},
+        f"동률 기준: |실험군 − 대조군| ≤ {TIE_ATOL:.0e} (원본 비율값)",
+        ha="center",
+        fontsize=8.8,
+        color=neutral_color,
     )
+    fig.savefig(REPORT_PNG, dpi=220, bbox_inches="tight", facecolor="white")
+    fig.savefig(REPORT_SVG, bbox_inches="tight", facecolor="white", metadata={"Date": None})
+    plt.close(fig)
+    clean_svg(REPORT_SVG)
 
-    inset = inset_axes(ax, width="47%", height="43%", loc="center right", borderpad=1.0)
-    for _, values, color, linestyle in series:
-        x, y = ecdf(values)
-        inset.step(x, y, where="post", color=color, linestyle=linestyle, linewidth=1.7)
-    inset.axvline(0.1, color="#6B7280", linestyle=":", linewidth=1.0)
-    inset.set_xlim(0, 0.2)
-    inset.set_ylim(0, 101)
-    inset.set_xticks([0, 0.05, 0.10, 0.15, 0.20])
-    inset.set_yticks([0, 50, 100])
-    inset.tick_params(labelsize=7.5)
-    inset.grid(color="#D1D5DB", linewidth=0.5, alpha=0.55)
-    inset.set_title("0~0.2% 확대", fontsize=8.5, pad=3)
-    mark_inset(ax, inset, loc1=2, loc2=4, fc="none", ec="#9CA3AF", lw=0.8)
 
-    ax.text(
-        0.0,
-        -0.24,
-        "일별 짝비교: "
-        f"개선 {paired['improved_days']}일 · 악화 {paired['worsened_days']}일 · "
-        f"동률 {paired['tied_days']}일  (|차이| ≤ {TIE_ATOL:.0e})",
-        transform=ax.transAxes,
-        ha="left",
-        va="top",
-        fontsize=9.2,
-        color="#374151",
+def draw_appendix(comparisons):
+    control_color = "#365F91"
+    experiment_color = "#C65D3A"
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5.3))
+    maximum = max(
+        float(np.max(comparison[key]) * 100)
+        for comparison in comparisons
+        for key in ("control", "experiment")
     )
+    for ax, comparison in zip(axes, comparisons):
+        for label, values, color, linestyle in (
+            (comparison["control_label"], comparison["control"], control_color, "-"),
+            (comparison["experiment_label"], comparison["experiment"], experiment_color, "--"),
+        ):
+            x, y = ecdf(values)
+            ax.step(x, y, where="post", color=color, linestyle=linestyle, linewidth=2.1, label=label)
+        ax.set_title(comparison["title"], fontsize=13, fontweight="bold")
+        ax.set_xlim(0, maximum * 1.02)
+        ax.set_ylim(0, 100)
+        ax.set_xlabel("최종 미소진율 (%)")
+        ax.set_ylabel("누적 시나리오 비율 (%)")
+        ax.grid(color="#D1D5DB", linewidth=0.7, alpha=0.65)
+        ax.spines[["top", "right"]].set_visible(False)
+        ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=2, frameon=False)
+    fig.suptitle("최종 미소진율 ECDF · 전체 범위 부록", fontsize=16, fontweight="bold")
+    fig.subplots_adjust(left=0.075, right=0.985, top=0.82, bottom=0.25, wspace=0.22)
+    fig.savefig(APPENDIX_PNG, dpi=220, bbox_inches="tight", facecolor="white")
+    fig.savefig(APPENDIX_SVG, bbox_inches="tight", facecolor="white", metadata={"Date": None})
+    plt.close(fig)
+    clean_svg(APPENDIX_SVG)
 
 
 def main():
@@ -305,6 +443,12 @@ def main():
             "B_state_PI_cap_1_2": group_summary(state_cap12),
         },
         "comparisons": comparisons,
+        "figures": {
+            "report_png": str(REPORT_PNG.relative_to(REPO)),
+            "report_svg": str(REPORT_SVG.relative_to(REPO)),
+            "appendix_png": str(APPENDIX_PNG.relative_to(REPO)),
+            "appendix_svg": str(APPENDIX_SVG.relative_to(REPO)),
+        },
     }
 
     expected_cap12_percent = 0.044549
@@ -322,38 +466,26 @@ def main():
             "svg.fonttype": "none",
         }
     )
-    fig, axes = plt.subplots(1, 2, figsize=(14.4, 6.5))
-    draw_panel(
-        axes[0],
-        "상태별 PI 적용",
-        "B · 고정 PI",
-        "B_state_PI · 상태별 PI",
-        fixed,
-        state_cap1,
-        comparisons["state_pi_vs_fixed_pi"],
+    report_comparisons = (
+        {
+            "title": "고정 PI vs 상태별 PI",
+            "control_label": "B · 고정 PI",
+            "experiment_label": "B_state_PI · 상태별 PI",
+            "control": fixed,
+            "experiment": state_cap1,
+            "paired": comparisons["state_pi_vs_fixed_pi"],
+        },
+        {
+            "title": "승수 상한 1.0 vs 1.2",
+            "control_label": "B_state_PI · 상한 1.0",
+            "experiment_label": "B_state_PI · 상한 1.2",
+            "control": state_cap1,
+            "experiment": state_cap12,
+            "paired": comparisons["cap_1_2_vs_cap_1_0"],
+        },
     )
-    draw_panel(
-        axes[1],
-        "입찰 승수 상한 완화",
-        "B_state_PI · 상한 1.0",
-        "B_state_PI · 상한 1.2",
-        state_cap1,
-        state_cap12,
-        comparisons["cap_1_2_vs_cap_1_0"],
-    )
-    fig.suptitle("최종 미소진율 누적분포 · 검증 200일", fontsize=17, fontweight="bold", y=0.98)
-    fig.text(
-        0.5,
-        0.925,
-        "ECDF가 왼쪽·위쪽일수록 더 많은 날이 낮은 미소진율로 마감 · 원본 비율값을 ×100해 %로 표시",
-        ha="center",
-        fontsize=10.5,
-        color="#4B5563",
-    )
-    fig.subplots_adjust(left=0.075, right=0.985, top=0.86, bottom=0.22, wspace=0.22)
-    fig.savefig(PNG, dpi=220, bbox_inches="tight", facecolor="white")
-    fig.savefig(SVG, bbox_inches="tight", facecolor="white")
-    plt.close(fig)
+    draw_report(report_comparisons)
+    draw_appendix(report_comparisons)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
