@@ -1,0 +1,27 @@
+{
+  "conditions": {
+    "A": "기존 E2, 예측 보정 없음",
+    "B": "모든 승수 후보에 공통 잔차 EMA",
+    "C": "최종 승수 주변 삼각 커널 잔차 EMA"
+  },
+  "eta": 0.25,
+  "h": 0.15,
+  "grid_candidates": 101,
+  "multiplier_min": 0.0,
+  "multiplier_max": 1.0,
+  "checkpoint": "/Users/chanwoong/pacing_two_state_20261114/research_report/pacing_gain_mlp_v2/results/model_E2_sum_s1.json",
+  "checkpoint_sha256": "c7963c7949abc537b892d5b3008d67cf9d450402058075033b7218e66b2ccf05",
+  "checkpoint_weight_field": "mean_weights",
+  "linear_predictor": "/Users/chanwoong/pacing_two_state_20261114/research_report/pacing_abc_state_pi/code/abc/predictors.joblib",
+  "linear_predictor_sha256": "74660874f26914876aacf80fed8954044ef6751338d8887eb968206a2da64155",
+  "daily_state_reset": [
+    "integral",
+    "prediction_correction"
+  ],
+  "excluded_updates": [
+    "no_valid_prediction",
+    "budget_censored"
+  ],
+  "bootstrap_samples": 20000,
+  "bootstrap_seed": 917
+}

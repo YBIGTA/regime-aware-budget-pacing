@@ -1,0 +1,66 @@
+{
+  "selected_checkpoint": {
+    "pick_file": "/Users/chanwoong/pacing_two_state_20261114/research_report/pacing_gain_mlp_v2/results/picks.json",
+    "model_file": "/Users/chanwoong/pacing_two_state_20261114/research_report/pacing_gain_mlp_v2/results/model_E2_sum_s1.json",
+    "model_file_sha256": "c7963c7949abc537b892d5b3008d67cf9d450402058075033b7218e66b2ccf05",
+    "weight_field": "mean_weights",
+    "selected_weights_sha256_float64": "cd71e555b0033f074364f42323b95dd17a02445b46e6f01247a0c0c4186891ec",
+    "linear_predictor_file": "/Users/chanwoong/pacing_two_state_20261114/research_report/pacing_abc_state_pi/code/abc/predictors.joblib",
+    "linear_predictor_file_sha256": "74660874f26914876aacf80fed8954044ef6751338d8887eb968206a2da64155"
+  },
+  "eta": 0.25,
+  "h": 0.15,
+  "grid_candidates": 101,
+  "multiplier_max": 1.0,
+  "checks": [
+    {
+      "day": 100000,
+      "original_action_max_abs_diff": 0.0,
+      "eta0_B_action_max_abs_diff": 0.0,
+      "eta0_C_action_max_abs_diff": 0.0,
+      "original_metric_max_abs_diff": 0.0,
+      "stored_E2_metric_max_abs_diff": 0.0,
+      "eta0_B_metric_max_abs_diff": 0.0,
+      "eta0_C_metric_max_abs_diff": 0.0,
+      "tape_match": true
+    },
+    {
+      "day": 100001,
+      "original_action_max_abs_diff": 0.0,
+      "eta0_B_action_max_abs_diff": 0.0,
+      "eta0_C_action_max_abs_diff": 0.0,
+      "original_metric_max_abs_diff": 0.0,
+      "stored_E2_metric_max_abs_diff": 0.0,
+      "eta0_B_metric_max_abs_diff": 0.0,
+      "eta0_C_metric_max_abs_diff": 0.0,
+      "tape_match": true
+    },
+    {
+      "day": 100002,
+      "original_action_max_abs_diff": 0.0,
+      "eta0_B_action_max_abs_diff": 0.0,
+      "eta0_C_action_max_abs_diff": 0.0,
+      "original_metric_max_abs_diff": 0.0,
+      "stored_E2_metric_max_abs_diff": 0.0,
+      "eta0_B_metric_max_abs_diff": 0.0,
+      "eta0_C_metric_max_abs_diff": 0.0,
+      "tape_match": true
+    }
+  ],
+  "causality": {
+    "act_signature": [
+      "self",
+      "obs"
+    ],
+    "observation_fields": [
+      "tick",
+      "ticks",
+      "budget",
+      "cumulative_spend",
+      "history"
+    ],
+    "future_tape_argument_present": false,
+    "identical_observation_action_equal": true,
+    "update_occurs_only_in_post_execute_sink": true
+  }
+}
