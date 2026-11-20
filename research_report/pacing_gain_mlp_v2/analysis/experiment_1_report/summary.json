@@ -1,0 +1,46 @@
+{
+  "control": "B_state_PI",
+  "experiment": "improved_gain_mlp_sum",
+  "selected_model": {
+    "model": "E2_sum_s1",
+    "weights": "mean_weights"
+  },
+  "validation_days": [
+    100000,
+    100199
+  ],
+  "day_count": 200,
+  "ticks_per_day": 288,
+  "rows_per_condition": 57600,
+  "same_day_pairing": true,
+  "auction_tape_hash_match": true,
+  "daily_metric_checks": {
+    "B_state_PI": {
+      "tracking_error": 0.0014153230996419063,
+      "unspent": 0.0005589390554983386,
+      "stored_tracking_difference": 7.948654755229878e-14,
+      "stored_unspent_difference": 9.736823543618489e-12
+    },
+    "improved_gain_mlp_sum": {
+      "tracking_error": 0.0013898478695825855,
+      "unspent": 0.00042092803965310897,
+      "stored_tracking_difference": 2.8955180267353775e-13,
+      "stored_unspent_difference": -9.19268274782864e-12
+    }
+  },
+  "control_minus_experiment_percent_points": {
+    "tracking_error": 0.0025475230059320833,
+    "unspent": 0.013801101584522964
+  },
+  "profile_checks": {
+    "difference_min_percent_points": -0.033992842381368515,
+    "difference_max_percent_points": 0.1622224720976018,
+    "symmetric_y_limit_percent_points": 0.178444719307362,
+    "mean_identity_max_abs_error": 3.7470027081099033e-16
+  },
+  "files": {
+    "trace": "research_report/pacing_gain_mlp_v2/analysis/experiment_1_report/experiment_1_5min.csv.gz",
+    "daily": "research_report/pacing_gain_mlp_v2/analysis/experiment_1_report/experiment_1_daily.csv",
+    "figure": "research_report/pacing_gain_mlp_v2/analysis/experiment_1_report/experiment-1-gain-mlp-tracking.png"
+  }
+}
